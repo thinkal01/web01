@@ -1,0 +1,69 @@
+<html>
+<body>
+<!--
+	使用超链接可以让我们从一个页面跳转到另一个页面
+	href属性构成
+		协议名+协议内容
+		href:指向链接跳转的目标地址,可以写一个相对路径也可以写一个完整的地址
+		file: file协议（文件协议）这种协议主要是用于搜索本地机器的资源文件的。
+		file:\\\f:\美女\1.jpg
+	a标签的原理：
+	1. a标签的href属性值如果是以http开头的，那么浏览器会马上启动http解释器去解释该网址，
+	首先会在本地机器去找一个hosts文件， 如果在hosts文件上该域名没有对应的主机，那么浏览器就去到对应的
+    dns服务器去寻找该域名对应的主机号。如果找到了对应的主机，那么该请求就会发给对应的主机。
+
+    2. 如果a标签的href属性值没有以任何协议开头，那么浏览就会启动file协议解释器去解释该资源路径。
+
+    3. 如果a标签的href属性值并不是以http开始，而且其他的一些协议，那么这时候浏览器就回去到我们本地的注册
+    	表中去查找是否有处理这种协议的应用程序，如果有，那么马上启动该应用程序处理该协议。
+
+    4. 不仅可以创建文本超链接，在网页中各种网页元素，如图像、表格、音频、视频等都可以添加超链接。
+
+	邮件 的协议： mailTo
+	迅雷的协议： thunder
+-->
+<a href="http://www.baidu.com">我是一个超链接</a>
+<a href="http://www.baidu1234567.com">我是一个超链接</a>
+<a href="02-排版标记.html" target="_blank">点我</a>
+<a href="http://www.baidu.com" target="_blank">百度</a>
+<a href="mailto:xxxx@itcast.cn" target="_blank">联系我们</a>
+<a href="thunder://E3F2A7821" target="_blank">点击下载</a>
+<a href="ed2k://aaaa">ed2k</a>
+
+<!-- 压缩文件下载 -->
+<a href="../../01-ppt.rar">压缩包</a>
+
+<!--让所有的超链接都在新窗口打开-->
+<base target="_blank">
+
+<!--
+	a标签中的target属性可以用来指定打开链接的位置
+	可选值：
+		_self，表示在当前窗口中打开（默认值）
+		_blank，在新的窗口中打开链接
+		可以设置一个内联框架的name属性值，链接将会在指定的内联框架中打开
+-->
+<a href="demo03.html" target="tom">我是一个超链接</a>
+<iframe src="demo02.html" name="tom"></iframe>
+
+<!-- A标签的锚点功能 -->
+<p id="sd">123</p>
+<a name="_abc"></a>
+<img src="html.bmp" border="1" width="300" height="300" alt="哈哈"
+     title="嘿嘿"/>
+<img src="html.bmp" border="1" width="300" height="300" alt="哈哈"
+     title="嘿嘿"/>
+<a name="_middle"></a>
+<img src="html.bmp" border="1" width="300" height="300" alt="哈哈"
+     title="嘿嘿"/>
+<img src="html.bmp" border="1" width="300" height="300" alt="哈哈"
+     title="嘿嘿"/>
+<a href="#_abc">回到顶部</a>
+<a href="#sd">回到頂部</a>
+<a href="#_middle">回到中间</a>
+</body>
+<head>
+    <title>链接标记</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+</html>

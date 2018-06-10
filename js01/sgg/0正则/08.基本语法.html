@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--
+    可以将js代码编写到外部js文件中，然后通过script标签引入
+    写到外部文件中可以在不同的页面中同时引用，也可以利用到浏览器的缓存机制
+    推荐使用的方式
+
+    script标签一旦用于引入外部文件了，就不能在编写代码了，即使编写了浏览器也会忽略
+    如果需要则可以在创建一个新的script标签用于编写内部代码
+    -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+        alert("我是内部的JS代码");
+    </script>
+
+    <script type="text/javascript">
+        //全局变量
+        var aa = 10;
+        //代码块 (Java)对代码进行封装 隔离变量的作用域
+        {
+            var a = 100;
+            document.write(a + "</br>");
+        }
+        {
+            document.write(a + "</br>");
+            //JavaScript不会隔离变量作用域
+        }
+    </script>
+    <script type="text/javascript">
+        //alert("在另外一个script标签使用： "+aa);
+    </script>
+
+    <script type="text/javascript">
+        /*
+         JS注释
+         多行注释
+         多行注释，注释中的内容不会被执行，但是可以在源代码中查看
+         要养成良好的编写注释的习惯，也可以通过注释来对代码进行一些简单的调试
+         */
+
+        //单行注释
+        //alert("hello");
+        //document.write("hello");
+        console.log("hello"); //该语句用来在控制台输出一个日志
+        /*
+         * 1.JS中严格区分大小写
+         * 2.JS中每一条语句以分号(;)结尾
+         * 		- 如果不写分号，浏览器会自动添加，但是会消耗一些系统资源，
+         * 			而且有些时候，浏览器会加错分号，所以在开发中分号必须写
+         * 3.JS中会忽略多个空格和换行，所以我们可以利用空格和换行对代码进行格式化
+         */
+        alert("hello");
+    </script>
+</head>
+<body>
+<body>
+<!--
+    可以将js代码编写到标签的onclick属性中
+    当我们点击按钮时，js代码才会执行
+    虽然可以写在标签的属性中，但是他们属于结构与行为耦合，不方便维护，不推荐使用
+-->
+<button onclick="alert('讨厌，你点我干嘛~~');">点我一下</button>
+
+<!--
+    可以将js代码写在超链接的href属性中，这样当点击超链接时，会执行js代码
+-->
+<a href="javascript:alert('让你点你就点！！');">你也点我一下</a>
+<a href="javascript:;">你也点我一下</a>
+
+</body>
+</body>
+</html>

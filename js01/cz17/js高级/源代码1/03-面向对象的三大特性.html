@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //封装
+        var obj = {
+            name: "刘德华",
+            age: 50,
+            sayHello: function () {
+                //.....
+            }
+        }
+
+        //继承
+        //javaScript当中的继承是指
+        //一个对象没有一些方法和属性，但是另外一个对象有
+        //把另外一个对象的属性和方法，拿过来使用，就是继承
+        var obj = {};
+
+        var obj1 = {
+            name: "张学友",
+            sayHello: function () {
+                console.log("你好，我是张学友");
+            }
+        }
+        obj.sayHello();
+
+        //混入式继承（mix-in）  for in
+        for (var k in obj1) {
+            //k可以获取到对象的每一个属性
+            //obj1[k]可以获取到对象的每一个属性的值
+            //这里使用k给对象新增属性的时候，不可以使用点语法
+            obj[k] = obj1[k];
+        }
+        obj.sayHello();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

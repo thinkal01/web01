@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+<head>
+<title>02-结合方式2.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!-- 语法1:
+	选择器{
+		样式属性键: 样式属性值;
+		样式属性键:样式属性值1 样式属性值2 样式属性值3...;
+		/*
+		注释内容!
+		*/
+	 语法2:
+		style="样式属性键: 样式属性值;"
+	}
+-->
+<style type="text/css">
+p { /* 这是注释内容 */
+	/**
+		这是注释内容
+	*/
+	color: red;
+}
+</style>
+
+<!--
+	标签选择器:
+		标签名称{
+		}
+	}
+-->
+<style type="text/css">
+a {
+	color: blue;
+}
+</style>
+
+<!--
+	id选择器:
+		#标签id{
+		}
+	注意: 使用id时.要保证id的值在页面中是唯一的
+ -->
+<style type="text/css">
+#one {
+	color: yellow;
+}
+</style>
+
+<!--
+	class选择器:
+		.class名称{
+		}
+	class属性和id属性类似，只不过class属性可以重复
+	拥有相同class属性值的元素，我们说他们是一组元素
+	可以同时为一个元素设置多个class属性值，多个值之间使用空格隔开
+-->
+<style type="text/css">
+.one {
+	color: green;
+}
+</style>
+
+<!--
+	 选择器分组(并集选择器)
+	 - 通过选择器分组可以同时选中多个选择器对应的元素
+	 - 语法：选择器1,选择器2,选择器N{}
+	#p1 , .p2 , h1{
+		background-color: yellow;
+	}
+
+	 通配选择器
+	 - 可以用来选中页面中的所有的元素
+	 语法：*{}
+
+	复合选择器（交集选择器）
+	为拥有class p3 span元素设置一个背景颜色为黄色
+	- 可以选中同时满足多个选择器的元素
+	- 选择器1选择器2选择器N{}
+
+	对于id选择器来说，不建议使用复合选择器
+	p#p1{
+	background-color: red;
+-->
+    <style type="text/css">
+        span.p3 {
+            background-color: yellow;
+        }
+
+        #one, .two, font {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+	<p>This is my HTML page.</p>
+	<a> This is my HTML page. </a>
+	<a id="one"> This is my HTML page. </a>
+	<p class="one">This is my HTML page.</p>
+	<a class="one"> This is my HTML page. </a>
+	<a href="01-结合方式1.html">点我</a>
+	<a id="one">点我</a>
+	<p class="two">点我</a> <font>点我</font> <br>
+</body>
+</html>

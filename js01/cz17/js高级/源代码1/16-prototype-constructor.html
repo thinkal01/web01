@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, gender, car) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.car = car;
+        }
+
+        var x = {
+            brand: "byd"
+        };
+
+        var p = new Person("张学友", "18", "male", x);
+
+        var p1 = new p.constructor("张学友1", "19", "male", x);//相当于直接使用 new Person()
+
+        //原型对象在创建出来的时候，会默认的有一个constructor属性
+        //指向对应的构造函数
+        console.log(Person.prototype.constructor== p.constructor); // true
+
+        function Person(){
+        }
+        Person.prototype = {};
+        console.log(Person.prototype.constructor); // Object
+
+        //在使用新的对象替换掉默认的原型对象之后
+        //原型对象中的constructor属性会变成 Object
+        //为了保证整个 构造函数---原型----对象 之间的关系的合理性
+        //应在替换原型对象的时候，在新的原型对象中手动添加 constructor 属性
+        Person.prototype = {
+            constructor : Person
+        };
+        console.log(Person.prototype.constructor); // Person
+    </script>
+</head>
+<body>
+
+</body>
+</html>

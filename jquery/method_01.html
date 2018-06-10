@@ -1,0 +1,557 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		.oneClass {
+			font-size: 44px;
+			color: red
+		}
+	</style>
+	<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+  </head>
+  <body>
+	<script type="text/javascript">
+		//num为number类型
+		var num = 100;
+		//flag为boolean类型
+		var flag = true;
+		//多个script块中的内容，可以相互访问
+		//str为string类型，注意js中的string类型用''或""均可
+		var str = "哈哈";
+		//undefined不是字符串，它是一种类型，如果你想判断某个变量是否为undefined，
+		//通过如下代码判断：
+		if (card == undefined) {
+			alert("card变量暂没值");
+		} else {
+			alert(card);
+		}
+
+		// 函数定义三种方式
+		// 正常方式(先)
+		function add(num1, num2) {
+			return num1 + num2;
+		}
+		window.alert("10+20=" + add(10, 20));
+
+		// 构造器方式，最后一个参数为函数体，每个参数都是字符串类型(后)
+		var add = new Function("num1", "num2", "return num1+num2");
+		window.alert("100+200=" + add(100, 200));
+
+		// 直接量或匿名或无名方式(再)
+		var add = function(num1, num2) {
+			return num1 + num2;
+		}
+		window.alert("1000+2000=" + add(1000, 2000));
+
+		// Date
+		var nowStr = new Date().toLocaleString();
+		window.document.write(nowStr + "<br/>");
+
+		// Math
+		for ( var i = 1; i <= 10; i++) {
+			// 1到9之间的随机整数
+			document.write(Math.floor(Math.random() * 9) + 1 + "<br/>");
+		}
+
+		// window对象，打开新窗口
+		var url = "04_images.html";
+		window.open(url);
+
+		// status对象，将当前时间设置到状态栏中
+		var nowStr = new Date().toLocaleString();
+		window.status = nowStr;
+
+		// location对象，模拟用户在地址栏输入url访问其它页面的情况
+		var url = "04_images.html";
+		window.location.href = url;
+
+		// history对象，演示刷新
+		window.history.go(0);
+	</script>
+	
+	<input type="text" id="usernameID" value="这就是jQuery库" />
+	<input id="inputID" type="button" value="这就是jQuery库,写少代码，做多事情" />
+	<div id="divID" class="oneClass">哈哈哈</div>
+	<script type="text/javascript">
+		//取得<input>标签中的value属性的内容
+		// js方式
+		var inputElement = document.getElementById("inputID");
+		var input = inputElement.value;
+
+		// jquery方式
+		var $input = $("#inputID");
+		var input = $input.val();
+		alert(input);
+
+		// 取得<div>标签中的文本内容
+		// js方式
+		var divElement = document.getElementById("divID");
+		var div = divElement.innerHTML;
+
+		//jquery方式
+		var $div = $("#divID");
+		var div = $div.html();
+
+		// 取得<input>标签中的value属性的内容[js对象->jquery对象]
+		var inputElement = document.getElementById("inputID");//js对象
+		var $input = $(inputElement);//jquery对象
+		var input = $input.val();
+
+		// 取得<div>标签中的文本内容[jquery对象->js对象]
+		var $div = $("#divID");//jquery对象
+
+		//var divElement = $div.get(0);//js对象
+		var divElement = $div[0];//js对象
+		var div = divElement.innerHTML;
+
+		//通过"#id"定位<input>
+		alert($("#usernameID").val());
+
+		//通过"标签名"定位<input><div>
+		alert($("input").val());
+		alert($("div").html());
+
+		//通过"样式名"定位<div>
+		alert($(".oneClass").html());
+
+		//js错误处理和jquery错误处理
+		alert( document.getElementById("usernameTD").value );
+		alert($("#usernameID").val());
+	</script>
+	
+	<form action="04_images.html" method="POST">
+		<input type="button" value="提交" />
+	</form>
+	<script type="text/javascript">
+		// 演示用JS提交表单
+		// 定位提交按钮
+		var inputElement = document.getElementsByTagName("input")[0];
+		// 为提交按钮添加单击事件
+		inputElement.onclick = function() {
+			// forms表示document对象中所有表单的集合，通过下标引用不同的表单
+			// 从0开始定位<form>标签
+			var formElement = document.forms[0];
+			// 提交表单，提交到action属性指定的地方
+			formElement.submit();
+		}
+	</script>
+
+	<script type="text/javascript">
+		// 自定义对象
+		function Person(id, name, sal) {
+			this.id = id;
+			this.name = name;
+			this.sal = sal;
+		}
+		var p = new Person(1, "波波", 7000);
+		document.write("编号:" + p.id + "<br/>");
+		document.write("姓名:" + p.name + "<br/>");
+		document.write("薪水:" + p.sal + "<br/>");
+
+		// json方式定义Person对象
+		var p = {
+			id : 1,
+			name : "包包",
+			sal : 8000
+		};
+		// 属性可以''或""符号
+		// 字符串必加''或""符号，其它类型不用加符号
+		document.write("编号:" + p.id + "<br/>");
+		document.write("姓名:" + p.name + "<br/>");
+		document.write("薪水:" + p.sal + "<br/>");
+
+		// 对象数组
+		var ps = [ {
+			id : 1,
+			name : '哈哈'
+		}, {
+			id : 2,
+			name : '呵呵'
+		}, {
+			id : 3,
+			name : '嘻嘻'
+		} ];
+		document.write("共有" + ps.length + "个学生<br/>");
+		for ( var i = 0; i < ps.length; i++) {
+			document.write("编号：" + ps[i].id + "<br/>");
+			document.write("姓名：" + ps[i].name + "<br/>");
+		}
+
+		// 创建一个对象，它的一个属性是数组
+		var p = {
+			id : 1,
+			name : '哈哈',
+			home : [ '湘潭', '长沙', '广州' ]
+		};
+		for ( var i = 0; i < p.home.length; i++) {
+			document.write(p.home[i] + "  ");
+		}
+
+		// 创建一个对象，使用function做为属性值
+		var p = {
+			id : 1,
+			name : '哈哈',
+			isLove : true,
+			home : [ '广州', '深圳' ],
+			show : function(str) {
+				alert("你是" + str);
+			}
+		};
+		//document.write(p.isLove?"已婚":"单身"+"<br/>");
+		p.show("赵君");
+	</script>
+
+	<script type="text/javascript">
+		// 用JS语法创建一个一维数组，存入string类型的姓名，再迭代
+		var nameArray = new Array("哈哈", "呵呵", "嘻嘻");
+		for ( var i = 0; i < nameArray.length; i++) {
+			document.write(nameArray[i] + "<br/>");
+		}
+
+		// 用JSON语法创建一个一维数组，存入string类型的姓名，再迭代
+		var nameArray = [ "哈哈", "呵呵", "嘻嘻", "都都" ];//js对象
+		var $nameArray = $(nameArray);//jquery对象
+		$nameArray.each(function() {
+			// this表示数组中每一个元素，this是js对象，this代表string类型
+			alert(this);
+		});
+
+		// 用JSON语法创建一个一维数组，存入object类型的姓名和薪水，再迭代
+		var nameArray = [ {
+			name : "哈哈",
+			sal : 6000
+		}, {
+			name : "嘿嘿",
+			sal : 7000
+		}, {
+			name : "笨笨",
+			sal : 8000
+		} ];
+		var $nameArray = $(nameArray);
+		$nameArray.each(function() {
+			// this代表object类型
+			alert(this.name + ":" + this.sal);
+		});
+	</script>
+	
+	<ul>
+		<li>第一项</li>
+		<li>第二项</li>
+		<li>第三项</li>
+	</ul> 
+		
+	<div>这是子元素，要插入到父元素内</div>
+
+	<script type="text/javascript">
+		// DIV标签插入到UL标签之后(父子关系)
+		$("ul").append( $("div") );	
+
+		// DIV标签插入到UL标签之前(父子关系)
+		$("ul").prepend($("div"));
+		
+		// DIV标签插入到UL标签之后(兄弟关系)
+		$("ul").after( $("div") ); 
+		 
+		// DIV标签插入到UL标签之前(兄弟关系)
+		$("ul").before( $("div") );
+	</script>
+	
+	<form>
+		<table>
+			<tr>
+				<td>
+					<input type="text" name="username" value="张三"/>
+				</td>
+				<td>
+					<input type="password" name="password" value="123456"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script type="text/javascript">
+		// 取得form里第一个input元素的type属性
+		alert( $("form input:first").attr("type") );
+
+		// 设置form里最后一个input元素为只读文本框
+		$("form input:last").attr("readonly","readonly");
+		$(":password").attr("readonly","readonly");
+	</script>
+
+
+	<script type="text/javascript">
+		//创建div元素，添加"哈哈"文本，ID属性，并添加到文档中
+		//<body><div id="2015">哈哈</div></body>
+
+		// js方式
+		var divElement = document.createElement("div");
+		divElement.innerHTML = "哈哈哈";
+		divElement.setAttribute("id","2015");
+		divElement.id = "2015";
+		document.body.appendChild(divElement);
+
+		// jquery方式
+		var $div = $("<div id='2015'>哈哈哈哈哈</div>");
+		// $("body").append( $div );	
+		$(document.body).append($div);
+	</script>
+
+	<ul id="a">
+		<li>第一项</li>
+		<li id="secondID">第二项</li>
+		<li>第三项</li>
+	</ul>
+
+	<ul id="b">
+		<li>第一条</li>
+		<li id="secondID">第二条</li>
+		<li>第三条</li>
+	</ul>
+
+	<div>这是div元素</div>
+
+	<script type="text/javascript">
+		// 删除ID为secondID的LI元素
+		$("#secondID").remove();
+
+		// 删除所有LI元素
+		$("#a li").remove();
+
+		// 删除UL元素
+		$("#b").remove();
+	</script>
+
+	<div>哈哈</div>
+
+	<select id="city">
+		<option value="地都">北京</option>
+	</select>
+
+	<script type="text/javascript">
+		// 取得<div>中的内容
+		alert( $("div").text() );
+
+		// 取得<option>的值和描述
+		var $option = $("#city option");
+		var value = $option.val();
+		var html = $option.text();
+		alert(value + ":" + html);
+	</script>
+
+	<input type="button" value="原按钮" onclick="alert('静态事件')" />
+
+	<script type="text/javascript">
+		// 复制原input元素，添加到原input元素后，与其同级
+		var $old = $(":button");
+		var $new = $old.clone();
+		$new.val("新按钮");
+		$old.after($new);
+
+		// 为原input元素动态添加单击事件，且复制原input元素，
+		var $old = $(":button");
+		$old.click(function(){
+			alert("动态事件");
+		});
+
+		// 添加到原input元素后，与其同级，且和原按钮有一样的行为
+		var $new = $old.clone(true);
+		$new.val("新按钮");
+		$old.after( $new );
+	</script>
+	
+	<table border="1" align="center">
+		<tr>
+			<td>
+				<div style="width:165px;height:23px">双击会被替换成文本框</div></td>
+			<td>不会变</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		// 双击<div>中的文本，用文本框替换文本
+		$("div").dblclick( function(){
+			var $text = $("<input type='text' style='width:165px;height:23px'/>");
+			// 文本框替代div标签
+			$(this).replaceWith( $text );
+		} );
+	</script>
+
+	<table>
+		<tr>
+			<td>添加属性border/align/width</td>
+			<td>删除属性align</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		// 为<table>元素添加属性border/align/width
+		var $table = $("table").attr("border","2")
+		.attr("align","right").attr("width","60%");
+		
+		// 将<table>元素的align属性删除
+		$table.removeAttr("align");
+	</script>
+	
+	<style type="text/css">
+    	.myClass{
+    		font-size:30px;
+    		color:red
+    	}
+    </style>
+    
+	<div>无样式</div>
+	<div class="myClass">有样式</div>
+	<script type="text/javascript">
+		// 为无样式的DIV添加样式
+		$("div:first").addClass("myClass");
+
+		// 为有样式的DIV删除样式
+		$("div:last").removeClass("myClass");
+
+		// 切换样式，即有样式的变成无样式，无样式的变成有样式
+		$("div").toggleClass("myClass");
+
+		// 最后一个DIV是否有样式
+		var flag = $("div:last").hasClass("myClass");
+		alert(flag ? "有样式" : "无样式");
+	</script>
+	
+	<img src="../images/zgl.jpg"/>
+	<script type="text/javascript">
+		// 获取图片的坐标
+		var offset = $("img").offset();
+		var x = offset.left;
+		var y = offset.top;
+		alert(x+":"+y);
+
+		// 设置图片的坐标
+		$("img").offset({
+			top:100,
+			left:200
+		});
+
+		// 获取图片的宽高
+		var w = $("img").width();
+		var h = $("img").height();
+
+		// 设置图片的宽高
+		$("img").width(500);
+		$("img").height(600);
+	</script>
+
+	<p>Hello</p>
+	<div>
+		<span> Hello Again <b> Bold </b> </span>
+	</div>
+	<p>And Again</p>
+	<span>And Span</span>
+	<script type="text/javascript">
+		//取得div元素的直接子元素内容，不含后代元素
+		var $span = $("div").children();
+		var content = $span.html();//包含子标签
+		var content = $span.text();//不包含子标签
+		alert(content);
+		
+		//取得div元素的下一个同级的兄弟元素内容	
+		var $p = $("div").next();
+		alert( $p.text() );
+		
+		//取得div元素的上一个同级的兄弟元素内容
+		alert( $("div").prev().text() );
+		
+		//依次取得div元素的上下一个同级的所有兄弟元素的内容
+		var $all = $("div").siblings("p");		
+		$all.each(function(){
+			alert( $(this).html() );
+		});
+	</script>
+
+	<p>
+		<img src="../images/zgl.jpg" />
+	</p>
+	<script type="text/javascript">
+		//图片隐蔽
+		$("img").hide(5000);
+
+		//休息3秒
+		window.setTimeout(function() {
+			//图片显示
+			$("img").show(5000);
+		}, 3000);
+	</script>
+
+	<p>
+		<img src="../images/zgl.jpg" style="display:none" />
+	</p>
+	<script type="text/javascript">
+		//淡入显示图片
+		$("img").fadeIn(3000);
+		//淡出隐蔽图片
+		$("img").fadeOut(3000);
+	</script>
+
+	<div>
+		中国0<br /> 中国1<br /> 中国2<br /> 
+		中国3<br /> 中国4<br /> 中国5<br /> 中国6<br />
+		中国7<br /> 中国8<br /> 中国9<br />
+	</div>
+	<input type="button" value="我的好友" />
+	<script type="text/javascript">
+		//向上下滑动
+		$(":button").click(function(){
+			//div光标上下移动
+			$("div").slideToggle(100);
+		});
+	</script>
+	
+	<table border="2" align="center" width="30%">
+		<tr>
+			<td>A1</td>
+			<td>A2</td>
+			<td>A3</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>B1</td>
+			<td>B2</td>
+			<td>B3</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>C1</td>
+			<td>C2</td>
+			<td>C3</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>D1</td>
+			<td>D2</td>
+			<td>D3</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><input type="button"
+				value="测  试 " onclick="myclick()" /></td>
+			<td>4</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function myclick() {
+			//使用jquery弹出奇数的tr标签下的td里的值，即A1,A2,A3,C1,C2,C3
+			var $tr = $("table tr:NOT(:last):even");
+			//在每个tr标签中查询td标签
+			$tr.each(function() {
+				//在tr标签中查询所有的td标签
+				var $td = $(this).find("td");
+				//迭代
+				$td.each(function() {
+					var content = $(this).text();
+					alert(content);
+				});
+			});
+		}
+		//写出另一种方式，比第一种更加easy
+	</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*
+         * 在JS中所有的数值都是Number类型，
+         * 	包括整数和浮点数（小数）
+         *
+         * JS中可以表示的数字的最大值
+         * 	Number.MAX_VALUE
+         * 		1.7976931348623157e+308
+         *
+         * 	Number.MIN_VALUE 大于0的最小值
+         * 		5e-324
+         *
+         *  如果使用Number表示的数字超过了最大值，则会返回一个
+         * 		Infinity 表示正无穷
+         * 		-Infinity 表示负无穷
+         * 		使用typeof检查Infinity也会返回number
+         *  NaN 是一个特殊的数字，表示Not A Number
+         * 		使用typeof检查一个NaN也会返回number
+         */
+        //数字123
+        var a = 123;
+        //字符串123
+        var b = "123";
+        /*
+         可以使用一个运算符 typeof 检查一个变量的类型
+         语法：typeof 变量
+             检查字符串时，会返回string
+             检查数值时，会返回number
+        */
+        //console.log(typeof b);
+
+        a = -Number.MAX_VALUE * Number.MAX_VALUE;
+        a = "abc" * "bcd";
+        a = NaN;
+        //console.log(typeof a); // "number"
+
+        a = Number.MIN_VALUE;
+        /*
+         * 在JS中整数的运算基本可以保证精确
+         */
+        var c = 1865789 + 7654321;
+
+        /*
+         * 如果使用JS进行浮点运算，可能得到一个不精确的结果
+         * 	所以千万不要使用JS进行对精确度要求比较高的运算
+         */
+        var c = 0.1 + 0.2;
+
+        /*
+         * 将其他的数据类型转换为Number
+         * 	 转换方式一：
+         * 		使用Number()函数
+         * 			- 字符串 --> 数字
+         * 				1.如果是纯数字的字符串，则直接将其转换为数字
+         * 				2.如果字符串中有非数字的内容，则转换为NaN
+         * 				3.如果字符串是一个空串或者是一个全是空格的字符串，则转换为0
+         *
+         * 			- 布尔 --> 数字
+         * 				true 转成 1
+         * 				false 转成 0
+         *
+         * 			- null --> 数字     0
+         * 			- undefined --> 数字 NaN
+         *
+         * 转换方式二：
+         * 		- 这种方式专门用来对付字符串
+         * 		- parseInt() 把一个字符串转换为一个整数
+         * 		- parseFloat() 把一个字符串转换为一个浮点数
+         *
+         * 转换方式三：
+         *      任何值做- * /运算时都会自动转换为Number
+         * 	    可以利用这一特点做隐式的类型转换
+         * 	    可以通过为一个值 -0 *1 /1来将其转换为Number
+         * 	    原理和Number()函数一样，使用起来更加简单
+         *
+         * 转换方式四：
+         * 	    可以对一个其他的数据类型使用正号+,来将其转换为number
+         */
+
+        var a = "123";
+        //调用Number()函数来将a转换为Number类型
+        a = Number(a);
+
+        a = false;
+        a = Number(a);
+
+        a = null;
+        a = Number(a);
+
+        a = undefined;
+        a = Number(a);
+
+        // == !=
+        alert(1 == true);//true
+        alert(2 == true);// false
+        alert(0 == false);// true
+        alert(0 == null);// false
+        alert(0 == undefined);// false
+        alert(null == null);//true
+        alert(null == undefined);//true
+        alert(NaN == NaN);// false 凡是NaN参与判断运算符 除了 ! != 其他全是false
+
+        // ===	比较时包括类型本身
+        alert(1 === true);//false
+        alert("1" === 1);// false
+
+        var a = "5";
+        alert(typeof a);//string
+        if (a > 3) {
+            alert("haha");
+        }
+
+        a = "123567a567px";
+        /*
+         * parseInt()可以将一个字符串中的有效的整数内容转换为Number
+         */
+        a = parseInt(a);
+
+        /*
+         * parseFloat()作用和parseInt()类似，不同的是它可以获得有效的小数
+         */
+        a = "123.456.789px";
+        a = parseFloat(a);
+
+        /*
+         * 如果对非String使用parseInt()或parseFloat()
+         * 	它会先将其转换为String然后在操作
+         */
+        a = true;
+        a = parseInt(a);
+
+        a = 198.23;
+        a = parseInt(a);
+
+        console.log(typeof a);
+        var n = +"123";
+        // number,值为123
+
+        // 使用+法时, 如果相加的值包含字符串,会自动转换为字符串类型
+        var a = "1" + 1;
+
+        /*
+         其他数学运算符中,字符串会自动转换为数字
+         当一元加法运算符对字符串进行操作时，它计算字符串的方式与 parseInt()相似，
+         主要的不同是只有对以 "0x" 开头的字符串（表示十六进制数字），一元运算符才能把它转换成十进制的值。
+         因此，用一元加法转换 "010"，得到的总是 10，而 "0xB" 将被转换成 11。
+         */
+        var b = "2" - 1;
+        alert(+"1" + 1); //2
+    </script>
+</head>
+<body>
+</body>
+</html>

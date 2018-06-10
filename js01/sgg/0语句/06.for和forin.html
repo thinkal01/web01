@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*
+         * for语句，也是一个循环语句，也称为for循环
+         * 	在for循环中，为我们提供了专门的位置用来放三个表达式：
+         * 		1.初始化表达式
+         * 		2.条件表达式
+         * 		3.更新表达式
+         *
+         *  for循环的语法：
+         * 		for(①初始化表达式;②条件表达式;④更新表达式){
+         * 			③语句...
+         * 		}
+         *
+         * 	for循环的执行流程：
+         * 		①执行初始化表达式，初始化变量（初始化表达式只会执行一次）
+         * 		②执行条件表达式，判断是否执行循环。
+         * 			如果为true，则执行循环③
+         * 			如果为false，终止循环
+         * 		④执行更新表达式，更新表达式执行完毕继续重复②
+         */
+
+        //创建一个执行10次的while循环
+        //初始化表达式
+        /*var i = 0;
+
+         //创建一个循环，定义条件表达式
+         while(i < 10){
+         //设置更新表达式
+         alert(i++);
+         }*/
+
+        for (var i = 0; i < 10; i++) {
+            alert(i);
+        }
+
+        /*
+         * for循环中的三个部分都可以省略，也可以写在外部
+         * 	如果在for循环中不写任何的表达式，只写两个;
+         * 	此时循环是一个死循环会一直执行下去，慎用
+         * 	for(;;){
+         alert("hello");
+         }
+         */
+
+        /*
+         for-in语句：
+         for(var 变量名 in 遍历的目标){
+
+         }
+         for-in语句的作用：
+         1. 可以用于遍历数组的元素。  注意： 使用for-in语句遍历数组元素的时候遍历出来是数组的下标。
+         2. 可以用于遍历对象的所有属性数据。 注意： 使用for-in语句遍历对象的属性的时候，遍历出来的是对象的属性名。
+         */
+        var arr = [12, 13, 19, 15, 16];
+        for (var index in arr) {
+            document.write(arr[index] + ",");
+        }
+        function Person(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        //创建一个对象
+        var p = new Person(110, "狗娃");
+        for (var property in p) {
+            document.write(p[property] + ",");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

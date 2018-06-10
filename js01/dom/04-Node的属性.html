@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>HTML示例</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<span id="spanid">哈哈呵呵</span>
+<ul id="ulid">
+    <li id="li1">qqqqq</li>
+    <li id="li2">wwww</li>
+    <li id="li3">yyyyyy</li>
+    <li id="li4">test1111</li>
+</ul>
+<script type="text/javascript">
+    /*
+    Node 方法
+    nodeName		String	节点的名字；根据节点的类型而定义
+    如果节点是元素节点，nodeName返回这个元素的名称
+    如果是属性节点，nodeName返回这个属性的名称
+    如果是文本节点，nodeName返回一个内容为#text 的字符串
+
+    nodeValue		String	节点的值；根据节点的类型而定义
+    如果给定节点是一个元素节点，返回值是 null
+    如果给定节点是一个属性节点，返回值是这个属性的值
+    如果给定节点是一个文本节点，返回值是这个文本节点内容
+
+    nodeType			Number	节点的类型常量值之一
+    Node.ELEMENT_NODE    ---1    -- 元素节点
+    Node.ATTRIBUTE_NODE  ---2    -- 属性节点
+    Node.TEXT_NODE       ---3    -- 文本节点
+    注释的节点类型： 8
+     */
+    //获取标签对象
+    var span1 = document.getElementById("spanid");
+    //alert(span1.nodeType);   //  1
+    ///alert(span1.nodeName);   // SPAN
+    ///alert(span1.nodeValue);  // null
+
+    //属性
+    var id1 = span1.getAttributeNode("id");
+    //alert(id1.nodeType);  // 2
+    //alert(id1.nodeName);  // id
+    //alert(id1.nodeValue); // spanid
+
+    //获取文本
+    var text1 = span1.firstChild;
+    alert(text1.nodeType); //  3
+    alert(text1.nodeName); // #text
+    alert(text1.nodeValue); // 内容
+
+    //得到li1
+    var li1 = document.getElementById("li1");
+    //得到ul
+    var ul1 = li1.parentNode;
+    alert(ul1.id);
+
+    //获取ul的第一个子节点 id=li1
+    //得到ul
+    var ul1 = document.getElementById("ulid");
+    //第一个子节点
+    var li1 = ul1.firstChild;
+    alert(li1.id);
+
+    //得到最后一个子节点
+    var li4 = ul1.lastChild;
+    alert(li4.id);
+
+    //获取li的id是li3的上一个和下一个兄弟节点
+    var li3 = document.getElementById("li3");
+    alert(li3.nextSibling.id);
+    alert(li3.previousSibling.id);
+</script>
+
+</body>
+</html>

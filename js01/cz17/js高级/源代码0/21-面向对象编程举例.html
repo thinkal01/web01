@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        //要求创建出来一个div 并且设置样式，然后加到body标签当中
+        window.onload = function () {
+            //使用面向过程的思维方式来解决js问题
+            //1.创建div
+            var div = document.createElement("div");
+            //2.设置div的样式
+            div.style.height = "200px";
+            div.style.width = "200px";
+            div.style.border = "1px solid pink";
+            //3.添加div到body中去
+            document.body.appendChild(div);
+
+            //使用面向对象的思维方式来解决js问题
+            $("body").append("<div style='width:200px;height:200px;border:1px solid pink'></div>")
+            //面向对象是对面向过程的封装，有了面向对象并不意味着，就可以抛弃面向过程
+        };
+
+        window.onload = function () {
+            //设置页面中的div和p的边框为1px solid red
+
+            //1.1、获取div们
+            var divs = document.getElementsByTagName("div");
+            //1.2、遍历获取到的div们
+            //little tip: itar 敲tab就可以出现for循环
+            for (var i = 0; i < divs.length; i++) {
+                var div = divs[i];
+                //1.3、在循环中给div设置样式
+                div.style.border = "1px solid red";
+            }
+
+            //2.设置p的样式
+            var ps = document.getElementsByTagName("p");
+            for (var j = 0; j < ps.length; j++) {
+                var p = ps[j];
+                p.style.border = "1px solid red";
+            }
+
+            //编写代码的时候的原则：DRY
+            //Dont repeat yourself
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+
+<p>我是第1个p元素</p>
+
+<p>我是第2个p元素</p>
+
+<p>我是第3个p元素</p>
+</body>
+</html>

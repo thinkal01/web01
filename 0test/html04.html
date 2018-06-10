@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+
+    #question_title {
+        height: 19px;
+        overflow-Y: hidden;
+        width: 200px;
+
+    }
+
+    main {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+</style>
+
+<body>
+<main>
+    <textarea placeholder="标题" rows="1" id="question_title" required></textarea>
+</main>
+
+<script language="javascript" type="text/javascript">
+    window.onload = function () {
+        //监听输入框，动态增加高度
+        document.querySelector('#question_title').addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    }
+
+</script>
+</body>
+</html>

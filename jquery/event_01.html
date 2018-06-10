@@ -1,0 +1,203 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ready.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		//定义a()和b()二个方法
+		function a() {
+			alert("JS方式");
+		}
+		function b() {
+			alert("JQUERY方式");
+		}
+		
+		//使用JS方式加载a()和b()二个方法
+		window.onload = function(){
+			a();
+		}
+		//覆盖以上方法
+		window.onload = function(){
+			b();
+		}
+
+		//使用jQuery方式加载a()和b()二个方法
+		$(document).ready(function(){
+			a();
+		});	
+		//首先调用上述方法，然后调用本方法
+		$(document).ready(function(){
+			b();
+		});	
+
+		//使用jQuery最简方式加载a()和b()二个方法，效果如上
+		$(function(){
+			a();
+		});
+		$(function(){
+			b();
+		});
+
+		//将js方式的onload与jquery方式的ready对比，看哪个执行快
+		window.onload = function() {
+			alert("传统");
+		}
+		//先执行
+		$(function() {
+			alert("现代");
+		});
+	</script>
+	
+	<select id="city">
+		<option value="bj">北京</option>
+		<option value="sh">上海</option>
+		<option value="gz">广州</option>
+	</select>
+	<script type="text/javascript">
+		//当<select>标签触发onchange事件,显示选中<option>的value和innerHTML属性的值
+		$("#city").change(function() {
+			var $option = $("#city option:selected");
+			var value = $option.val();
+			var text = $option.text();
+			alert(value + ":" + text); // sh：上海
+		});
+	</script>
+
+	<input type="text" value="加载页面时获取光标并选中所有文字" size="50" />
+	<script type="text/javascript">
+		//加载页面时获取光标并选中所有文字
+		$(function() {
+			//光标定位文本框
+			$(":text").focus();
+			//选中文本框的所有文本
+			$(":text").select();
+		});
+	</script>
+
+	<script type="text/javascript">
+		//当按键弹起时，显示所按键的unicode码
+		$(function() {
+			//IE浏览器会自动创建event这个事件对象，那么程序员可以根据需要来使用该event对象
+			$(document).keyup(function() {
+				//获取按钮的unicode编码
+				var code = event.keyCode;
+			});
+		});
+	</script>
+	
+	X=<input type="text" id="xID"/><br/>
+	Y=<input type="text" id="yID"/>
+	<script type="text/javascript">
+		//显示鼠标移动时的X和Y座标
+		$(function() {
+			$(document).mousemove(function() {
+				var x = event.clientX;
+				var y = event.clientY;
+				$("#xID").val(x);
+				$("#yID").val(y);
+			});
+		});
+	</script>
+
+	<table border="2" align="center" width="80%" id="tableID">
+		<tr>
+			<td>张三</td>
+			<td>男</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>男</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>王五</td>
+			<td>男</td>
+			<td>26</td>
+		</tr>
+		<tr>
+			<td>周六</td>
+			<td>男</td>
+			<td>28</td>
+		</tr>
+	</table>
+
+	<img height="120px" src="../images/zgl.jpg"
+		style="position:absolute;left:30%;border-style:dashed;border-color:white" />
+	<img height="120px" src="../images/lb.jpg"
+		style="position:absolute;left:60%;border-style:dashed;border-color:white" />
+	<script type="text/javascript">
+		//鼠标移到某行上，某行背景变色
+		$("table tr").mouseover(function() {
+			$(this).css("background-color", "inactivecaption");
+		});
+
+		//鼠标移出某行，某行还原
+		$("table tr").mouseout(function() {
+			$(this).css("background-color", "white");
+		});
+
+		//鼠标移到某图片上，为图片加边框
+		$("img").mouseover(function() {
+			$(this).css("border-color", "red");
+		});
+
+		//鼠标移出图片，图片还原
+		$("img").mouseout(function() {
+			$(this).css("border-color", "white");
+		});
+	</script>
+	
+	<form action="06_mouseover_mouseout.html" method="post">
+		用户名：<input type="text" /> <input type="submit" value="表单提交" />
+	</form>
+	<script type="text/javascript">
+		//浏览器加载web页面时触发
+		$(function(){
+			//将光标定位于文本框中
+			$(":text").focus();
+		});
+		
+		//检测是否为中文，true表示是中文，false表示非中文
+		function isChinese(str){
+			if(/^[\u3220-\uFA29]+$/.test(str)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		//当表单提交前检测
+		$("form").submit(function(){
+			var flag = false;
+			//获取文本框中的内容
+			var name = $(":text").val();
+			//去二边的空格
+			name = $.trim(name);
+			//如果没有填内容
+			if(name.length == 0){
+				alert("用户名必填");
+				//将光标定位于文本框中
+				$(":text").focus();
+				//清空文本框中的内容
+				$(":text").val("");
+			}else{
+				//调用方法
+				flag = isChinese(name);
+				//如果不是中文
+				if(!flag){
+					alert("用户名必须填中文");
+					//将光标定位于文本框中
+					$(":text").focus();
+					//清空文本框中的内容
+					$(":text").val("");
+				}
+			}
+			return flag;
+		});
+	</script>
+</body>
+</html>

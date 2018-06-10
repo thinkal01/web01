@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 10px;
+            border: 10px solid yellow;
+        }
+
+        #box2 {
+            padding: 100px;
+            background-color: #bfa;
+        }
+
+        #box4 {
+            width: 200px;
+            height: 300px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+
+        #box5 {
+            width: 450px;
+            height: 600px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var box4 = document.getElementById("box4");
+
+            btn01.onclick = function () {
+                /*
+                 * clientWidth
+                 * clientHeight
+                 * 	- 这两个属性可以获取元素的可见宽度和高度
+                 * 	- 这些属性都是不带px的，返回都是一个数字，可以直接进行计算
+                 * 	- 会获取元素宽度和高度，包括内容区和内边距
+                 *  - 这些属性都是只读的，不能修改
+                 */
+                //alert(box1.clientWidth);
+                //alert(box1.clientHeight);
+                //box1.clientHeight = 300;
+
+                /*
+                 * offsetWidth
+                 * offsetHeight
+                 * 	- 获取元素的整个的宽度和高度，包括内容区、内边距和边框,不包括margin
+                 */
+                //alert(box1.offsetWidth);
+                console.log(typeof box1.offsetHeight);   //number
+
+
+                /*
+                 * offsetParent
+                 * 	- 可以用来获取当前元素的定位父元素
+                 *  - 会获取到离当前元素最近的开启了定位的祖先元素
+                 * 		如果所有的祖先元素都没有开启定位，则返回body
+                 */
+                var op = box1.offsetParent;
+                //alert(op.id);
+
+                /*
+                 * offsetLeft
+                 * 	- 当前元素相对于其定位父元素的水平偏移量
+                 * offsetTop
+                 * 	- 当前元素相对于其定位父元素的垂直偏移量
+                 */
+                // 一、最大区别在于offsetLeft可以返回没有定位盒子的距离左侧的位置。
+                //如果父系盒子中都没有定位，以body为准。
+                //style.left只能获取行内样式，如果没有返回“”;
+
+                // 二、offsetTop 返回的是数字，而 style.top 返回的是字符串，除了数字外还带有单位：px。
+                //div.offsetLeft = 100;    div.style.left = "100px";
+
+                // 三、offsetTop 只读，而 style.top 可读写。（只读是获取值，可写是赋值）
+                //style.left和style.top可以赋值
+                //offsetLeft和offsetTop只能获取值
+
+                // 四、如果没有给 HTML 元素指定过 top 样式，则style.top 返回的是空字符串。
+                //style.left只能获取行内式，如果没有返回“”;
+                console.log(box1.offsetLeft);
+                console.log(box1.style.left);
+
+                /*
+                 * scrollWidth
+                 * scrollHeight
+                 * 	- 可以获取元素整个滚动区域的宽度和高度
+                 */
+                //alert(box4.clientHeight);
+                //alert(box4.scrollWidth);
+
+                /*
+                 * scrollLeft
+                 * 	- 可以获取水平滚动条滚动的距离
+                 * scrollTop
+                 * 	- 可以获取垂直滚动条滚动的距离
+                 */
+                //alert(box4.scrollLeft);
+                //alert(box4.scrollTop);
+
+                //alert(box4.clientHeight); // 283
+
+                //当满足scrollHeight - scrollTop == clientHeight
+                //说明垂直滚动条滚动到底了
+
+                //当满足scrollWidth - scrollLeft == clientWidth
+                //说明水平滚动条滚动到底
+                //alert(box4.scrollHeight - box4.scrollTop); // 600
+            };
+        };
+    </script>
+</head>
+<body id="body">
+<button id="btn01">点我一下</button>
+<br/><br/>
+
+<div id="box4">
+    <div id="box5"></div>
+</div>
+
+<br/><br/>
+
+<div id="box3">
+    <div id="box2" style="position: relative;">
+        <div id="box1"></div>
+    </div>
+</div>
+
+</body>
+</html>

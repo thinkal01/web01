@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<<body onload='loadform();' onbeforeunload='unloadform();'>
+<script Language="JavaScript">
+    function loadform() {
+        alert("这是一个自动装载例子!");
+    }
+
+    function unloadform() {
+        alert("这是一个卸载例子!");
+    }
+</script>
+
+<img src=""/>
+<img src=""/>
+
+<div name="info"></div>
+<div name="info"></div>
+
+<span onmousemove="showTime()" onmouseout="hideTime()">查看当前系统时间：</span>
+<span id="timeSpan"></span>
+
+用户名<input type="text" onfocus="showInfo()" onblur="hideInfo()"/>
+<span id="userName"></span>
+
+<select onchange="change()">
+    <option>广州</option>
+    <option>深圳</option>
+    <option>上海</option>
+</select>
+<script type="text/javascript">
+    function showTime() {
+        var timeSpan = document.getElementById("timeSpan");
+        var date = new Date().toLocaleString();
+        timeSpan.innerHTML = date.fontcolor("red");
+    }
+
+    function hideTime() {
+        var timeSpan = document.getElementById("timeSpan");
+        timeSpan.innerHTML = "";
+    }
+
+    function showInfo() {
+        var timeSpan = document.getElementById("userName");
+        timeSpan.innerHTML = "用户名是由6位的英文与数字组成".fontcolor("green");
+    }
+
+    function hideInfo() {
+        var timeSpan = document.getElementById("userName");
+        timeSpan.innerHTML = "";
+    }
+
+    function change() {
+        alert("城市改变了..");
+    }
+
+    function showImage() {
+        var images = document.getElementsByTagName("img"); //根据标签名获取所有的标签对象。
+        for (var i = 0; i < images.length; i++) {
+            images[i].src = "33.jpg";
+            images[i].width = "100";
+            images[i].height = "100";
+        }
+    }
+
+    function showDiv() {
+        var divs = document.getElementsByName("info"); //根据标签的name属性值取找对应的标签，返回的是一个数组。
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].innerHTML = "哈哈".fontcolor("red");
+        }
+    }
+</script>
+
+<input type="text" id="info" onmouseover="mouseovertest();" onmouseout="mouseouttest();"/>
+<input type="button" value="添加附件" onclick="addFile();">
+请输入一个八位数字<input type="text" id="testdate" onblur="checkDate();">
+没有按钮的表单，用回车键提交
+<form action="login" onsubmit="return isDelete();">
+    <input type="text" name="username" onkeypress="submitform(event);"/>
+</form>
+<select id="provice" onchange="changecontent();">
+    <option value="0">请选择省份</option>
+    <option value="1">河北</option>
+    <option value="2">山东</option>
+</select>
+
+<script language="JavaScript">
+    function mouseovertest() {
+        document.getElementById("info").value = "鼠标在输入框上";
+    }
+
+    function mouseouttest() {
+        document.getElementById("info").value = "鼠标在输入框外";
+    }
+
+    function addFile() {
+        var file = document.createElement('input');
+        file.setAttribute('id', 'temp_file');
+        file.setAttribute('type', 'file');
+        document.body.appendChild(file);
+    }
+
+    function checkDate() {
+        var date1 = document.getElementById("testdate").value;
+        if (date1.match("^\\d{8}$") == null) {
+            alert("wrong");
+        }
+        else {
+            alert("right");
+        }
+    }
+
+    function submitform(e) {
+        if (e.keyCode) {
+            if (e.keyCode == 13) {
+                document.forms[0].submit();
+            }
+        } else {
+            if (e.which == 13) {
+                document.forms[0].submit();
+            }
+        }
+    }
+
+    function isDelete() {
+        //带有指定消息和 OK 及取消按钮的对话框
+        var isdelete = window.confirm();
+        if (isdelete) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+<script type="text/javascript">
+    //演示 给id为one的 按钮 添加事件的方法
+    //方式1:
+    //1 获得要添加的元素对象
+    var one = document.getElementById("one");
+    //2 添加事件函数属性
+    one.onclick = function () {
+        alert("haha");
+    };
+
+    //方式2:
+    //<input type="button" value="点我" id="one" onclick="alert("heihei")" />
+    var one = document.getElementById("one");
+    one.onblur = function () {
+        alert("失去焦点!");
+    };
+    one.onfocus = function () {
+        alert("得到焦点!");
+    };
+    one.onchange = function () {
+        alert("被改变了!");
+    };
+
+    /*
+    onkeydown 某个键盘按键被按下。 3 1 No Yes
+    onkeypress 某个键盘按键被按下并松开。 3 1 9 Yes
+    onkeyup 某个键盘按键被松开。 3 1 9 Yes
+    */
+
+    //event =>　封装了事件发生的详情
+    //keyCode属性 => 按下按键的unicode码
+    one.onkeydown = function (event) {
+        //1 获得摁下的按键
+        var key = event.keyCode;
+        //2 判断按键按下的是否是回车
+        if (key == 13) {
+            //是=>表单提交
+            alert("表单被提交了");
+        }
+    };
+
+    /*
+    onmousedown 鼠标按钮被按下。 4 1 9 Yes
+    onmouseup 鼠标按键被松开。
+    onmouseout 鼠标从某元素移开。 4 1 9 Yes
+    onmouseover 鼠标移到某元素之上。 3 1 9 Yes
+    onmousemove 鼠标被移动。 3 1 9 Yes
+     */
+    one.onmousedown = function (event) {
+        alert(event.button);
+    };
+    one.onmouseout = function (event) {
+        alert("onmouseout");
+    };
+    one.onmouseover = function (event) {
+        alert("onmouseover");
+    };
+    one.onmousemove = function (event) {
+        alert(event.clientX + "==>" + event.clientY);
+    };
+
+    //onsubmit 当表单提交时触发
+    //作用: 表单验证
+    //onsubmit="return fun();"
+    var one = document.getElementById("one");
+    one.onsubmit = function (event) {
+        //校验通过
+        alert("校验不通过!");
+        //校验不通过 => 拦截表单提交
+        return false;
+        // 阻止默认事件的发生
+        event.preventDefault();
+    };
+
+    //event.stopPropagation();
+    //组织事件的继续传播
+    document.getElementById("two").onclick = function (event) {
+        alert("two");
+        event.stopPropagation();
+    };
+    document.getElementById("one").onclick = function () {
+        alert("one");
+    };
+</script>
+</body>
+
+</html>

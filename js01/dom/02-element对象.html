@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>HTML示例</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div id="one" class="two" name="three"></div>
+<input class='c1' type="text" name="name1" id="inputid" value="aaaa"/>
+<ul id="ulid1">
+    <li>aaaaaa</li>
+    <li>bbbbbb</li>
+    <li>cccccc</li>
+</ul>
+<script type="text/javascript">
+    /*
+    操纵 Element 对象的属性
+    获取属性：getAttitude(name)方法。
+    设置属性：setAttribute(name,value)方法。
+    删除属性：removeAttribute(name)方法。
+    在Element对象中查找 Element的唯一有效方法就是
+    getElementsByTagName()方法。而该方法返回的是一个集合
+
+    通过关系找标签。(父子关系、兄弟关系)
+    owner			Document	指向这个节点所属的文档
+    parentNode		Node	返回一个给定节点的父节点。document 节点的没有父节点
+
+    firstChild		Node	指向在childNodes列表中的第一个节点
+    lastChild		Node	指向在childNodes列表中的最后一个节点
+    hasChildNodes()	Boolean	当childNodes包含一个或多个节点时，返回真
+    childNodes		NodeList	获取指定节点的所有子节点集合,包括空文本或者是注释
+
+    previousSibling	Node	指向前一个兄弟节点；如果这个节点就是第一个兄弟节点，那么该值为null
+    nextSibling		Node	指向后一个兄弟节点；如果这个节点就是最后一个兄弟节点，那么该值为null
+
+    当你想知道某个节点是否包含子节点和属性时，可以使用hasChildNodes()和hasAttributes()方法。
+    在IE浏览器中，不存在hasAttributes()方法！
+
+    attributes		NamedNodeMap	包含了代表一个元素的特性的Attr对象；仅用于Element节点
+    attributes.getNameItem()和Element对象的getAttribute()方法类似。
+
+    移动节点：由以下三种方法组合完成
+    查找节点
+    getElementById()：通过节点的id属性，查找对应节点。
+    getElementsByName()：通过节点的name属性，查找对应节点。
+    getElementsByTagName()：通过节点名称，查找对应节点。
+    cloneNode(boolean)  复制节点方法，参数boolean是判断是否复制子节点。
+
+    插入节点
+    appendChild(node)	Node	将node添加到childNodes的末尾
+    insertBefore(newnode, refnode)	Node	在childNodes中的refnode之前插入newnode
+    没有insertAfter()方法
+
+    替换节点：
+    replaceChild(newnode, oldnode)	Node	将childNodes中的oldnode替换成newnode
+    removeChild(node)	Node	从childNodes中删除node
+
+    innerHTML 属性可以用来读，写某给定元素里的 HTML 内容。多与div或span标签配合使用。
+    innerText 是用于设置标签体的内容的。
+    value   是用于设置标签的value属性值.
+
+    常用的事件：
+    鼠标点击相关：
+        onclick 用户用鼠标左键单击对象时触发。
+        ondblclick 当用户双击对象时触发。
+        onmousedown 当用户用任何鼠标按钮单击对象时触发。
+        onmouseup 当用户在鼠标位于对象之上时释放鼠标按钮时触发。
+    鼠标移动相关：
+        onmouseout  当用户将鼠标指针移出对象边界时触发。
+        onmousemove 当用户将鼠标划过对象时触发。
+    焦点相关的：
+        onblur 在对象失去输入焦点时触发。
+        onfocus 当对象获得焦点时触发。
+    其他：
+        onchange 当对象或选中区的内容改变时触发。
+        onload 在浏览器完成对象的装载后立即触发。
+        onsubmit 当表单将要被提交时触发。
+    */
+
+    //先要获取input标签
+    var input1 = document.getElementById("inputid");
+    alert(input1.value);
+    alert(input1.getAttribute("value"));
+    alert(input1.getAttribute("class"));
+
+    input1.setAttribute("class", "haha");
+    alert(input1.getAttribute("class"));
+    alert(input1.getAttribute("value"));
+    input1.removeAttribute("value");
+    alert(input1.getAttribute("value"));
+
+    //获取到ul下面的所有子标签（子元素）
+    //获取ul标签
+    var ul11 = document.getElementById("ulid1");
+    //获取ul下面的子标签
+    var childNodes = ul11.childNodes;
+    alert(childNodes.length);
+    var lis = ul11.getElementsByTagName("li");
+    alert(lis.length);
+
+    //element 的获得
+    var div2 = document.getElementById("one");
+    var div4 = document.getElementsByName("three")[0];
+    var div1 = document.getElementsByTagName("div")[0];
+    var div3 = document.getElementsByClassName("two")[0];
+    alert(div3 == div4);
+
+    var inputs = document.getElementsByName("name1");
+    //遍历数组
+    for (var i = 0; i < inputs.length; i++) {
+        var input1 = inputs[i];  //每次循环得到input对象，赋值到input1里面
+        alert(input1.value);    //得到每个input标签里面的value值
+        //向input里面设置一个值value
+        input1.value = "bbbbb";
+    }
+</script>
+
+</body>
+</html>

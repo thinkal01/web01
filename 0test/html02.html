@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .txta-memo {
+            overflow-y: hidden;
+            resize: none;
+            width: 30%;
+        }
+
+        .overflow-auto {
+            overflow-y: auto;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            var paddingTop = $(".txta-memo").css("padding-top");
+            var paddingBottom = $(".txta-memo").css("padding-bottom");
+            var verticalPadding = parseInt(paddingTop) + parseInt(paddingBottom);
+            var srcHeight = $(".txta-memo").height();
+            var maxHeight = srcHeight * 3;
+            $(".txta-memo").on('input', function () {
+//                console.log($(this).height());
+//                console.log(this.scrollHeight);
+//                $(this).height(srcHeight+$(this).scrollTop());
+                $(this).height("auto");
+//                $(this).height("");
+                if (this.scrollHeight >= 45 + verticalPadding) {
+                    $(this).addClass('overflow-auto');
+                    $(this).height(45 + verticalPadding);
+                } else {
+                    $(this).removeClass('overflow-auto');
+                    $(this).height(this.scrollHeight - verticalPadding);
+                }
+//                console.log($(this).css("height")); // 高度设置为""后,获取为30px
+//                console.log($(this).height()); // 高度设置为""后,获取为30
+//                console.log($(this).height());
+//                console.log(this.scrollHeight);
+            });
+        });
+    </script>
+</head>
+<body>
+<textarea name="mytextarea" class="txta-memo">
+</textarea>
+</body>
+</html>

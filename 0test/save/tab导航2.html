@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 510px;
+            margin-left: -1px;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            /*width: 98px;*/
+            /*padding: 0 1px;*/
+            height: 40px;
+            text-align: center;
+            font: 400 18px/40px "simsun";
+            cursor: pointer;
+            background-color: blue;
+        }
+
+        span {
+            display: none;
+            width: 500px;
+            height: 360px;
+            background-color: yellow;
+            text-align: center;
+            font: 700 50px/360px "consola";
+        }
+
+        .box {
+            width: 500px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .current {
+            background-color: purple;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>公告</li>
+        <li class="current">规则</li>
+        <li>论坛</li>
+        <li>安全</li>
+        <li>公益</li>
+    </ul>
+    <span>公告</span>
+    <span class="show">规则</span>
+    <span>论坛</span>
+    <span>安全</span>
+    <span>公益</span>
+</div>
+</body>
+</html>

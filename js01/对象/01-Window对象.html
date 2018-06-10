@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>01-Window对象</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	/*
+	 BOM( Browser Object MOdel) 浏览器对象模型.
+	 浏览器对象模型中把浏览器的各个部分都是用了一个对象进行描述，如果我们要
+	 操作浏览器的一些属性，我就可以通过浏览器对象模型 的对象进行操作。
+	
+	 window  代表了一个新开的窗口 
+	 location 代表了地址栏对象。
+	 screen  代表了整个屏幕的对象
+
+	 window对象常用的方法：
+	 open()   打开一个新的窗口。
+	 resizeTo() 将窗口的大小更改为指定的宽度和高度值。
+	 moveBy()  相对于原来的窗口移动指定的x、y值。 
+	 moveTo() 将窗口左上角的屏幕位置移动到指定的 x 和 y 位置。 
+	 注意： 使用window对象的任何属性与方法都可以省略window对象不写的。
+	 */
+	 
+	//open方法  => 打开一个新的窗口
+	//参数1: 打开的url
+	//参数2: 窗口名称=> name属性
+	//参数3: 窗口的特征=> 长宽(其他属性未必好使)...
+	//参数4: 是否将新窗口的地址加入到浏览器历史记录中
+	// 返回值: 返回一个window对象. 新打开的窗口的window对象
+	function open2() {
+		window.open("../猜数字.html", "", 'width=100,height=100');
+	}
+	
+	function showAd() {
+		open("ad.html", "_blank",
+				"height=400px,width=400px,toolbar=no,location=no,top=200px");
+	}
+	setTimeout("showAd()", 2000);
+
+	//  close方法 => 关闭当前窗口
+	function close2() {
+		window.close();
+	}
+	
+	function small() {
+		resizeTo(300, 200); //相对于原本窗口改变指定的大小。	
+	}
+
+	function move() {
+		for ( var i = 0; i < 100; i++) {
+			window.moveBy(50, 0); // 相对于原来的窗口移动指定的x、y值。	
+			moveBy(0, 50);
+			window.moveBy(-50, 0);
+			window.moveBy(0, -50);
+		}
+	}
+
+	function move2() {
+		window.moveTo(500, 200);
+	}
+	
+	//1 如何获得window对象
+	//window对象 由浏览器创建.当浏览器加载页面时,浏览器会立刻自动创建window对象.
+	//如果要获得,直接使用即可.
+	//alert(window); // 就可以拿到
+
+	//2 window中的方法
+	// alert
+	// confirm  弹出确认框
+	// prompt 弹出一个输入框 返回值为str. 点击取消返回null.
+	
+	var b = confirm("您确定要删除吗?");
+	alert(b);
+	
+	var str = prompt("请输入一个整数!", "0");
+	alert(typeof str);
+	
+	//定时器方法
+	// setInterval 设置定时器
+	// clearInterval 清除定时器
+	
+	//参数1: 可以是一段string, 内容是js代码
+	//参数2: 毫秒单位的时间
+	//返回值: 当前开启的定时器id
+	//功能: 每隔参数2毫秒,执行参数1代码.
+	var id = window.setInterval("alert('abc');", 2000);
+	function stop() {
+		window.clearInterval(id);
+	}
+
+	// setTimeout 设置定时器,只执行 code一次。如果要多次调用，可以让 code自身再次调用 setTimeout()。 
+	// clearTimeout 清除定时器
+	
+	//参数1: 可以是一段string, 内容是js代码
+	//参数2: 毫秒单位的时间
+	//返回值: 当前开启的定时器id
+	// 功能:参数2毫秒后,执行参数1代码(只执行一次).
+	var id = window.setTimeout("alert('abc');", 2000);
+	function stop() {
+		window.clearTimeout(id);
+	}
+	function fun1() {
+		alert("fun1!!!!");
+	}
+	//参数1: 也可以接受一个函数类型的对象
+	// 如下两行代码,执行效果是一样的
+	window.setInterval(fun1, 2000)
+	window.setInterval("fun1()", 2000)
+	
+	//navigator
+	document.write(navigator.appName);
+	
+/*
+	Screen(屏幕)对象
+		availHeight	获取系统屏幕的工作区域高度，排除 Microsoft Windows任务栏。 	
+		availWidth	获取系统屏幕的工作区域宽度，排除 Windows任务栏。 	
+		height		获取屏幕的垂直分辨率。 
+		width		获取屏幕的水平分辨率。 
+*/
+	document.write("获取系统屏幕的工作区域高度："+screen.availHeight+"<br/>");
+	document.write("获取系统屏幕的工作区域宽度："+screen.availWidth+"<br/>");
+	document.write("获取屏幕的垂直分辨率："+screen.height+"<br/>");
+	document.write("获取屏幕的水平分辨率："+screen.width+"<br/>");
+	
+	//location对象
+	document.write(location.href);
+	alert(location.url);
+</script>
+</head>
+
+<body>
+	<input type="button" onclick="close2();" value="关闭当前窗口" />
+	<input type="button" onclick="open2();" value="打开猜数字窗口" />
+	<input type="button" onclick="stop();" value="停止" />
+	
+	<!-- Location对象 
+	Location 对象包含有关当前 URL 的信息
+	location.href是一个属性，要这样使用：
+	location.href='http://www.example.com'
+	而location.assign('http://www.example.com') 就是 location.href='http://www.example.com'
+	至于
+	location.replace('http://www.example.com')与前两者的区别是，
+	在replace之后，浏览历史就被清空了（href与assign方法会产生历史记录）。
+	建议：使用replace。因为前两者会产生历史记录，而浏览者如果点‘后退’按钮，就会产生'redirection loop'，会被浏览器禁止。 
+	-->
+	<input type="button" onclick="window.location.href='01-Window对象.html'"
+		value="01-Window对象.html" />
+	<input type="button" onclick="window.location.assign('01-Window对象.html')"
+		value="01-Window对象.html" />
+	<input type="button" onclick="window.location.reload()" value="刷新" />
+
+	<!-- History 对象包含用户（在浏览器窗口中）访问过的 URL  -->
+	<a href="06-history对象02.html">06-history对象02.html</a>
+	<input type="button" onclick="window.history.forward()" value="前进" />
+	<input type="button" onclick="window.history.go(1)" value="前进" />
+	<input type="button" onclick="window.history.back()" value="后退" />
+	<input type="button" onclick="window.history.go(-1)" value="后退" />
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>06-js的运算符-一元运算符.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- js中的语句 -->
+<script type="text/javascript">
+	//js中的运算符
+	var a = -2;
+	var b = +2;
+	// 在js里面不区分整数和小数，123/1000=0.123 * 1000 = 123
+	
+	// 逻辑运算符 && || ! => 用法同java
+	
+	// 各种类型 -> 布尔类型
+	Boolean
+	构造函数中可以传递任意值,实参在内部会进行自动类型转换,转为true或者false
+	var a = new Boolean(false);
+	document.write(a.constructor + "<br/>");
+	document.write(a.toString() + "<br/>");
+	document.write(a.valueOf() + "<br/>");
+	
+	// number => boolean   	除了+0,-0,NaN,其他都是true.
+	// string => boolean   	字符串不为空,那么其他都是true.
+	// null => boolean 		false
+	// undefined => boolean false
+	// Object   => boolean	true
+	// NaN => not a number  false
+	var a = NaN;
+	// NaN:number 类型,转成bool类型是 :false 
+	document.write("NaN:" + typeof (a) + " 类型," + "转成bool类型是 :"+ Boolean(a));
+	
+	// == != 
+	alert(1 == true);//true
+	alert(2 == true);// false
+	alert(0 == false);// true
+	alert(0 == null);// false 
+	alert(null == undefined);//true
+	alert(NaN == NaN);// false 凡是NaN参与判断运算符 除了 ! != 其他全是false
+	
+	// ===	比较时包括类型本身
+	alert(1 === true);//false
+	alert("1" === 1);// false
+	
+	if ("haha" && new Object()) {
+		alert("true");
+	} else {
+		alert("false");
+	}
+	
+	// 三元运算符
+	var a = 100;
+	var b = 20;
+	alert(a > b ? "a厉害" : "b厉害");
+
+	var a = 1;
+	a += "1";
+	alert(a);//11
+
+	var a = "5";
+	alert(typeof a);//string
+	if (a > 3) {
+		alert("haha");
+	}
+	
+	//字符串的操作
+	var c = "1234";
+	//js是弱类型=>js中的类型会根据需要自动变化.
+	alert(typeof c);
+	//因为+是数学运算符.所以需要c是数字类型.js就会自动将c转换为number类型.
+	c = -c;
+	
+	var n = +"123";
+	// number,值为123
+	alert(typeof n);
+	
+	// 使用+法时, 如果相加的值包含字符串,会自动转换为字符串类型
+	var a = "1" + 1;
+	/*
+	其他数学运算符中,字符串会自动转换为数字
+	当一元加法运算符对字符串进行操作时，它计算字符串的方式与 parseInt()相似，
+	主要的不同是只有对以 "0x" 开头的字符串（表示十六进制数字），
+	一元运算符才能把它转换成十进制的值。因此，用一元加法转换 "010"，得到的总是 10，而 "0xB" 将被转换成 11。
+	*/
+	var b = "2" - 1;
+	alert(+"1" + 1); //2
+	
+	var str = "abc";
+	alert(str+1);   //abc1
+	alert(str-1);    //相减时候，执行减法的运算,提示NaN:表示不是一个数字
+	
+	// "2" => 2  true
+	alert("2" > 1);
+	//字符串的比较规则=>ascll比对   false
+	alert("aa" > "aaa");
+	
+	ECMAScript 位运算符(了解)跟java一模一样
+</script>
+</head>
+<body>
+</body>
+</html>
