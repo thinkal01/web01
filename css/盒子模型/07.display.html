@@ -8,8 +8,8 @@
             background-color: #bfa;
             /*
              * 将一个内联元素变成块元素，
-             * 	通过display样式可以修改元素的类型
-             * 	可选值：
+             * 通过display样式可以修改元素的类型
+             * 可选值：
              * 		inline：可以将一个元素作为内联元素显示
              * 		block: 可以将一个元素设置块元素显示
              * 		inline-block：将一个元素转换为行内块元素
@@ -17,11 +17,11 @@
              * 					既可以设置宽高，又不会独占一行
              * 		none: 不显示元素，并且元素不会在页面中继续占有位置
              */
-            display: none;
+            display: inline-block;
 
             /*为其设置一个宽和高*/
-            width: 500px;
-            height: 500px;
+            width: 100px;
+            height: 100px;
         }
 
         .box {
@@ -35,12 +35,10 @@
              * 		visible 默认值，元素默认会在页面显示
              * 		hidden 元素会隐藏不显示
              *
-             * 使用 visibility:hidden;隐藏的元素虽然不会在页面中显示，
-             * 		但是它的位置会依然保持
+             * 使用 visibility:hidden;隐藏的元素虽然不会在页面中显示，但是它的位置会依然保持
              */
             visibility: hidden;
         }
-
     </style>
 </head>
 <body>
