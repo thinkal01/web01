@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript">
-
         window.onload = function () {
             /*
              * 使图片可以自动切换
              */
-
             //获取img标签
             var img1 = document.getElementById("img1");
 
@@ -25,11 +23,10 @@
             //为btn01绑定一个单击响应函数
             var btn01 = document.getElementById("btn01");
             btn01.onclick = function () {
-
                 /*
                  * 目前，我们每点击一次按钮，就会开启一个定时器，
-                 * 	点击多次就会开启多个定时器，这就导致图片的切换速度过快，
-                 * 	并且我们只能关闭最后一次开启的定时器
+                 * 点击多次就会开启多个定时器，这就导致图片的切换速度过快，
+                 * 并且我们只能关闭最后一次开启的定时器
                  */
 
                 //在开启定时器之前，需要将当前元素上的其他定时器关闭
@@ -49,7 +46,6 @@
                     index %= imgArr.length;
                     //修改img1的src属性
                     img1.src = imgArr[index];
-
                 }, 1000);
             };
 
@@ -59,8 +55,8 @@
                 //点击按钮以后，停止图片的自动切换，关闭定时器
                 /*
                  * clearInterval()可以接收任意参数，
-                 * 	如果参数是一个有效的定时器的标识，则停止对应的定时器
-                 * 	如果参数不是一个有效的标识，则什么也不做
+                 * 如果参数是一个有效的定时器的标识，则停止对应的定时器
+                 * 如果参数不是一个有效的标识，则什么也不做
                  */
                 clearInterval(timer);
             };

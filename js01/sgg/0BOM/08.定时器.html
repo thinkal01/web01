@@ -20,7 +20,6 @@
 
     <script type="text/javascript">
         window.onload = function () {
-
             //获取box1
             var box1 = document.getElementById("box1");
             //获取btn01
@@ -42,7 +41,7 @@
                     var oldValue = parseInt(getStyle(box1, "left"));
 
                     //在旧值的基础上增加
-                    var newValue = oldValue + 1;
+                    var newValue = oldValue + 10;
 
                     //判断newValue是否大于800
                     if (newValue > 800) {
@@ -69,7 +68,6 @@
          * 		name 要获取的样式名
          */
         function getStyle(obj, name) {
-
             if (window.getComputedStyle) {
                 //正常浏览器的方式，具有getComputedStyle()方法
                 return getComputedStyle(obj, null)[name];

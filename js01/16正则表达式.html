@@ -1,61 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script type="text/javascript">
-	/*
-	 正则表达式的创建方式：
-	 方式1：
-	 /正则表达式/模式
-	
-	 方式2：
-	 new RegExp("正则表达式",模式);
-	
-	 模式：
-	 g （全文查找出现的所有 pattern） 	
-	 i （忽略大小写）
-	 
-	 正则表达式对象常用的方法：
-	 test()  使用正则对象去匹配字符串  如果匹配成功返回ture，否则返回false.	
-	 exec()  根据正则表达式去查找字符串符合规则的内容。
-	
-	 var str = "hello123";
-	 var reg = /^[A-Z0-9]+$/i;
-	 alert("匹配吗？"+reg.test(str));	
+    <script type="text/javascript">
+        /*
+         正则表达式的创建方式：
+         方式1：
+         /正则表达式/模式
 
-	 查找出三个字符组成的单词。
-	 */
-	var str = "da jia hao hao xue xi a";
-	var reg = /\b[a-z]{3}\b/gi;
-	var line = "";
-	while ((line = reg.exec(str)) != null) {
-		document.write(line + "<br/>")
-	}
-	
-	//正则对象  =>  使用正则匹配字符串.
-	//表单校验时会用到正则
+         方式2：
+         new RegExp("正则表达式",模式);
 
-	//1 创建
-	//参数1: 正则表达式
-	//参数2: 匹配模式. g: 全局  i: 忽略大小写
-	var reg1 = new RegExp("e", "gi");
-	var reg2 = /z/g;
-	//2 方法
-	// test 方法 => 校验 字符串是否能与正则表达式匹配
-	alert(reg2.test("hello"));//true
-	
-	// String 与正则结合的 4个方法
-	var str = "hello world";
-	//split 切割
-	alert(str.split(/o/g));
-	//replace 替换
-	alert(str.replace(/l/g, "a"));
-	//match 匹配并获得 => 找不到就返回null
-	alert(str.match(/or/g));//or
-	//search 查找索引
-	alert(str.search(/e/g));//1
-</script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+         模式：
+         g （全文查找出现的所有 pattern）
+         i （忽略大小写）
+
+         正则表达式对象常用方法：
+         test()  使用正则对象去匹配字符串,如果匹配成功返回true,否则返回false
+         exec()  根据正则表达式去查找字符串符合规则的内容
+
+         var str = "hello123";
+         var reg = /^[A-Z0-9]+$/i;
+         alert("匹配吗？"+reg.test(str));
+
+         查找出三个字符组成的单词。
+         */
+        var str = "da jia hao hao xue xi a";
+        var reg = /\b[a-z]{3}\b/gi;
+        var line = "";
+        while ((line = reg.exec(str)) != null) {
+            document.write(line + "<br/>")
+        }
+
+        //正则对象  =>  使用正则匹配字符串
+        //表单校验时会用到正则
+
+        //1 创建
+        //参数1: 正则表达式
+        //参数2: 匹配模式. g: 全局 i: 忽略大小写
+        var reg1 = new RegExp("e", "gi");
+        var reg2 = /z/g;
+        //2 方法
+        // test 方法 => 校验字符串是否能与正则表达式匹配
+        alert(reg2.test("hello"));//true
+
+        // String 与正则结合的4个方法
+        var str = "hello world";
+        //split 切割
+        alert(str.split(/o/g));
+        //replace 替换
+        alert(str.replace(/l/g, "a"));
+        //match 匹配并获得 => 找不到就返回null
+        alert(str.match(/or/g));//or
+        //search 查找索引
+        alert(str.search(/e/g));//1
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
 </head>
 
 <body>

@@ -12,17 +12,17 @@
                 //创建li元素节点
                 /*
                  * document.createElement()
-                 * 	可以用于创建一个元素节点对象，
-                 * 	它需要一个标签名作为参数，将会根据该标签名创建元素节点对象，
-                 * 	并将创建好的对象作为返回值返回
+                 * 可以用于创建一个元素节点对象，
+                 * 它需要一个标签名作为参数，将会根据该标签名创建元素节点对象，
+                 * 并将创建好的对象作为返回值返回
                  */
                 var li = document.createElement("li");
 
                 //创建广州文本节点
                 /*
                  * document.createTextNode()
-                 * 	可以用来创建一个文本节点对象
-                 *  需要一个文本内容作为参数，将会根据该内容创建文本节点，并将新的节点返回
+                 * 可以用来创建一个文本节点对象
+                 * 需要一个文本内容作为参数，将会根据该内容创建文本节点，并将新的节点返回
                  */
                 var gzText = document.createTextNode("广州");
 
@@ -55,8 +55,8 @@
 
                 /*
                  * insertBefore()
-                 * 	- 可以在指定的子节点前插入新的子节点
-                 *  - 语法：
+                 * - 可以在指定的子节点前插入新的子节点
+                 * - 语法：
                  * 		父节点.insertBefore(新节点,旧节点);
                  */
                 city.insertBefore(li, bj);
@@ -94,7 +94,7 @@
                  * 	- 可以删除一个子节点
                  * 	- 语法：父节点.removeChild(子节点);
                  *
-                 * 		子节点.parentNode.removeChild(子节点);
+                 * 子节点.parentNode.removeChild(子节点);
                  */
                 //city.removeChild(bj);
                 bj.parentNode.removeChild(bj);

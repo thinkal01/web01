@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>05-三个包装对象.html</title>
+    <title>05-三个包装对象.html</title>
 
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="this is my page">
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<script type="text/javascript">
-	// encodeURI/decodeURI 可以将中文Url编码 例如:  汤姆=>%E6%B1%A4%E5%A7%86
-	// 进行url跳转时可以整体使用encodeURI 
-    //2、encodeURI不编码字符有82个：!，#，$，&，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z
-     
-	// encodeURIComponent/decodeURIComponent 转换的范围更大,包括一些url中的字符& : /
-	// username=%E6%B1%A4%E5%A7%86
-	//3、encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z
-	 
-	//escape / unescape  对字符串进行unicode编码
-    //1、escape不编码字符有69个：*，+，-，.，/，@，_，0-9，a-z，A-Z 
-	var str = "http://www.baidu.com?wd=&汤?姆";
-	var encodeStr = encodeURIComponent(str);
-	
-	var a = 12;
-	var b = new Number(12);
-	document.write(a + ":" + b);
-	document.write(a == b);//比较数值true
-	document.write(a === b);//没有转型false
-	document.write(new Number(12) == new Number(12));//false
-	document.write(new Number(12) === new Number(12));//false
-	document.write(new Number(12).valueOf() == new Number(12).valueOf());//true
-	document.write(new Number(12).valueOf() === new Number(12).valueOf());//true	
-	
-常用的方法：	
-	toString()  把数字转换成指定进制形式的字符串。
-	toFixed()   指定保留小数位,而且还带四舍五入的功能。
-		
-	var  num = 10; // 十进制
-	document.write("十进制："+num.toString()+"<br/>");
-	document.write("二进制："+num.toString(2)+"<br/>"); 
-	document.write("八进制："+num.toString(8)+"<br/>"); 
-	document.write("十六进制："+num.toString(16)+"<br/>"); 
-	document.write("三进制："+num.toString(3)+"<br/>");   // 101
-	var num2 = 3.455;
-	document.write("保留两位小数:"+num2.toFixed(2))	
-	/* 
-	parseInt  转换成整数
-	如果接收的字符串含有非数字的字符，那么parseInt方法会从字符串的首个字符开始寻找，
-	一直找到非数字字符为止，然后就使用前面的数字字符转换成数字， 
-	
-	parseFloat 转换成浮点数
-	parseFloat()方法
-	a)var fNum1 = parseFloat("12345red");	//返回 12345
-	f)var fNum1 = parseFloat("red");	//返回 NaN
-	b)var fNum2 = parseFloat("0xA");	//返回 NaN
-	e)var fNum5 = parseFloat("0102");	//返回 102
-	c)var fNum3 = parseFloat("11.2");	//返回 11.2
-	d)var fNum4 = parseFloat("11.22.33");	//返回 11.22
-	*/
-	var str2 = "123a";
-	alert(+str2);
-	var num1 = parseInt(str);//123
-	var num2 = +str;
-	var num3 = new Number(str);
-	//八进制中如果数据超过0~7，默认解析为十进制数据。
-	var a=09; //无效的八进制,9
-	
-	a = "012"; /* 12 如果首位是0，那么就想祛除0再进行转换。*/
-	a = "0x10"; /* 如果一个字符串是以0x开头，那么会把字符串中的内容当成十六进行的数据处理的。 */
-	var b = parseInt(a);
-	
-	var str3 = "a123";
-	alert(parseInt(str3));//NaN
+    <script type="text/javascript">
+        // encodeURI/decodeURI 可以将中文Url编码 例如:  汤姆=>%E6%B1%A4%E5%A7%86
+        // 进行url跳转时可以整体使用encodeURI
+        //2、encodeURI不编码字符有82个：!，#，$，&，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z
 
-	var str4 = "3.14";
-	alert(parseInt(str4));//3
-	alert(parseFloat(str4));//3.14
-	c = "10";   
-	// 如果是一个字符串是整数的，那么使用parseFloat还是转换 成整数 。
-	c = parseFloat(c);
-	
-	
-	//isNaN() 判断一个值是否是NaN
-	var num = NaN;
-	if (isNaN(num)) {
-		alert("是NaN");
-	} else {
-		alert("不是NaN");
-	}
+        // encodeURIComponent/decodeURIComponent 转换的范围更大,包括一些url中的字符& : /
+        // username=%E6%B1%A4%E5%A7%86
+        //3、encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z
 
-	//eval 把javascript字符串作为脚本代码来执行
-	alert(eval("1+1"));//2
-	alert(eval("new String('abc')"));// abc
+        //escape / unescape  对字符串进行unicode编码
+        //1、escape不编码字符有69个：*，+，-，.，/，@，_，0-9，a-z，A-Z
+        var str = "http://www.baidu.com?wd=&汤?姆";
+        var encodeStr = encodeURIComponent(str);
 
-	//math 数学工具类 
-	// 属性
-	//PI 圆周率
-	// Math对象中的方法全部是静态方法，所以不用new直接调用即可。
-	// random 随机数,返回 0 ~ 1 之间的随机数
-	var num = Math.random();
-	//ceil(x) 对一个数进行上舍入。
-	//floor(x) 对一个数进行下舍入。
-	// round  四舍五入
-	var num2 = Math.round(3.54);
-	//pow 计算幂
-	var num3 = Math.pow(2, 3); //8
-	// min/max  返回最小/最大数
-	var num4 = Math.min(1, 2, 3);
-	var num5 = Math.max(1, 2, 3);
-</script>
+        var a = 12;
+        var b = new Number(12);
+        document.write(a + ":" + b);
+        document.write(a == b);//比较数值true
+        document.write(a === b);//没有转型false
+        document.write(new Number(12) == new Number(12));//false
+        document.write(new Number(12) === new Number(12));//false
+        document.write(new Number(12).valueOf() == new Number(12).valueOf());//true
+        document.write(new Number(12).valueOf() === new Number(12).valueOf());//true
+
+        /* 常用的方法：
+            toString()
+                把数字转换成指定进制形式的字符串。
+            toFixed()
+                指定保留小数位, 而且还带四舍五入的功能。
+        */
+        var num = 10; // 十进制
+        document.write("十进制：" + num.toString() + "<br/>");
+        document.write("二进制：" + num.toString(2) + "<br/>");
+        document.write("八进制：" + num.toString(8) + "<br/>");
+        document.write("十六进制：" + num.toString(16) + "<br/>");
+        document.write("三进制：" + num.toString(3) + "<br/>");   // 101
+        var num2 = 3.455;
+        document.write("保留两位小数:" + num2.toFixed(2))
+        /*
+        parseInt  转换成整数
+        如果接收的字符串含有非数字的字符，那么parseInt方法会从字符串的首个字符开始寻找，
+        一直找到非数字字符为止，然后就使用前面的数字字符转换成数字，
+
+        parseFloat 转换成浮点数
+        parseFloat()方法
+        a)var fNum1 = parseFloat("12345red"); //返回 12345
+        f)var fNum1 = parseFloat("red"); //返回 NaN
+        b)var fNum2 = parseFloat("0xA"); //返回 0
+        e)var fNum5 = parseFloat("0102"); //返回 102
+        c)var fNum3 = parseFloat("11.2"); //返回 11.2
+        d)var fNum4 = parseFloat("11.22.33"); //返回 11.22
+        */
+        var str2 = "123a";
+        alert(+str2);
+        var num1 = parseInt(str);//123
+        var num2 = +str;
+        var num3 = new Number(str);
+        //八进制中如果数据超过0~7，默认解析为十进制数据。
+        var a = 09; //无效的八进制,9
+
+        a = "012";
+        /* 12 如果首位是0，那么除0再进行转换*/
+        a = "0x10";
+        /* 如果一个字符串是以0x开头，那么会把字符串内容当成十六进制数据处理*/
+        var b = parseInt(a);
+
+        var str3 = "a123";
+        alert(parseInt(str3));//NaN
+
+        var str4 = "3.14";
+        alert(parseInt(str4));//3
+        alert(parseFloat(str4));//3.14
+        c = "10";
+        // 如果是一个字符串是整数的，那么使用parseFloat还是转换成整数
+        c = parseFloat(c);
+
+        //isNaN() 判断一个值是否是NaN
+        var num = NaN;
+        if (isNaN(num)) {
+            alert("是NaN");
+        } else {
+            alert("不是NaN");
+        }
+
+        //eval 把javascript字符串作为脚本代码来执行
+        alert(eval("1+1"));//2
+        alert(eval("new String('abc')"));// abc
+
+        //math 数学工具类
+        // 属性
+        //PI 圆周率
+        // Math对象中的方法全部是静态方法，所以不用new直接调用即可。
+        // random 随机数,返回 0 ~ 1 之间的随机数
+        var num = Math.random();
+        //ceil(x) 对一个数进行上舍入。
+        //floor(x) 对一个数进行下舍入。
+        // round  四舍五入
+        var num2 = Math.round(3.54);
+        //pow 计算幂
+        var num3 = Math.pow(2, 3); //8
+        // min/max  返回最小/最大数
+        var num4 = Math.min(1, 2, 3);
+        var num5 = Math.max(1, 2, 3);
+    </script>
 </head>
 <a href="http://www.baidu.com?wd=传智">点我</a>
 <body>

@@ -57,9 +57,9 @@
         //运算符=> typeof => 返回原始类型的类型
         alert(typeof f);
         // 是javascript中的一个bug.后来将该bug保留了.
-        //  typeof null => object
+        // typeof null => object
 
-        //Instance of 与java中 一样, 用于判断变量是否属于指定类型
+        //Instance of 与java一样, 用于判断变量是否属于指定类型
         var str = new String("abc");
         alert(str instanceof String);//true
         alert("abc" instanceof String);//false
@@ -68,8 +68,8 @@
             声明变量, 变量的类型是随时可以变化的,区分大小写
             定义了多个同名的变量是，后定义的同名变量是覆盖前面定义的同名变量。
             第一个字符必须是字母、下划线（_）或美元符号（$）,余下的字符可以是下划线、美元符号或任何字母或数字字符
-            声明变量时,加var声明,作用范围在代码块中.不加var声明,作用范围为全局
-            解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。
+            声明变量时,加var声明,作用范围在代码块中.
+            不加var声明,作用范围为全局.解释程序遇到未声明过的标识符时，用该变量名创建一个全局变量，并将其初始化为指定的值。
         */
         var a = 1;
         var b = 2, c = 3;
@@ -78,14 +78,13 @@
 
         //2 注释 写法与java一模一样.没有文档注释. //   /**/
 
-        //4js中每行语句的结束使用 ";" 号来表示. 也可以不使用";".(推荐都加上)
+        //4js中每行语句的结束使用";" 号来表示,也可以不使用";"(推荐都加上)
 
         //6 字母大小写.语法区分大小写
         function fun1() {
             var d = "hello"
             e = "heihei";
         }
-
         fun1();
         alert(e);
 
@@ -112,20 +111,18 @@
          for-in语句的作用：
          1. 可以用于遍历数组的元素。注意：遍历数组元素的时候,遍历出来是数组的下标。
          2. 可以用于遍历对象的所有属性数据。注意：遍历对象的属性的时候，遍历出来的是对象的属性名。
-         */
+        */
         var arr = [12, 13, 19, 15, 16];
 
-        /*
-         for-in语句遍历数组元素
-         for(var index in arr){
-             document.write(arr[index]+",");
-         }
+        // for-in语句遍历数组元素
+        for (var index in arr) {
+            document.write(arr[index] + ",");
+        }
 
-         普通的for循环遍历数组的元素
-         for(var index = 0 ; index<arr.length ; index++){
-             document.write(arr[index]+",");
-         }
-         */
+        // 普通的for循环遍历数组的元素
+        for (var index = 0; index < arr.length; index++) {
+            document.write(arr[index] + ",");
+        }
 
         function Person(id, name) {
             this.id = id;
@@ -137,15 +134,16 @@
         for (var property in p) {
             document.write(p[property] + ",");
         }
-        with (p) {
-            document.write("编号：" + p.id);
-            document.write("姓名：" + name);
-        }
         /*
          with语句:有了 With 语句，在存取对象属性和调用方法时就不用重复指定对象。
          with(对象){
          }
          */
+        with (p) {
+            document.write("编号：" + p.id);
+            document.write("姓名：" + name);
+        }
+
         with (document) {
             for (var i = 0; i < 5; i++) {
 
@@ -157,12 +155,13 @@
             write("<hr/>");
         }
 
-        //js中的语句
-        //1 判断
-        // if  else/ switch
-        //2 循环
-        // for / while do / do {statement} while (expression);
-        // while循环
+        /* js中的语句
+           1 判断
+                if  else/ switch
+           2 循环
+                for / while do / do {statement} while (expression);
+        */
+
         var i = 5;
         while (i > 1) {
             alert(i);
