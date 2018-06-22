@@ -30,20 +30,18 @@
         /* 字符串与字符串的比较规则：
          情况1：
          能找到对应位置上的不同字符，那么就比较第一个不同字符的大小
-
          情况2：
          不能找到对应位置上的不同字符，这时候比较的是两个字符串的长度*/
-
         document.write("10字符串大于3字符串吗？" + ("190" > "19") + "<br/>");
-        // 字符串还可以与数字进行比较。  凡是数字与字符串 进行比较，会先把字符串转换成数字再进行比较 的。
-        document.write("10大于字符串9吗？" + ( 10 > "9") + "<br/>");
+        // 字符串还可以与数字进行比较。  凡是数字与字符串进行比较，会先把字符串转换成数字再进行比较的。
+        document.write("10大于字符串9吗？" + (10 > "9") + "<br/>");
         /*
          * length属性
          * 即使字符串包含双字节的字符（与 ASCII 字符相对，ASCII 字符只占用一个字节），每个字符也只算一个字符。
          */
         alert("world".length);
-        //console.log(str.length);
-        //console.log(str[5]);
+        console.log(str.length);
+        console.log(str[5]);
 
         /*
          * charAt()
@@ -79,7 +77,7 @@
          * 	- 该方法可以检索一个字符串中是否含有指定内容
          * 	- 如果字符串中含有该内容，则会返回其第一次出现的索引
          * 		如果没有找到指定的内容，则返回-1
-         * 	- 可以指定一个第二个参数，指定开始查找的位置
+         * 	- 可以指定第二个参数，指定开始查找的位置
          *
          * lastIndexOf();
          * 	- 该方法的用法和indexOf()一样，
@@ -147,6 +145,12 @@
         //console.log(result[0]);
         console.log(result);
 
+        //replace
+        var str6 = "abcd";
+        document.write(str6);
+        document.write("<br/>");
+        document.write(str6.replace("a", "Q"));
+
         /*
          * toUpperCase()
          * 	- 将一个字符串转换为大写并返回
@@ -160,7 +164,6 @@
          * 	-将一个字符串转换为小写并返回
          */
         result = str.toLowerCase();
-        //console.log(result);
 
         //bold方法
         document.write("<hr/>");

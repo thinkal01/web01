@@ -17,49 +17,56 @@
          */
         //创建一个变量
         var a = 10;
+
         function fun() {
             var a = "我是fun函数中的变量a";
             var b = 20;
-            //console.log("a = "+a);
+            console.log("a = " + a);
 
             function fun2() {
                 console.log("a = " + window.a);
             }
+
             fun2();
         }
-        //fun();
-        //console.log("b = "+b);
+
+        fun();
+        console.log("b = " + b);
 
         /*
          * 在函数作用域也有声明提前的特性，
-         * 	使用var关键字声明的变量，会在函数中所有的代码执行之前被声明
-         * 	函数声明也会在函数中所有的代码执行之前执行
+         * 使用var关键字声明的变量，会在函数中所有的代码执行之前被声明
+         * 函数声明也会在函数中所有的代码执行之前执行
          */
 
         function fun3() {
             fun4();
-            //console.log(a);
+            console.log(a);
             var a = 35;
+
             function fun4() {
                 alert("I'm fun4");
             }
         }
-        //fun3();
+
+        fun3();
 
         var c = 33;
+
         /*
-         * 在函数中，不适用var声明的变量都会成为全局变量
+         * 在函数中，不用var声明的变量都会成为全局变量
          */
         function fun5() {
-            //console.log("c = "+c);
-            //c = 10;
+            console.log("c = " + c);
+            c = 10;
             //d没有使用var关键字，则会设置为全局变量
             d = 100;
         }
+
         fun5();
 
-        //在全局输出c
-        //console.log("d = "+d);
+        //在全局输出
+        console.log("d = " + d);
         var e = 23;
 
         /*
@@ -68,6 +75,7 @@
         function fun6(e) {
             alert(e);
         }
+
         fun6();
     </script>
 </head>

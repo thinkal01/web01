@@ -134,26 +134,6 @@
         for (var property in p) {
             document.write(p[property] + ",");
         }
-        /*
-         with语句:有了 With 语句，在存取对象属性和调用方法时就不用重复指定对象。
-         with(对象){
-         }
-         */
-        with (p) {
-            document.write("编号：" + p.id);
-            document.write("姓名：" + name);
-        }
-
-        with (document) {
-            for (var i = 0; i < 5; i++) {
-
-                for (var j = 0; j <= i; j++) {
-                    write("*&nbsp;");
-                }
-                write("<br/>");
-            }
-            write("<hr/>");
-        }
 
         /* js中的语句
            1 判断

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-
     <!--
+        JSON这个对象在IE7及以下的浏览器中不支持，所以在这些浏览器中调用时会报错
         如果需要兼容IE7及以下的JSON操作，则可以通过引入一个外部的js文件来处理
     -->
     <script type="text/javascript" src="js/json2.js"></script>
@@ -21,7 +21,7 @@
          * 		JSON分类：
          * 			1.对象 {}
          * 			2.数组 []
-         * 		JSON中允许的值：
+         * 		JSON允许的值：
          * 			1.字符串
          * 			2.数值
          * 			3.布尔值
@@ -31,45 +31,35 @@
          */
         //创建一个对象
         var arr = '[1,2,3,"hello",true]';
-
         var obj2 = '{"arr":[1,2,3]}';
-
         var arr2 = '[{"name":"孙悟空","age":18,"gender":"男"},{"name":"孙悟空","age":18,"gender":"男"}]';
 
         /*
          * 将JSON字符串转换为JS中的对象
-         * 	在JS中，为我们提供了一个工具类，就叫JSON
-         * 	这个对象可以帮助我们将一个JSON转换为JS对象，也可以将一个JS对象转换为JSON
+         * 在JS中提供了一个工具类，就叫JSON
+         * 这个对象可以将一个JSON转换为JS对象，也可以将一个JS对象转换为JSON
          */
         var json = '{"name":"孙悟空","age":18,"gender":"男"}';
 
         /*
          * json --> js对象
-         * 	 JSON.parse()
+         * JSON.parse()
          * 		- 可以将以JSON字符串转换为js对象
          * 		- 它需要一个JSON字符串作为参数，会将该字符串转换为JS对象并返回
          */
         var o = JSON.parse(json);
         var o2 = JSON.parse(arr);
-
-        //console.log(o.gender);
-        //console.log(o2[1]);
+        console.log(o2[1]);
 
         /*
          * JS对象 ---> JSON
-         * 	JSON.stringify()
+         * JSON.stringify()
          * 		- 可以将一个JS对象转换为JSON字符串
          * 		- 需要一个js对象作为参数，会返回一个JSON字符串
          */
         var obj3 = {name: "猪八戒", age: 28, gender: "男"};
         var str = JSON.stringify(obj3);
-        //console.log(str);
 
-        /*
-         * JSON这个对象在IE7及以下的浏览器中不支持，所以在这些浏览器中调用时会报错
-         */
-        var str3 = '{"name":"孙悟空","age":18,"gender":"男"}';
-        JSON.parse(str3);
         /*
          * eval()
          * 	- 这个函数可以用来执行一段字符串形式的JS代码，并将执行结果返回
@@ -80,7 +70,6 @@
          * 		但是在开发中尽量不要使用，首先它的执行性能比较差，然后它还具有安全隐患
          */
         var obj = eval("(" + str3 + ")");
-        console.log(obj);
         var str2 = "alert('hello')";
         alert(eval("1+1"));//2
         alert(eval("new String('abc')"));// abc

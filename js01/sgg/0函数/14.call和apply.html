@@ -33,7 +33,7 @@
          * 		3.以构造函数的形式调用时，this是新创建的那个对象
          * 		4.使用call和apply调用时，this是指定的那个对象
          */
-        //fun.call(obj,2,3);
+        fun.call(obj, 2, 3);
         fun.apply(obj, [2, 3]);
 
         var obj2 = {
@@ -41,12 +41,10 @@
         };
 
         /*fun.apply();
-         fun.call();
-         fun();*/
+         fun.call();*/
 
         //fun.call(obj);
         //fun.apply(obj);
-        //fun();
 
         //obj.sayName.apply(obj2);
     </script>

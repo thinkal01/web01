@@ -18,13 +18,13 @@
 
         /*
          * 将其他的数据类型转换为Boolean
-         * 	- 使用Boolean()函数
-         *   number => boolean   	除了+0,-0,NaN,其他都是true.
-             string => boolean   	字符串不为空,那么其他都是true.
-             null,undefined => boolean 		false
-             Object   => boolean	true
+         * - 使用Boolean()函数
+         *   number => boolean   除了+0,-0,NaN,其他都是true.
+             string => boolean   字符串不为空,那么其他都是true.
+             null,undefined => boolean  false
+             Object => boolean  true
          方式二: 可以为一个任意数据类型取反两次，来将其转换为布尔值，
-         * 		    原理和Boolean()函数一样
+         * 		原理和Boolean()函数一样
          */
         var a = -123; //true
         a = 0; //false
