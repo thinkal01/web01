@@ -5,10 +5,11 @@
     <title></title>
     <script type="text/javascript">
         /*
-         * BOM
+         * BOM(Browser Object Model)
          * - 浏览器对象模型
          * - BOM可以使我们通过JS来操作浏览器
-         * - 在BOM中为我们提供了一组对象，用来完成对浏览器的操作
+         * 浏览器对象模型把浏览器各个部分都用一个对象进行描述，
+         * 如果要操作浏览器的一些属性，就可以通过浏览器对象模型操作。
          * - BOM对象
          * 		Window
          * 			- 代表的是整个浏览器的窗口，同时window也是网页中的全局对象
@@ -21,7 +22,7 @@
          * 			由于隐私原因，该对象不能获取到具体的历史记录，只能操作浏览器向前或向后翻页
          * 			而且该操作只在当次访问时有效
          * 		Screen
-         * 			- 代表用户的屏幕的信息，通过该对象可以获取到用户的显示器的相关信息
+         * 			- 代表用户的屏幕的信息，通过该对象可以获取到用户显示器的相关信息
          *
          * 		这些BOM对象在浏览器中都是作为window对象的属性保存的，
          * 		可以通过window对象来使用，也可以直接使用
@@ -59,8 +60,7 @@
          * 	- 在IE11中已经将微软和IE相关的标识都已经去除了，所以我们基本已经不能通过UserAgent来识别一个浏览器是否是IE了
          */
 
-        //alert(navigator.appName);
-
+        alert(navigator.appName);
         var ua = navigator.userAgent;
         console.log(ua);
 
@@ -84,6 +84,18 @@
          alert("你不是IE~~~");
          }*/
         /*alert("ActiveXObject" in window);*/
+
+        /*
+         *Screen(屏幕)对象
+         *    availHeight	获取系统屏幕的工作区域高度，排除 Microsoft Windows任务栏。
+         *    availWidth	获取系统屏幕的工作区域宽度，排除 Windows任务栏。
+         *    height		获取屏幕的垂直分辨率。
+         *    width		获取屏幕的水平分辨率。
+        */
+        document.write("获取系统屏幕的工作区域高度：" + screen.availHeight + "<br/>");
+        document.write("获取系统屏幕的工作区域宽度：" + screen.availWidth + "<br/>");
+        document.write("获取屏幕的垂直分辨率：" + screen.height + "<br/>");
+        document.write("获取屏幕的水平分辨率：" + screen.width + "<br/>");
     </script>
 </head>
 <body>

@@ -7,14 +7,28 @@
         /*
          * Location
          * - 该对象中封装了浏览器的地址栏信息
+         * Location 包含有关当前 URL 的信息
+           location.href是一个属性：
+           location.href='http://www.example.com'
+           而location.assign('http://www.example.com') 就是 location.href='http://www.example.com'
+           至于location.replace('http://www.example.com')与前两者的区别是，
+           在replace之后，浏览历史就被清空了（href与assign方法会产生历史记录）
+           建议：使用replace。因为前两者会产生历史记录，而浏览者如果点‘后退’按钮，就会产生'redirection loop'，会被浏览器禁止。
          */
         window.onload = function () {
+            //location对象
+            document.write(location.href);
+            alert(location.url);
+
             //获取按钮对象
             var btn = document.getElementById("btn");
 
             btn.onclick = function () {
                 //如果直接打印location，则可以获取到地址栏的信息（当前页面的完整路径）
-                //alert(location);
+                alert(location);
+
+                // ? 后面的部分
+                var str = window.location.search;
 
                 /*
                  * 如果直接将location属性修改为一个完整的路径，或相对路径
@@ -54,5 +68,8 @@
 
 <input type="text"/>
 <a href="01.BOM.html">去BOM</a>
+<input type="button" onclick="window.location.href='01-Window对象.html'" value="01-Window对象.html"/>
+<input type="button" onclick="window.location.assign('01-Window对象.html')" value="01-Window对象.html"/>
+<input type="button" onclick="window.location.reload()" value="刷新"/>
 </body>
 </html>

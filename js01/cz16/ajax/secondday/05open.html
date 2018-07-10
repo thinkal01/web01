@@ -9,6 +9,7 @@
             btn.onclick = function () {
                 var username = document.getElementById("username").value;
                 var password = document.getElementById('password').value;
+
                 //第一步：创建xhr对象
                 var xhr = null;
                 if (window.XMLHttpRequest) {//标准浏览器
@@ -18,12 +19,10 @@
                 }
 
                 //第二步：准备发送请求-配置发送请求的一些行为
-                var url = '05open.php?username=' + encodeURIComponet(username) + '&password=' + password;
+                var url = '05open.php?username=' + encodeURIComponent(username) + '&password=' + password;
 
-                //var url = '05open.php';
                 xhr.open('get', url);
                 //第三步：执行发送的动作
-
                 var param = 'username=' + username + '&password=' + password;
                 xhr.send(null);
                 //第四步：指定一些回调函数

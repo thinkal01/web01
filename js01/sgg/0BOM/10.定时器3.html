@@ -26,7 +26,7 @@
             top: 200px;
         }
     </style>
-    <script type="text/javascript" src="js/tools.js"></script>
+    <script type="text/javascript" src="../js/tools.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             //获取box1
@@ -55,9 +55,9 @@
             //测试按钮
             var btn04 = document.getElementById("btn04");
             btn04.onclick = function () {
-                //move(box2 ,"width", 800 , 10);
+                // move(box2, "width", 800, 10);
                 //move(box2 ,"top", 800 , 10);
-                //move(box2 ,"height", 800 , 10);
+                move(box2, "height", 800, 10);
                 move(box2, "width", 800, 10, function () {
                     move(box2, "height", 400, 10, function () {
                         move(box2, "top", 0, 10, function () {

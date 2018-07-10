@@ -12,6 +12,7 @@
             } else {//早期的IE浏览器
                 xhr = new ActiveXObject('Microsoft.XMLHTTP');
             }
+
             console.log("状态q" + xhr.readyState);
             //第二步：准备发送请求-配置发送请求的一些行为
             xhr.open('get', '03form.php', true);
@@ -29,10 +30,7 @@
                         // var data1 = xhr.responseXML;
                     }
                 }
-                // console.log("状态t"+xhr.readyState);
-                // console.log(1234);
             };
-            // console.log(456);
             console.log("状态r" + xhr.readyState);
         }
     </script>

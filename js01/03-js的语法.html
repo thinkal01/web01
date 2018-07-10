@@ -6,25 +6,6 @@
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <!-- 使用src属性引入外部js文件,注意: 在引入外部js的script标签中,不能再书写js代码-->
-    <script type="text/javascript" src="hello.js"></script>
-    <script type="text/javascript">
-        //全局变量
-        var aa = 10;
-        //代码块
-        {
-            var a = 100;
-            document.write(a + "</br>");
-        }
-        {
-            document.write(a + "</br>");
-            //JavaScript不会隔离变量作用域
-        }
-    </script>
-    <script type="text/javascript">
-        //alert("在另外一个script标签使用： "+aa);
-    </script>
-
     <!-- js是弱类型语言 -->
     <script type="text/javascript">
         //java中的变量分类

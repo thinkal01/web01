@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*
+         * if语句
+         * 	语法二:
+         * 		if(条件表达式){
+         * 			语句...
+         * 		}else{
+         * 			语句...
+         * 		}
+         *
+         * 	if...else...语句
+         * 		当该语句执行时，会先对if后的条件表达式进行求值判断，
+         * 			如果该值为true，则执行if后的语句
+         * 			如果该值为false，则执行else后的语句
+         *
+         * 	语法三：
+         * 		if(条件表达式){
+         * 			语句...
+         * 		}else if(条件表达式){
+         * 			语句...
+         * 		}else if(条件表达式){
+         * 			语句...
+         * 		}else{
+         * 			语句...
+         * 		}
+         *
+         * 		if...else if...else
+         * 		当该语句执行时，会从上到下依次对条件表达式进行求值判断
+         * 		如果值为true，则执行当前语句。
+         * 		如果值为false，则继续向下判断。
+         * 		如果所有的条件都不满足，则执行最后一个else后的语句
+         * 		该语句中，只会有一个代码块被执行，一旦代码块执行了，则直接结束语句
+         */
+
+        /*
+         * 编写程序，由键盘输入三个整数分别存入变量num1、num2、num3，
+         * 对他们进行排序，并且从小到大输出。
+         * 获取用户输入的三个数
+         * prompt()函数的返回值是String类型的
+         */
+        var num1 = +prompt("请输入第一个数:");
+        var num2 = +prompt("请输入第二个数:");
+        var num3 = +prompt("请输入第三个数:");
+
+        //找到三个数中最小的数
+        if (num1 < num2 && num1 < num3) {
+            //num1最小，比较num2和num3
+            if (num2 < num3) {
+                //num1 num2 num3
+                alert(num1 + "," + num2 + "," + num3);
+            } else {
+                //num1 num3 num2
+                alert(num1 + "," + num3 + "," + num2);
+            }
+        } else if (num2 < num1 && num2 < num3) {
+            //num2最小，比较num1和num3
+            if (num1 < num3) {
+                //num2 num1 num3
+                alert(num2 + "," + num1 + "," + num3);
+            } else {
+                //num2 num3 num1
+                alert(num2 + "," + num3 + "," + num1);
+            }
+        } else {
+            //num3最小,比较num1和num2
+            if (num1 < num2) {
+                // num3 num1 num2
+                alert(num3 + "," + num1 + "," + num2);
+            } else {
+                //num3 num2 num1
+                alert(num3 + "," + num2 + "," + num1);
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
