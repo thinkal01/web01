@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript">
+        //javascript 代码运行分连个阶段：
+        // 1、预解析 --- 把所有的函数定义提前，所有的变量声明提前，变量的赋值不提前
+        // 2、执行 --- 从上到下执行（setTimeout，setInterval,ajax中的回调函数，事件中的函数需要触发执行）
         /*
          * 变量的声明提前
          * 	- 使用var关键字声明的变量，会在所有代码执行之前被声明（但是不会赋值），

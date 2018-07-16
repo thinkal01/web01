@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        foo(); // 1
+        function foo() {
+            console.log("第1个script标签内的函数")
+        }
+    </script>
+
+    <script>
+        foo(); // 2
+        function foo() {
+            console.log("第2个script标签内的函数")
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
