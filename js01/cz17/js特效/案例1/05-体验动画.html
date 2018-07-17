@@ -20,9 +20,9 @@
     var div = document.getElementsByTagName("div")[0];
 
     //闪动
-    //    btn.onclick = function () {
-    //        div.style.left = "500px";
-    //    }
+    //btn.onclick = function () {
+    //    div.style.left = "500px";
+    //}
 
     //匀速运动
     btn.onclick = function () {
@@ -32,8 +32,8 @@
             //div.style.left = parseInt(div.style.left)+10+"px";  //NaN不能用
             //动画原理： 盒子未来的位置 = 盒子现在的位置 + 步长；
             //style.left赋值，用offsetLeft获取值。
-            //style.left获取值不方便，获取行内式，如果没有事“”；容易出现NaN；
-            //offsetLeft获取值特别方便，而且是现成number方便计算。因为他是只读的不能赋值。
+            //style.left获取值不方便，获取行内式，如果没有是“”；容易出现NaN；
+            //offsetLeft获取值特别方便，而且是number方便计算。他是只读的不能赋值。
             div.style.left = div.offsetLeft + 10 + "px";
         }, 300);
     }

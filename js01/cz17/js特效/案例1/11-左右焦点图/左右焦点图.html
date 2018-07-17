@@ -112,18 +112,16 @@
         <span id="right">></span>
     </div>
 </div>
-
-
 <script>
     //需求：鼠标放到盒子上，显示左右切换的图片。点击左则按钮图片(ul)向右移动，相反的按钮向左移动。
     //思路：获取两个按钮，点击左侧按钮移动ul向右走(每次只走一张)(计数器从0开始)。
     //如何移动盒子。利用计数器模拟index值，点右侧自增，点左侧自减。
     //步骤：
-    //1.鼠标放上去显示移开以藏
-    //2.点击右侧盒子图片向做移动并用计数器模拟index值。
-    //3，点击左侧盒子，同理。
+    //1.鼠标放上去显示移开隐藏
+    //2.点击右侧盒子图片向左移动并用计数器模拟index值。
+    //3.点击左侧盒子，同理。
 
-    //1.鼠标放上去显示移开以藏
+    //1.鼠标放上去显示移开隐藏
     var box = document.getElementById("box");
     var imgWidth = box.children[0].offsetWidth;
     var ul = box.children[0].children[0];
@@ -133,25 +131,24 @@
     //鼠标放上去显示，移开隐藏
     box.onmouseover = function () {
         boxLeftRight.style.display = "block";
-    }
+    };
     box.onmouseout = function () {
         boxLeftRight.style.display = "none";
-    }
+    };
 
-    //2.点击右侧盒子图片向做移动并用计数器模拟index值。
+    //2.点击右侧盒子图片向左移动并用计数器模拟index值。
     //定义计数器
     var index = 0;
-
     btnArr[1].onclick = function () {
         index++;
-        //我们要对index的值进行约束。index的值必须在[0,4]
+        //对index的值进行约束。index的值必须在[0,4]
         if (index > ul.children.length - 1) {
             index = ul.children.length - 1;
             alert("到头了！");
         }
         //点击盒子以后移动图片（ul，和目标位置）
         animate(ul, -index * imgWidth);
-    }
+    };
 
     //3，点击左侧盒子，同理。
     btnArr[0].onclick = function () {
@@ -162,7 +159,7 @@
         }
         //点击盒子以后移动图片（ul，和目标位置）
         animate(ul, -index * imgWidth);
-    }
+    };
 
 
     function animate(ele, target) {

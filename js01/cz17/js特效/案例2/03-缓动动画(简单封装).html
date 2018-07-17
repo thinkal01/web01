@@ -14,8 +14,7 @@
     </style>
 </head>
 <body>
-<button>运动到200</button>
-<button>运动到400</button>
+<button>运动到0</button>
 <div></div>
 
 <script>
@@ -28,13 +27,11 @@
         clearInterval(timer);
         timer = setInterval(function () {
             var target = 0;
-            //缓动。如何缓动呢？步长越来越小....
-            //   步长用目标位置和盒子自身位置的十分之一
-            //最后10像素的时候都是1像素1像素的向目标位置移动，就能够到达指定位置。
+            // 步长用目标位置和盒子自身位置的十分之一
+            // 最后10像素的时候都是1像素1像素向目标位置移动，就能够到达指定位置。
             var step = (target - div.offsetLeft) / 10;
             //每次获取步长都向上取整，这种情况就包含step<0.4的情况
             //拓展：差值大于0的时候，向上取整，小于0的时候向下取整。
-//            step = Math.ceil(step);
             step = step > 0 ? Math.ceil(step) : Math.floor(step);
 //            step = target>div.offsetLeft?Math.ceil(step):Math.floor(step);
 

@@ -39,7 +39,7 @@
             //需求2：当我们滚动界面的时候，被卷曲的头部小于第二个盒子距离顶部的位置，那么直接给第二个盒子取消类名.fixed
             //步骤：
             //1.老三步。
-            //2.判断 ，被卷曲的头部的大小
+            //2.判断，被卷曲的头部的大小
             //3.满足条件添加类，否则删除类
 
             //1.老三步。
@@ -50,30 +50,29 @@
 
             window.onscroll = function () {
                 //2.判断 ，被卷曲的头部的大小
-                if(scroll().top > height){
+                if (scroll().top > height) {
                     //3.满足条件添加类，否则删除类
                     middle.className += " fixed";
                     //第二个盒子不占位置了，所以我们给第三个盒子一个上padding占位置，不出现盒子抖动问题
-                    main.style.paddingTop = middle.offsetHeight+"px";
-                }else{
+                    main.style.paddingTop = middle.offsetHeight + "px";
+                } else {
                     middle.className = "";
                     //清零
                     main.style.paddingTop = 0;
                 }
             }
-
         }
     </script>
 </head>
 <body>
-    <div class="top" id="top">
-        <img src="images/top.png" alt=""/>
-    </div>
-    <div id="Q-nav1">
-        <img src="images/nav.png" alt=""/>
-    </div>
-    <div class="main" id="main">
-        <img src="images/main.png" alt=""/>
-    </div>
+<div class="top" id="top">
+    <img src="images/top.png" alt=""/>
+</div>
+<div id="Q-nav1">
+    <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="main">
+    <img src="images/main.png" alt=""/>
+</div>
 </body>
 </html>

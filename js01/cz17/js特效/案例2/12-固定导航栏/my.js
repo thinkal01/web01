@@ -1,6 +1,3 @@
-/**
- * Created by andy on 2015/12/8.
- */
 function scroll() {  // 开始封装自己的scrollTop
     if (window.pageYOffset !== undefined) {  // ie9+ 高版本浏览器
         // 因为 window.pageYOffset 默认的是  0  所以这里需要判断
