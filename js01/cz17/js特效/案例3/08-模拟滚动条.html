@@ -44,9 +44,9 @@
     <script src="animate.js"></script>
     <script>
         window.onload = function () {
-            //需求：模拟滚动条，鼠标拖动滚动条，滚动条动，而且内容等比例联动。
+            //需求：模拟滚动条，鼠标拖动滚动条，滚动条动，而且内容等比例联动
             //步骤：
-            //1.根据内容和盒子的比例确定bar的高。
+            //1.根据内容和盒子的比例确定bar的高
             //2.绑定事件（鼠标按下，然后移动）
             //3.鼠标移动，bar联动
             //4.内容等比例联动
@@ -69,7 +69,7 @@
                 var y = pageyy - bar.offsetTop;
                 //模拟拖拽案例
                 document.onmousemove = function (event) {
-                    //新五步获取鼠标在页面的位置。
+                    //新五步获取鼠标在页面的位置
                     event = event || window.event;
                     var pagey = event.pageY || scroll().top + event.clientY;
                     //鼠标的位置-鼠标在盒子中的位置。
@@ -86,15 +86,15 @@
                     bar.style.top = pagey + "px";
 
                     //4.内容等比例联动
-                    //高级比例：  内容走的距离/bar走的距离 = （内容的高-大盒子的高）/（scroll的高-bar的高）
+                    //高级比例：内容走的距离/bar走的距离 = （内容的高-大盒子的高）/（scroll的高-bar的高）
                     var s = pagey * (content.offsetHeight - box.offsetHeight) / (scroll.offsetHeight - bar.offsetHeight);
                     //s赋值给content。通过marginTop负值移动content
                     content.style.marginTop = -s + "px";
 
-                    //让被选文字清除。
+                    //让被选文字清除
                     window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
                 }
-            }
+            };
 
             //事件解绑
             document.onmouseup = function () {
@@ -102,7 +102,6 @@
             }
         }
     </script>
-
 </head>
 <body>
 <div class="box" id="box">
@@ -177,13 +176,11 @@
         埋骨何须桑梓地，人生无处不青山。<br>
         孩儿励志出湘关，学不成名终不还。<br>
         埋骨何须桑梓地，人生无处不青山。<br>
-        -------------结束------------<br>
+        -------------结束---------<br>
     </div>
     <div class="scroll">
         <div class="bar"></div>
     </div>
 </div>
-
-
 </body>
 </html>

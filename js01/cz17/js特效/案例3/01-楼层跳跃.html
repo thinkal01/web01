@@ -59,7 +59,7 @@
 <script src="animate.js"></script>
 <script>
     //需求：点击ol中的li，屏幕滑动到对应的ul中的li的范围。
-    //思路：还是利用window.scrollTo();利用缓动动画原理实现屏幕滑动。
+    //思路：window.scrollTo();利用缓动动画原理实现屏幕滑动。
     //步骤：
     //0.获取元素
     //1.指定ul和ol中的li的背景色，对应的li背景色相同
@@ -76,7 +76,7 @@
     var leader = 0;
     var timer = null;
     //1.指定ul和ol中的li的背景色，对应的li背景色相同
-    //设置一个数组，里面装颜色，然指定的颜色给数组中的指定元素
+    //设置一个数组，里面装颜色，指定的颜色给数组中指定元素
     var arrColor = ["pink", "blue", "yellow", "orange", "green"];
     //利用for循环给两个数组的元素上色
     for (var i = 0; i < arrColor.length; i++) {
@@ -86,7 +86,7 @@
 
         //属性绑定索引值
         olLiArr[i].index = i;
-        //2.老三步。(并绑定事件)循环绑定，为每一个li绑定点击事件
+        //2.老三步。(绑定事件)循环绑定，为每一个li绑定点击事件
         olLiArr[i].onclick = function () {
             //***获取目标位置
             //获取索引值。
