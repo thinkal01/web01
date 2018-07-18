@@ -15,16 +15,15 @@
 
     window.onscroll = function () {
         //没有dtd约束的
-//        document.title = document.body.scrollTop;
-        //有dtd约束的
-//        document.title = document.documentElement.scrollTop;
+        // document.title = document.body.scrollTop;
+        // 有dtd约束的
+        // document.title = document.documentElement.scrollTop;
 
         //兼容写法
-//        document.title = document.body.scrollTop || document.documentElement.scrollTop;
-//        document.title = document.body.scrollTop + document.documentElement.scrollTop;
-//        document.title = window.pageYOffset;
-//        alert(window.pageYOffset);
-//        document.title = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+        // document.title = document.body.scrollTop || document.documentElement.scrollTop;
+        // document.title = document.body.scrollTop + document.documentElement.scrollTop;
+        // document.title = window.pageYOffset;
+        document.title = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
     }
 </script>
 </body>

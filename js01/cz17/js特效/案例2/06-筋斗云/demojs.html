@@ -79,7 +79,7 @@
                 };
                 //点击事件，记录功能
                 liArr[i].onclick = function () {
-                    //需要一个计数器，每次点击以后把所以只记录下来
+                    //需要一个计数器，每次点击以后把索引记录下来
                     //因为onmouseout事件要用到这个计数器，所以应该是一个全局变量
                     count = this.index;
                     animate(span, count * liWidth);
