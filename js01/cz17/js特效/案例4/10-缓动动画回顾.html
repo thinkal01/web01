@@ -24,15 +24,14 @@
 
     btnArr[0].onclick = function () {
         animate(div, 200);
-    }
+    };
 
     btnArr[1].onclick = function () {
         animate(div, 400);
-    }
+    };
 
-    //缺点：1.只能获取行内式，不能获取内嵌和外链样式。导致我们获取left值的时候,用offsetLeft模拟
+    //缺点：1.只能获取行内式，不能获取内嵌和外联样式。导致获取left值的时候,用offsetLeft模拟
     //2.只能放入一个属性。（一个方法只能操作一个属性）
-    //3.一次性放入多个属性值。
     function animate(ele, target) {
         //清除定时器
         clearInterval(ele.timer);
@@ -53,6 +52,5 @@
         }, 30);
     }
 </script>
-
 </body>
 </html>

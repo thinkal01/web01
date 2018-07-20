@@ -19,24 +19,21 @@
 <div></div>
 
 <script>
-
     var btnArr = document.getElementsByTagName("button");
     var div = document.getElementsByTagName("div")[0];
 
     btnArr[0].onclick = function () {
         animate(div, "left", 400);
-    }
-
+    };
     btnArr[1].onclick = function () {
         animate(div, "width", 400);
-    }
+    };
 
     //参数变为3个
     function animate(ele, attr, target) {
         //先清定时器
         clearInterval(ele.timer);
         ele.timer = setInterval(function () {
-            //四部
             var leader = parseInt(getStyle(ele, attr)) || 0;
             //1.获取步长
             var step = (target - leader) / 10;
@@ -50,7 +47,6 @@
                 ele.style[attr] = target + "px";
                 clearInterval(ele.timer);
             }
-
         }, 25);
     }
 

@@ -31,7 +31,7 @@
                 animate(div, json1);
             });
         });
-    }
+    };
 
     //参数变为3个
     function animate(ele, json, fn) {
@@ -48,14 +48,10 @@
                 //1.获取步长
                 var step = (json[k] - leader) / 10;
                 //2.二次加工步长
-//                if(k=="height" && leader>=190){
-//                    debugger height为191获取到190
-//                }
                 step = step > 0 ? Math.ceil(step) : Math.floor(step);
                 leader = leader + step;
                 //3.赋值
                 ele.style[k] = leader + "px";
-//                var leader = parseInt(getStyle(ele, k)) || 0;
                 //4.清除定时器
                 //判断: 目标值和当前值的差大于步长，就不能跳出循环
                 //不考虑小数的情况：目标位置和当前位置不相等，就不能清除清除定时器。
@@ -64,10 +60,8 @@
                 }
             }
 
-            console.log(1);
             //只有所有的属性都到了指定位置，bool值才不会变成false；
             if (bool) {
-                debugger
                 clearInterval(ele.timer);
                 //所有程序执行完毕了，现在可以执行回调函数了
                 //只有传递了回调函数，才能执行

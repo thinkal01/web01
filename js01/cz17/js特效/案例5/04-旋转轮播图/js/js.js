@@ -1,6 +1,3 @@
-/**
- * Created by Lenovo on 2016/9/13.
- */
 window.onload = function () {
     var arr = [
         {   //  1
@@ -52,26 +49,26 @@ window.onload = function () {
     slide.onmouseenter = function () {
         //arrow.style.opacity = 1;
         animate(arrow, {"opacity": 100});
-    }
+    };
     slide.onmouseleave = function () {
         //arrow.style.opacity = 1;
         animate(arrow, {"opacity": 0});
-    }
+    };
 
     move();
-    //3.把两侧按钮绑定事件。(调用同一个方法，只有一个参数，true为正向旋转，false为反向旋转)
+    //3.把两侧按钮绑定事件(调用同一个方法，只有一个参数，true为正向旋转，false为反向旋转)
     arrowChildren[0].onclick = function () {
         if (flag) {
             flag = false;
             move(true);
         }
-    }
+    };
     arrowChildren[1].onclick = function () {
         if (flag) {
             flag = false;
             move(false);
         }
-    }
+    };
 
     //4.书写函数。
     function move(bool) {
@@ -90,5 +87,4 @@ window.onload = function () {
             });
         }
     }
-
-}
+};

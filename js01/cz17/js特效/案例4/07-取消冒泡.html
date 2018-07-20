@@ -16,7 +16,6 @@
 <div class="box"></div>
 <script>
     var box = document.getElementsByClassName("box")[0];
-
     box.onmouseover = function (event) {
         console.log("鼠标放到了box上");
         //阻止冒泡
@@ -27,7 +26,7 @@
         } else {
             event.cancelBubble = true;
         }
-    }
+    };
 
     document.onmouseover = function (event) {
         console.log(event.bubbles);

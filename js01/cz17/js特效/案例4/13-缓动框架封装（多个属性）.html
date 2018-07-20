@@ -17,7 +17,6 @@
 <body>
 <button>运动到400</button>
 <div></div>
-
 <script>
     var btnArr = document.getElementsByTagName("button");
     var div = document.getElementsByTagName("div")[0];
@@ -25,9 +24,8 @@
     btnArr[0].onclick = function () {
         var json = {"left": 10, "top": 200, "width": 300, "height": 200};
         animate(div, json);
-    }
+    };
 
-    //参数变为3个
     function animate(ele, json) {
         //先清定时器
         clearInterval(ele.timer);
@@ -35,7 +33,6 @@
             //遍历属性和值，分别单独处理json
             //attr == k(键)    target == json[k](值)
             for (var k in json) {
-                //四部
                 var leader = parseInt(getStyle(ele, k)) || 0;
                 //1.获取步长
                 var step = (json[k] - leader) / 10;
@@ -62,7 +59,5 @@
         return ele.currentStyle[attr];
     }
 </script>
-
-
 </body>
 </html>

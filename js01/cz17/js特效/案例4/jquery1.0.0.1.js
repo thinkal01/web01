@@ -1,6 +1,3 @@
-/**
- * Created by Lenovo on 2016/9/11.
- */
 function show(ele) {
     ele.style.display = "block";
 }
@@ -46,7 +43,6 @@ function animate(ele, json, fn) {
             }
         }
 
-        console.log(1);
         //只有所有的属性都到了指定位置，bool值才不会变成false；
         if (bool) {
             clearInterval(ele.timer);

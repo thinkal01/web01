@@ -51,7 +51,7 @@
     <script src="animate.js"></script>
     <script>
         window.onload = function () {
-            //需求：鼠标放到小盒子上，让大盒子里面的图片和我们同步等比例移动。
+            //需求：鼠标放到小盒子上，让大盒子里面的图片同步等比例移动。
             //技术点：onmouseenter==onmouseover 第一个不冒泡
             //技术点：onmouseleave==onmouseout  第一个不冒泡
             //步骤：
@@ -111,8 +111,8 @@
 
                 //3.右侧的大图片，等比例移动。
                 //如何移动大图片？等比例移动。
-                //    大图片/大盒子 = 小图片/mask盒子
-                //    大图片走的距离/mask走的距离 = （大图片-大盒子）/（小图片-黄盒子）
+                // 大图片/大盒子 = 小图片/mask盒子
+                // 大图片走的距离/mask走的距离 = （大图片-大盒子）/（小图片-黄盒子）
                 // var bili = (bigImg.offsetWidth-big.offsetWidth)/(small.offsetWidth-mask.offsetWidth);
 
                 //大图片走的距离/mask盒子都的距离 = 大图片/小图片

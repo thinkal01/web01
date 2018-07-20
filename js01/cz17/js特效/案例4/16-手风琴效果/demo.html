@@ -34,19 +34,18 @@
     <script src="../jquery1.0.0.1.js"></script>
     <script>
         window.onload = function () {
-            //需求：鼠标放入到li中该盒子变宽，其他的盒子变窄。移开大盒子，回复原样。
+            //需求：鼠标放入到li中该盒子变宽，其他盒子变窄。移开大盒子，回复原样。
             //步骤：
             //1.给li添加背景
             //2.绑定onmouseover事件，鼠标放入到li中该盒子变宽，其他的盒子变窄
             //3.移开大盒子，回复原样
-
             var div = document.getElementsByTagName("div")[0];
             var liArr = div.getElementsByTagName("li");
             //1.给li添加背景
             for (var i = 0; i < liArr.length; i++) {
                 liArr[i].style.background = "url(images/" + (i + 1) + ".jpg) no-repeat";
 
-                //2.绑定onmouseover事件，鼠标放入到li中该盒子变宽，其他的盒子变窄
+                //2.绑定onmouseover事件，鼠标放入到li中该盒子变宽，其他盒子变窄
                 liArr[i].onmouseover = function () {
                     //排他思想
                     for (var j = 0; j < liArr.length; j++) {

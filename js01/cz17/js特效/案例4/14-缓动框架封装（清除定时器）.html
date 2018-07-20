@@ -15,21 +15,17 @@
     </style>
 </head>
 <body>
-
 <button>运动到400</button>
 <div></div>
-
 <script>
-
     var btnArr = document.getElementsByTagName("button");
     var div = document.getElementsByTagName("div")[0];
 
     btnArr[0].onclick = function () {
         var json = {"left": 10, "top": 200, "width": 300, "height": 200};
         animate(div, json);
-    }
+    };
 
-    //参数变为3个
     function animate(ele, json) {
         //先清定时器
         clearInterval(ele.timer);
@@ -57,7 +53,6 @@
                 }
             }
 
-            console.log(1);
             //只有所有的属性都到了指定位置，bool值才不会变成false；
             if (bool) {
                 clearInterval(ele.timer);
@@ -73,7 +68,5 @@
         return ele.currentStyle[attr];
     }
 </script>
-
-
 </body>
 </html>

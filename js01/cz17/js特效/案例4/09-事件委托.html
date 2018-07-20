@@ -24,10 +24,10 @@
     <li>我是土著li</li>
 </ul>
 <script>
-    var liArr = document.getElementsByTagName("li");
     var ul = document.getElementsByTagName("ul")[0];
     var btn = document.getElementsByTagName("button")[0];
 
+    // var liArr = document.getElementsByTagName("li");
     //    for(var i=0;i<liArr.length;i++){
     //        liArr[i].onclick = function () {
     //            alert("我是土著li");
@@ -44,10 +44,9 @@
             ul.appendChild(newLi);
             ul.appendChild(newA);
         }
-    }
+    };
 
-    //普通的时间绑定，没有办法为新创建的元素绑定事件。所以我们要使用冒泡的特性，事件委托！
-    //事件委托
+    //普通事件绑定，没有办法为新创建的元素绑定事件。所以要使用冒泡的特性，事件委托！
     ul.onclick = function (event) {
         //获取事件触动的时候传递过来的值
         event = event || window.event;

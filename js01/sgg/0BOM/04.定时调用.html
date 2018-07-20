@@ -37,6 +37,16 @@
             //clearInterval()可以用来关闭一个定时器
             //方法中需要一个定时器的标识作为参数，这样将关闭标识对应的定时器
             //clearInterval(timer);
+
+            var num = 1;
+            // 等待上一次执行完成之后执行
+            setInterval(function () {
+                console.log(num);
+                num++;
+                for (var i = 0; i <= 50000; i++) {
+                    console.log(0);
+                }
+            }, 1);
         };
     </script>
 </head>
