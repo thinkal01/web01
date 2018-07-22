@@ -1,4 +1,4 @@
-/*sub-banner²¿·Östart*/
+/*sub-banneréƒ¨åˆ†start*/
 .sub-banner {
     position: relative;
 }
@@ -12,16 +12,16 @@
     background: url(../images/subbanner.jpg) no-repeat center top;
 }
 
-/*sub-banner²¿·Öend*/
+/*sub-banneréƒ¨åˆ†end*/
 
-/*main²¿·Östart*/
+/*mainéƒ¨åˆ†start*/
 .main {
     position: relative;
 }
 
 .main-slide {
-    /*¸¡¶¯ºĞ×Ó×îºÃ¼Ó¿í¸ß,ÒÔÃâ×ÓÔªËØ³ÅÆÆ³öÏÖÎÊÌâ
-        ¸¡¶¯ºĞ×ÓÖ®¼ä¼Ó¼ä¾à
+    /*æµ®åŠ¨ç›’å­æœ€å¥½åŠ å®½é«˜,ä»¥å…å­å…ƒç´ æ’‘ç ´å‡ºç°é—®é¢˜
+        æµ®åŠ¨ç›’å­ä¹‹é—´åŠ é—´è·
     */
     position: relative;
     height: 454px;
@@ -32,7 +32,7 @@
 
 .main-slide ul {
     position: absolute;
-    /*¾ÓÖĞ¶¨Î»: ¾à×ó±ß50% ¼õÈ¥¸ß¶ÈÒ»°ë*/
+    /*å±…ä¸­å®šä½: è·å·¦è¾¹50% å‡å»é«˜åº¦ä¸€åŠ*/
     left: 50%;
     margin-left: -66px;
     bottom: 10px;
@@ -47,7 +47,7 @@
     border-radius: 50%;
     margin: 0px 2px;
     color: white;
-    /*curp ¿ì½İ¼ü*/
+    /*curp å¿«æ·é”®*/
     cursor: pointer;
     background-color: #3E3E3E;
 }
@@ -58,13 +58,13 @@
 
 .arrow a {
     position: absolute;
-    /*¾ÓÖĞ*/
+    /*å±…ä¸­*/
     top: 50%;
     margin-top: -31px;
     width: 28px;
     height: 62px;
     background-color: rgba(0, 0, 0, 0.3);
-    /*opacity: 0.3; ×ÖÌåÒ²»áÍ¸Ã÷*/
+    /*opacity: 0.3; å­—ä½“ä¹Ÿä¼šé€æ˜*/
     color: #fff;
     text-align: center;
     font: 400 22px/62px "simsun";
@@ -176,9 +176,9 @@
     background: url(../images/guohui.png) no-repeat 40px 0px;
 }
 
-/*main²¿·Öend*/
+/*mainéƒ¨åˆ†end*/
 
-/*today²¿·Östart*/
+/*todayéƒ¨åˆ†start*/
 .today-left {
     float: left;
 }
@@ -204,7 +204,7 @@
 }
 
 .today-right ul {
-    /*Õ¹Ê¾4×éÍ¼Æ¬*/
+    /*å±•ç¤º4ç»„å›¾ç‰‡*/
     width: 410%;
 }
 
@@ -213,4 +213,4 @@
     margin-right: 1px;
 }
 
-/*today²¿·Öend*/
+/*todayéƒ¨åˆ†end*/

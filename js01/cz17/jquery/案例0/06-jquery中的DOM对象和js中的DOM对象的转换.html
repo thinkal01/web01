@@ -7,7 +7,6 @@
     <script>
         //入口函数
         jQuery(document).ready(function () {
-
             //如果想要那种方式设置属性或方法，必须转换成该种类型。
             //1.js对象转换成jquery对象。     $(js对象);
             //2.jquery对象转换成js对象。     1.jquery对象[索引值]   2.jquery对象.get(索引值)
@@ -34,7 +33,6 @@
             cbox = $(cbox);
             div = $(div);
 
-
             console.log(box);
             console.log(jqbox);
             console.log("------------");
@@ -44,7 +42,7 @@
             console.log(div);
             console.log(jqdiv);
 
-            //转换成了jquery对象，皮上面有功能可以直接调用。
+            //转换成了jquery对象，上面有功能可以直接调用。
             div.css({"width": 100, "height": 100, "border": "1px solid red"});
             box.css("background", "red");
             cbox.css("background", "yellow");
