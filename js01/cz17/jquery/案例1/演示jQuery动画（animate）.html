@@ -62,47 +62,47 @@
                 $("div").hide(speed, function () {
                     showColor("show");
                 })
-                        .show(speed, function () {
-                            showColor("fadeout");
-                        })
-                        .fadeOut(speed, function () {
-                            showColor("fadein");
-                        })
-                        .fadeIn(speed, function () {
-                            showColor("slideup");
-                        })
-                        .slideUp(speed, function () {
-                            showColor("slidedown");
-                        })
-                        .slideDown(speed, function () {
-                            showColor("fadeto");
-                        })
-                        .fadeTo(speed, .4, function () {
-                            showColor("animate");
-                            $("div").css("background", "green");
-                        })
-                        .animate({
-                            left: 400
-                        }, speed)
-                        .animate({
-                            height: 100
-                        }, speed)
-                        .animate({
-                            width: 100
-                        }, speed)
-                        .animate({
-                            height: 400
-                        }, speed)
-                        .animate({
-                            width: 400
-                        }, speed)
-                        .animate({
-                            left: 8
-                        }, speed, function () {
-                            showColor("");
-                            $("div").css("background", "pink").fadeTo(0, 1);
-                            $("#msg").children().removeClass();
-                        });
+                    .show(speed, function () {
+                        showColor("fadeout");
+                    })
+                    .fadeOut(speed, function () {
+                        showColor("fadein");
+                    })
+                    .fadeIn(speed, function () {
+                        showColor("slideup");
+                    })
+                    .slideUp(speed, function () {
+                        showColor("slidedown");
+                    })
+                    .slideDown(speed, function () {
+                        showColor("fadeto");
+                    })
+                    .fadeTo(speed, .4, function () {
+                        showColor("animate");
+                        $("div").css("background", "green");
+                    })
+                    .animate({
+                        left: 400
+                    }, speed)
+                    .animate({
+                        height: 100
+                    }, speed)
+                    .animate({
+                        width: 100
+                    }, speed)
+                    .animate({
+                        height: 400
+                    }, speed)
+                    .animate({
+                        width: 400
+                    }, speed)
+                    .animate({
+                        left: 8
+                    }, speed, function () {
+                        showColor("");
+                        $("div").css("background", "pink").fadeTo(0, 1);
+                        $("#msg").children().removeClass();
+                    });
             });
 
             var $divItem = $(".divItem");
@@ -134,23 +134,23 @@
                     $divItem.animate({
                         left: 400
                     }, speed)
-                            .animate({
-                                height: 100
-                            }, speed)
-                            .animate({
-                                width: 100
-                            }, speed)
-                            .animate({
-                                height: 400
-                            }, speed)
-                            .animate({
-                                width: 400
-                            }, speed)
-                            .animate({
-                                left: 8
-                            }, speed, function () {
-                                $("div").css("background", "pink").fadeTo(0, 1);
-                            });
+                        .animate({
+                            height: 100
+                        }, speed)
+                        .animate({
+                            width: 100
+                        }, speed)
+                        .animate({
+                            height: 400
+                        }, speed)
+                        .animate({
+                            width: 400
+                        }, speed)
+                        .animate({
+                            left: 8
+                        }, speed, function () {
+                            $("div").css("background", "pink").fadeTo(0, 1);
+                        });
                 }
             };
             // 动画效果 span 绑定事件

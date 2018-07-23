@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        div{
+        div {
             width: 300px;
             height: 300px;
             display: none;
@@ -18,12 +18,12 @@
             //点击按钮后产生动画
             $("button:eq(0)").click(function () {
                 $("div").slideDown(2000);
-            })
+            });
 
             //滑出动画
             $("button:eq(1)").click(function () {
                 $("div").slideUp(2000);
-            })
+            });
 
             $("button:eq(2)").click(function () {
                 $("div").stop();   //都不写，默认两个都是false;
@@ -45,11 +45,11 @@
                 //（后续动画不执行，立即停止当前动画`）
 //                $("div").stop(true,false);
 
-                //四种情况：情况4：true,false
+                //四种情况：情况4：false,false
                 //（后续动画会执行，立即停止当前动画`）
 //                $("div").stop(false,false);
-            })
-        })
+            });
+        });
     </script>
 </head>
 <body>

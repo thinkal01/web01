@@ -19,13 +19,13 @@
         $(function () {
             $("button").click(function () {
                 //需求：点击按钮 ，切换背景
-//                if($("div").hasClass("current")){
-//                    //如果有类名，那么删除
-//                    $("div").removeClass("current")
-//                }else{
-//                    //如果没有类名，那么添加
-//                    $("div").addClass("current")
-//                }
+                if ($("div").hasClass("current")) {
+                    //如果有类名，那么删除
+                    $("div").removeClass("current")
+                } else {
+                    //如果没有类名，那么添加
+                    $("div").addClass("current")
+                }
                 //切换类（toggleCLass）
                 $("div").toggleClass("current");
             });
