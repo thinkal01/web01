@@ -22,7 +22,7 @@
     <script>
         $(function () {
             var $srcCity = $("#src-city"), // 获取到 左边（源） 选择框：jQuery对象
-                    $tarCity = $("#tar-city"); // 获取到 右边（目标） 选择框：jQuery对象
+                $tarCity = $("#tar-city"); // 获取到 右边（目标） 选择框：jQuery对象
             //srcCity = $srcCity[0], // 左边（源） 选择框：DOM对象
             //tarCity = $tarCity[0]; // 右边（目标） 选择框：DOM对象
 
@@ -48,7 +48,7 @@
                 //$tarCity.html("");
             });
 
-            // > 操作 （不支持多选）
+            // > 操作
             $("#btn-sel").click(function () {
                 // 获取到当前选中的option
                 //var selCitySel = $srcCity.children(":selected")[0];
@@ -64,7 +64,7 @@
                 //srcCity.removeChild(selCitySel);
             });
 
-            // < 操作 （不支持多选）
+            // < 操作
             $("#btn-back").click(function () {
                 // 获取到当前选中的option
                 //var tarCitySel = $tarCity.children(":selected")[0];
@@ -90,10 +90,10 @@
 </select>
 
 <div class="btn-box">
-    <button id="btn-sel-all"> &gt;&gt; </button>
-    <button id="btn-sel-none"> &lt;&lt; </button>
+    <button id="btn-sel-all"> &gt;&gt;</button>
+    <button id="btn-sel-none"> &lt;&lt;</button>
     <button id="btn-sel"> &gt;</button>
-    <button id="btn-back"> &lt; </button>
+    <button id="btn-back"> &lt;</button>
 </div>
 <select id="tar-city" name="tar-city" multiple>
 </select>

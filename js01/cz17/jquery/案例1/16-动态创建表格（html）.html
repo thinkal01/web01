@@ -10,8 +10,7 @@
             border: 1px solid #c0c0c0;
         }
 
-        th,
-        td {
+        th, td {
             border: 1px solid #d0d0d0;
             color: #404060;
             padding: 10px;
@@ -67,8 +66,8 @@
                 //2.利用for循环,把数组中的所有数据组合成一个字符串。
                 for (var i = 0; i < data.length; i++) {
                     //如何生成3组？？？
-//                    str += "<tr><td>1</td><td>2</td><td>3</td></tr>";
-                    //data[i] = 数组中的每一个json
+                    // str += "<tr><td>1</td><td>2</td><td>3</td></tr>";
+                    // data[i] = 数组中的每一个json
                     //data[i].name = 数组中的每一个json的name属性值
                     str += "<tr><td>" + data[i].name + "</td><td>" + data[i].url + "</td><td>" + data[i].type + "</td></tr>";
                 }

@@ -28,9 +28,7 @@
     </style>
     <script type="text/javascript" src="jquery-1.7.2.js"></script>
     <script type="text/javascript">
-
         $(function () {
-
             $("#btn1").click(function () {
                 $("body div").css("background", "#ffbbaa");
             });
@@ -48,17 +46,14 @@
                 $("#two").siblings("div").css("background", "#ffbbaa");
             });
             $("#btn6").click(function () {
-                //以下选择器选择的是近邻 #one 的 span 元素, 若该span
-                //和 #one 不相邻, 选择器无效.
+                //以下选择器选择的是近邻 #one 的 span 元素, 若该span和 #one 不相邻, 选择器无效.
                 //$("#one + span").css("background", "#ffbbaa");
                 $("#one").nextAll("span:first").css("background", "#ffbbaa");
             });
             $("#btn7").click(function () {
                 $("#two").prevAll("div").css("background", "#ffbbaa");
             });
-
-        })
-
+        });
     </script>
 </head>
 <body>
@@ -69,9 +64,7 @@
 <input type="button" value="选择 id 为 two 的元素所有 div 兄弟元素" id="btn5"/>
 <input type="button" value="选择 id 为 one 的下一个 span 元素" id="btn6"/>
 <input type="button" value="选择 id 为 two 的元素前边的所有的 div 兄弟元素" id="btn7"/>
-
 <br><br>
-
 <div class="one" id="one">
     id 为 one,class 为 one 的div
     <div class="mini">class为mini</div>

@@ -3,24 +3,112 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Untitled Document</title>
-
     <script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
     <script type="text/javascript">
+        //1. 操作文本节点: 通过 jQuery 对象的 text() 方法
+        alert($("#bj").text());
+        $("#bj").text("尚硅谷");
 
-        //测试使用 jQuery 操作文本节点, 属性节点.
-        //及查找元素节点
-        $(function () {
-            //1. 操作文本节点: 通过 jQuery 对象的 text() 方法
-            alert($("#bj").text());
-            $("#bj").text("尚硅谷");
+        //2. 操作属性节点: 通过 jQuery 对象的 attr() 方法.
+        //注: 直接操作 value 属性值可以使用更便捷的 val() 方法.
+        alert($(":text[name='username']").attr("value"));
+        $(":text[name='username']").attr("value", "尚硅谷");
 
-            //2. 操作属性节点: 通过 jQuery 对象的 attr() 方法.
-            //注: 直接操作 value 属性值可以使用更便捷的 val() 方法.
-            alert($(":text[name='username']").attr("value"));
-            $(":text[name='username']").attr("value", "尚硅谷");
-        })
+        //测试使用 jQuery 创建节点并插入节点到指定的节点中
+        /*
+        1. 创建节点: 使用 $(html) 方式即可, 元素节点, 文本节点, 属性节点可以一网打尽
+        返回对应节点的 jQuery 对象:
+        $("<li id='atguigu'>尚硅谷</li>")
+
+        2. 添加节点:
+        1). appendTo 和 append: 主语和宾语的位置不同:
+        $("<li id='atguigu'>尚硅谷</li>").appendTo($("#city"));
+        $("#city").append("<li id='atguigu'>[尚硅谷]</li>");
+
+        2). prependTo 和 prepend: 主语和宾语的位置不同:
+        $("<li id='atguigu'>尚硅谷</li>").prependTo($("#city"));
+        $("#city").prepend("<li id='atguigu'>[尚硅谷]</li>");
+        */
+
+        //1. 创建一个 <li id="atguigu">尚硅谷</li>
+        //2. 并把其加入到 #bj 的后面
+        $("<li id='atguigu'>尚硅谷</li>").insertAfter($("#bj"));
+        $("#bj").after("<li id='atguigu'>[尚硅谷]</li>");
+
+        $("<li id='atguigu'>尚硅谷</li>").insertBefore($("#bj"));
+        $("#bj").before("<li id='atguigu'>[尚硅谷]</li>");
+
+        //1. 为 #city 的每一个 li 添加 click 响应函数: 点击时, li 被删除
+        $("#city li").click(function () {
+            $(this).remove();
+        });
+
+        //jQuery 对象的 remove() 方法: 将把 jQuery 对象对应的DOM 节点直接删除
+        $("#bj").remove();
+
+        //2. 清空 #game 节点
+        //jQuery 对象的 empty() 方法: 清空 jQuery 对象对应的DOM 对象的所有子节点
+        $("#game").empty();
+
+        $("li").click(function () {
+            alert($(this).text());
+        });
+
+        //复制 #bj 节点, 并添加到 #rl 节点的后面
+        /*
+         1. clone 节点时需要注意克隆后的节点的 id 属性. 若原节点有 id
+         属性, 则克隆后, 会出现在一个文档中有两个 id 相同的节点的情况.
+         2. clone(true): 在克隆节点的同时, 克隆节点包含的事件.
+         */
+        $("#bj").clone(true).attr("id", "bj2").insertAfter($("#rl"));
+
+        //1. 创建一个 <li>尚硅谷</li> 节点, 替换 #city 的最后一个 li 子节点
+        $("<li>尚硅谷</li>").replaceAll($("#city li:last"));
+
+        //2. 创建一个 <li>[尚硅谷]</li> 节点,
+        //替换 #city 的第二个 li 子节点
+        $("#city li:eq(1)").replaceWith($("<li>[尚硅谷]</li>"));
+
+        //3. 互换以下两个节点: #rl 和 #bj. 还有移动的功能.
+        $("#bj").replaceWith($("#rl"));
+
+        //节点互换需要先克隆节点.
+        var $bj2 = $("#bj").clone(true);
+        var $rl = $("#rl").replaceWith($bj2);
+        $("#bj").replaceWith($rl);
+
+        //包装 li 本身
+        $("#game li").wrap("<font color='red'></font>");
+        //包装所有的 li
+        $("#city li").wrapAll("<font color='red'></font>");
+        //包装 li 里边的文字
+        $("#language li").wrapInner("<font color='red'></font>");
+
+        alert($("#city").html());
+        $("#city").html("<li id='atguigu'>尚硅谷</li>");
+
+        /*
+        1. 获取的是指定元素的直接子节点
+        */
+        var $eles = $("body").children();
+        $eles.each(function () {
+            alert(this.nodeName);
+        });
+        var $ul = $("body > ul");
+
+        //测试移除事件: 使用 unbind 移除事件
+        //one(): 只为某一个元素添加一次事件, 事件函数响应后, 将不再被触发响应
+        $("#rl").one("click", function () {
+            alert("红色警戒. ");
+        });
+
+        $("li:not(#rl)").click(function () {
+            alert(this.firstChild.nodeValue);
+
+            //对于 #bj 节点, 点击一次后, 就没有 click 响应函数了
+            if (this.id == "bj") $("#bj").unbind("click");
+        });
     </script>
-
 </head>
 <body>
 <p>你喜欢哪个城市?</p>
@@ -30,9 +118,7 @@
     <li id="dj">东京</li>
     <li id="se">首尔</li>
 </ul>
-
 <br><br>
-
 <p>你喜欢哪款单机游戏?</p>
 <ul id="game">
     <li id="rl">红警</li>
@@ -40,14 +126,18 @@
     <li>极品飞车</li>
     <li>魔兽</li>
 </ul>
-
 <br><br>
+<p>你喜欢哪种开发语言?</p>
+<ul id="language">
+    <li>C</li>
+    <li>Java</li>
+    <li>.NET</li>
+    <li>PHP</li>
+</ul>
 gender:
 <input type="radio" name="gender" value="male"/>Male
 <input type="radio" name="gender" value="female"/>Female
-
 <br><br>
 name: <input type="text" name="username" value="atguigu"/>
-
 </body>
 </html>

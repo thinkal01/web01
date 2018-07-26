@@ -30,7 +30,6 @@
     <script type="text/javascript" src="jquery-1.7.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-
             $("#btn1").click(function () {
                 //选取子元素, 需要在选择器前添加一个空格.
                 $("div.one :nth-child(2)").css("background", "#ffbbaa");
@@ -41,11 +40,9 @@
             $("#btn3").click(function () {
                 $("div.one :last-child").css("background", "#ffbbaa");
             });
-
             $("#btn4").click(function () {
                 $("div.one :only-child").css("background", "#ffbbaa");
             });
-
         });
     </script>
 </head>

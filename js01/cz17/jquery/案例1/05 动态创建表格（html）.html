@@ -16,8 +16,7 @@
             border: 1px solid #c0c0c0;
         }
 
-        th,
-        td {
+        th, td {
             border: 1px solid #d0d0d0;
             color: #404060;
             padding: 10px;
@@ -62,8 +61,8 @@
         $(function () {
             $("#j_btnGetData").click(function () {
                 var tbHtml = "",
-                        dataLen = data.length,
-                        i = 0;
+                    dataLen = data.length,
+                    i = 0;
 
                 for (; i < dataLen; i++) {
                     tbHtml += "<tr>";
@@ -76,7 +75,6 @@
                 //document.getElementById("j_tbData").innerHTML = tbHtml;
                 $("#j_tbData").html(tbHtml);
             });
-
         });
     </script>
 </head>
@@ -95,5 +93,4 @@
     </tbody>
 </table>
 </body>
-
 </html>

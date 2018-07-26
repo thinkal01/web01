@@ -13,25 +13,23 @@
 
                 //方法1：.empty();
                 $("ul").empty();
-            })
+            });
 
             $("button").eq(1).click(function () {
                 //删除指定的li。  ---  自杀！
                 $("li:eq(0)").remove();
-            })
+            });
         });
     </script>
 </head>
 <body>
 <button>清空li</button>
 <button>删除第一个li</button>
-
 <ul>
     <li>我是土著li1</li>
     <li>我是土著li2</li>
     <li>我是土著li3</li>
     <li>我是土著li4</li>
 </ul>
-
 </body>
 </html>

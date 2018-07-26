@@ -40,11 +40,9 @@
                 //选取的元素中包含没有 title 的 div 元素.
                 $("div[title!='test']").css("background", "#ffbbaa");
             });
-
             $("#btn4").click(function () {
                 $("div[title^='te']").css("background", "#ffbbaa");
             });
-
             $("#btn5").click(function () {
                 $("div[title$='est']").css("background", "#ffbbaa");
             });
@@ -54,11 +52,10 @@
             $("#btn7").click(function () {
                 $("div[id][title*='es']").css("background", "#ffbbaa");
             });
-
             $("#btn8").click(function () {
                 $("div[title][title!='test']").css("background", "#ffbbaa");
             });
-        })
+        });
     </script>
 </head>
 <body>
