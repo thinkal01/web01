@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>alert dialog frame main</title>
+<script src="artDialog.source.js"></script>
+<script src="iframeTools.source.js"></script>
+<link href="skins/default.css" rel="stylesheet" />
+<style>
+.layout_left_menu{
+    position:absolute;
+    float: left;
+    min-height: 90%;
+    box-shadow: 0 0 10px #BDBDBD;
+    width: 200px;
+    background: #f7f5fa;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-left:5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.layout_right_content{
+    margin-left: 210px;
+    padding-left: 10px;
+    padding-top: 5px;
+    height: 90%;
+    min-height: 90%;
+    overflow:auto;
+}
+.mian_content{
+    position: relative;
+    min-height: 93%;
+    margin-right: 5px;
+}
+#page_content{
+    width: 100%;
+    height: 500px;
+}
+</style>
+</head>
+
+<body>
+	<div class="layout_left_menu"><a href="#">aaaaaaaaaaaaaaa<a></div>
+	<div class="layout_right_content">
+        <div class="mian_content">
+            <div id="page_content">
+				<iframe src="demo-frame.html" style="overflow:visible;"
+					scrolling="yes" frameborder="1" width="100%" height="100%"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

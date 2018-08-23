@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>alert dialog</title>
+
+<script src="artDialog.source.js"></script>
+<script src="iframeTools.source.js"></script>
+<link href="skins/default.css" rel="stylesheet" />
+
+<script>
+	function funTest1() {
+		art.dialog({ title: "Title1", content: '我支持HTML' });
+	}
+	function funTest2() {
+		art.dialog({
+			content: '如果定义了回调函数才会出现相应的按钮',
+			ok: function () {
+				alert("aaa");
+				return true;
+			},
+			cancel: true
+		});
+	}
+	function funTest3() {
+		art.dialog({
+		title:'dd',
+			icon: 'warning',
+					content: '后台出错！',
+					lock: true
+		});
+	}
+	function funTest4() {
+		art.dialog({
+			icon: 'succeed',
+			ok: true,
+			padding: 0,
+			title: '照片',
+			content: '<img src="./images/photo.jpg" width="200" height="100" />',
+			lock: true
+		});
+	}
+	function funTest5() {
+		art('#testA5').dialog({
+			content: '让对话框跟着某个元素，一个元素同时只能出现一个对话框'
+		});
+	}
+	function funTest6() {
+		art.dialog({
+			follow: document.getElementById('testA6'),
+			content: '让对话框跟着某个元素，一个元素同时只能出现一个对话框'
+		});
+	}
+	function funTest7() {
+		art.dialog({
+			left: 100,
+			top: '50%',
+			content: '我改变坐标了'
+		});
+	}
+	function funTest8() {
+		var timer;
+		art.dialog({
+			content: '时间越来越少，越来越少..',
+			init: function () {
+				var that = this, i = 5;
+				var fn = function () {
+					that.title(i + '秒后关闭');
+					!i && that.close();
+					i --;
+				};
+				timer = setInterval(fn, 1000);
+				fn();
+			},
+			close: function () {
+				clearInterval(timer);
+			}
+		}).show();
+	}
+	function funTest9() {
+		art.dialog.open('demo-frame.html', {title: '提示', lock: true});
+	}
+	
+</script>
+
+</head>
+
+<body>
+	<button onclick="funTest1();">TEST1-简单</button><br>
+	<button onclick="funTest2();">TEST2-回调</button><br>
+	<button onclick="funTest3();">TEST3-Icon</button><br>
+	<button onclick="funTest4();">TEST4-Lock</button><br>
+	<button onclick="funTest5();">TEST5-Elem</button> <a id="testA5" href="#">TEST A5</a><br>
+	<button onclick="funTest6();">TEST6-Elem</button> <a id="testA6" href="#">TEST A6</a><br>
+	<button onclick="funTest7();">TEST7-位置</button><br>
+	<button onclick="funTest8();">TEST8-计时</button><br>
+	<button onclick="funTest9();">TEST9-Open</button><br>
+</body>
+
+</html>
