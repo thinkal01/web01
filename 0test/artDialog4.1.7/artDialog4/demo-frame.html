@@ -2,56 +2,69 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>alert dialog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>alert dialog</title>
 
-<script src="artDialog.source.js"></script>
-<script src="iframeTools.source.js"></script>
-<link href="skins/default.css" rel="stylesheet" />
+    <script src="artDialog.source.js"></script>
+    <script src="iframeTools.source.js"></script>
+    <link href="skins/default.css" rel="stylesheet"/>
 
-<script>
-	function funTest1() {
-		art.dialog({
-			fixed: true,
-			content: '请拖动滚动条查看',
-			lock: true
-		});
-	}
-	function funTest2() {
-		art.dialog.alert('警察叔叔会请你喝茶！', function () {alert(0)});
-	}
-	function funTest9() {
-		art.dialog.open('demo.html', {
-				title: '登录'
-		});
-	}
-	function funTest10() {
-		art.dialog.confirm('你确认删除操作？', function(){
-			var input = document.getElementById('demoInput02');
-				
-			if (input) input.parentNode.removeChild(input);
-		}, function(){
-			art.dialog.tips('你取消了操作');
-		});
-	}
-	function funTest11() {
-		//alert("dd");
-		confirm("aaa");
-	}
-	function funTest12() {
-		art.dialog.close();
-	}
-</script>
+    <script>
+        function funTest1() {
+            art.dialog({
+                fixed: true,
+                content: '请拖动滚动条查看',
+                lock: true
+            });
+        }
+
+        function funTest2() {
+            art.dialog.alert('警察叔叔会请你喝茶！', function () {
+                alert(0)
+            });
+        }
+
+        function funTest9() {
+            art.dialog.open('demo.html', {
+                title: '登录'
+            });
+        }
+
+        function funTest10() {
+            art.dialog.confirm('你确认删除操作？', function () {
+                var input = document.getElementById('demoInput02');
+
+                if (input) input.parentNode.removeChild(input);
+            }, function () {
+                art.dialog.tips('你取消了操作');
+            });
+        }
+
+        function funTest11() {
+            //alert("dd");
+            confirm("aaa");
+        }
+
+        function funTest12() {
+            art.dialog.close();
+        }
+    </script>
 
 </head>
 
 <body>
-	<button onclick="funTest1();">TEST1-Base</button><br>
-	<button onclick="funTest2();">TEST2-Alert</button><br>
-	<button onclick="funTest9();">TEST9-Frame</button><br>
-	<button onclick="funTest10();">TEST10-确认</button> <a id="demoInput02">AAAA</a><br>
-	<button onclick="funTest11();">TEST11-JS-Alert</button><br>
-	<button onclick="funTest12();">TEST11-Open-Close</button><br>
+<button onclick="funTest1();">TEST1-Base</button>
+<br>
+<button onclick="funTest2();">TEST2-Alert</button>
+<br>
+<button onclick="funTest9();">TEST9-Frame</button>
+<br>
+<button onclick="funTest10();">TEST10-确认</button>
+<a id="demoInput02">AAAA</a><br>
+<button onclick="funTest11();">TEST11-JS-Alert</button>
+<br>
+<button onclick="funTest12();">TEST11-Open-Close</button>
+<br>
 </body>
 
 </html>

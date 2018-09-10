@@ -1,76 +1,76 @@
 <html>
 <head>
-    <title>HTMLÊ¾Àı</title>
+    <title>HTMLç¤ºä¾‹</title>
     <style type="text/css">
     </style>
 </head>
 <body>
 <ul id="ulid21">
-    <li id="li11">Î÷Ê©</li>
-    <li id="li12">ÍõÕÑ¾ı</li>
-    <li id="li13">õõ²õ</li>
-    <li id="li14">ÑîÓñ»·</li>
+    <li id="li11">è¥¿æ–½</li>
+    <li id="li12">ç‹æ˜­å›</li>
+    <li id="li13">è²‚è‰</li>
+    <li id="li14">æ¨ç‰ç¯</li>
 </ul>
 <input type="button" value="insert" onclick="insert1()"/>
 <script type="text/javascript">
-    //ÔÚ<li>õõ²õ</li>Ö®Ç°Ìí¼Ó <li>¶­Ğ¡Íğ</li>
+    //åœ¨<li>è²‚è‰</li>ä¹‹å‰æ·»åŠ  <li>è‘£å°å®›</li>
     function insert1() {
         /*
-            1¡¢»ñÈ¡µ½li13±êÇ©
-            2¡¢´´½¨li
-            3¡¢´´½¨ÎÄ±¾
-            4¡¢°ÑÎÄ±¾Ìí¼Óµ½liÏÂÃæ
-            5¡¢»ñÈ¡µ½ul
-            6¡¢°ÑliÌí¼Óµ½ulÏÂÃæ£¨ÔÚ<li>õõ²õ</li>Ö®Ç°Ìí¼Ó <li>¶­Ğ¡Íğ</li>£©
+            1ã€è·å–åˆ°li13æ ‡ç­¾
+            2ã€åˆ›å»ºli
+            3ã€åˆ›å»ºæ–‡æœ¬
+            4ã€æŠŠæ–‡æœ¬æ·»åŠ åˆ°liä¸‹é¢
+            5ã€è·å–åˆ°ul
+            6ã€æŠŠliæ·»åŠ åˆ°ulä¸‹é¢ï¼ˆåœ¨<li>è²‚è‰</li>ä¹‹å‰æ·»åŠ  <li>è‘£å°å®›</li>ï¼‰
          */
-        //»ñÈ¡li3 ±êÇ©
+        //è·å–li3 æ ‡ç­¾
         var li13 = document.getElementById("li13");
-        //´´½¨li
+        //åˆ›å»ºli
         var li15 = document.createElement("li");
-        //´´½¨ÎÄ±¾
-        var text15 = document.createTextNode("¶­Ğ¡Íğ");
-        //°ÑÎÄ±¾Ìí¼Óµ½liÏÂÃæ appendChild
+        //åˆ›å»ºæ–‡æœ¬
+        var text15 = document.createTextNode("è‘£å°å®›");
+        //æŠŠæ–‡æœ¬æ·»åŠ åˆ°liä¸‹é¢ appendChild
         li15.appendChild(text15);
-        //»ñÈ¡µ½ul
+        //è·å–åˆ°ul
         var ul21 = document.getElementById("ulid21");
-        //ÔÚ<li>õõ²õ</li>Ö®Ç°Ìí¼Ó <li>¶­Ğ¡Íğ</li>
+        //åœ¨<li>è²‚è‰</li>ä¹‹å‰æ·»åŠ  <li>è‘£å°å®›</li>
         //insertBefore(newNode,oldNode)
         ul21.insertBefore(li15, li13);
-        //Ìæ»»½Úµã
+        //æ›¿æ¢èŠ‚ç‚¹
         ul21.replaceChild(li15, li13);
     }
 
-    //É¾³ı<li id="li24">ÑîÓñ»·</li>
+    //åˆ é™¤<li id="li24">æ¨ç‰ç¯</li>
     function remove1() {
         /*
-            1¡¢»ñÈ¡µ½li24±êÇ©
-            2¡¢»ñÈ¡¸¸½Úµãul±êÇ©
-            3¡¢Ö´ĞĞÉ¾³ı£¨Í¨¹ı¸¸½ÚµãÉ¾³ı£©
+            1ã€è·å–åˆ°li24æ ‡ç­¾
+            2ã€è·å–çˆ¶èŠ‚ç‚¹ulæ ‡ç­¾
+            3ã€æ‰§è¡Œåˆ é™¤ï¼ˆé€šè¿‡çˆ¶èŠ‚ç‚¹åˆ é™¤ï¼‰
          */
-        //»ñÈ¡li±êÇ©
+        //è·å–liæ ‡ç­¾
         var li24 = document.getElementById("li24");
-        //»ñÈ¡¸¸½Úµã
-        //Á½ÖÖ·½Ê½  1¡¢Í¨¹ıid»ñÈ¡ £» 2¡¢Í¨¹ıÊôĞÔ parentNode»ñÈ¡
+        //è·å–çˆ¶èŠ‚ç‚¹
+        //ä¸¤ç§æ–¹å¼  1ã€é€šè¿‡idè·å– ï¼› 2ã€é€šè¿‡å±æ€§ parentNodeè·å–
         var ul31 = document.getElementById("ulid31");
-        //É¾³ı£¨Í¨¹ı¸¸½Úµã£©
+        //åˆ é™¤ï¼ˆé€šè¿‡çˆ¶èŠ‚ç‚¹ï¼‰
         ul31.removeChild(li24);
     }
 
-    //°ÑulÁĞ±í¸´ÖÆµ½ÁíÍâÒ»¸ödivÀïÃæ
+    //æŠŠulåˆ—è¡¨å¤åˆ¶åˆ°å¦å¤–ä¸€ä¸ªdivé‡Œé¢
     /*
-        1¡¢»ñÈ¡µ½ul
-        2¡¢Ö´ĞĞ¸´ÖÆ·½·¨ cloneNode·½·¨¸´ÖÆ true
-        3¡¢°Ñ¸´ÖÆÖ®ºóµÄÄÚÈİ·Åµ½divÀïÃæÈ¥
-     ** »ñÈ¡µ½div
-     ** appendChild·½·¨
+        1ã€è·å–åˆ°ul
+        2ã€æ‰§è¡Œå¤åˆ¶æ–¹æ³• cloneNodeæ–¹æ³•å¤åˆ¶ true
+        3ã€æŠŠå¤åˆ¶ä¹‹åçš„å†…å®¹æ”¾åˆ°divé‡Œé¢å»
+     ** è·å–åˆ°div
+     ** appendChildæ–¹æ³•
      */
-    //»ñÈ¡ul
+    //è·å–ul
     var ul41 = document.getElementById("ulid41");
-    //¸´ÖÆul£¬·Åµ½ÀàËÆ¼ôÇĞ°åÀïÃæ
+    //å¤åˆ¶ulï¼Œæ”¾åˆ°ç±»ä¼¼å‰ªåˆ‡æ¿é‡Œé¢
     var ulcopy = ul41.cloneNode(true);
-    //»ñÈ¡µ½div
+    //è·å–åˆ°div
     var divv = document.getElementById("divv");
-    //°Ñ¸±±¾·Åµ½divÀïÃæÈ¥
+    //æŠŠå‰¯æœ¬æ”¾åˆ°divé‡Œé¢å»
     divv.appendChild(ulcopy);
 </script>
 

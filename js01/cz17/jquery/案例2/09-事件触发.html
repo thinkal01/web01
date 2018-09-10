@@ -6,42 +6,42 @@
     <script src="jquery-1.11.1.js"></script>
     <script>
         $(function () {
-//            $(document).on("click mouseenter", function () {
-//                alert("页面被点击了");
-//            });
+            $(document).on("click mouseenter", function () {
+                alert("页面被点击了");
+            });
 
             //事件触发(1)(触发浏览器行为)
-//            $(document).click();
-//            $(document).mouseenter();
+            $(document).click();
+            $(document).mouseenter();
 
             //事件触发(2)(触发浏览器行为)
-//            $(document).trigger("mouseenter");
-//            $(document).trigger("click");
+            // trigger()函数的返回值当前jQuery对象本身
+            $(document).trigger("mouseenter");
+            $(document).trigger("click");
 
             //事件触发(3)(不触发浏览器行为)
-//            $(document).triggerHandler("mouseenter");
-//            $(document).triggerHandler("click");
+            // 只调用jquery集合中第一个元素的事件处理函数，并且不冒泡）；而且checkbox前面没有打勾（阻止浏览器默认行为）；
+            // triggerHandler返回值是时间处理函数的返回值，不是jquery对象
+            $(document).triggerHandler("mouseenter");
+            $(document).triggerHandler("click");
 
             $("input").on("focus", function () {
                 alert("我获取了焦点！");
             });
 
             //事件触发(2)(触发浏览器行为)(执行程序，触动事件)
-//            $(document).click(function () {
-//                $("input").trigger("focus");
-//            });
+            $(document).click(function () {
+                $("input").trigger("focus");
+            });
 
             //事件触发(3)(不触发浏览器行为)(只执行程序，不触动事件)
             $(document).click(function () {
                 $("input").triggerHandler("focus");
             });
-        })
+        });
     </script>
 </head>
 <body>
-
 <input type="text"/>
-
-
 </body>
 </html>

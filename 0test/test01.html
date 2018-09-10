@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 只能输入数字,在失去焦点时也进行验证(因为可以进行粘贴操作)-->
+<input type='text' onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+       onblur="this.v();"/>
+
+<script type="text/javascript">
+    // 选中select第一选项
+    $('.selector').each(function (i, j) {
+        // 将之前选项置为false
+        $(j).find("option:selected").attr("selected", false);
+        // 选中第一个
+        $(j).find("option").first().attr("selected", true);
+        // $('#id option:first').prop('selected', 'selected');
+    });
+
+    // 限制输入数字及长度
+    $html.find('input').on("keydown", inputNumber).on("keydown", inputLength);
+
+    function inputNumber(event) {
+        event = event || window.event;
+
+        //文本框中只能输入主键盘,小键盘数字及backspace
+        if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || event.keyCode == 8) {
+            return true;
+        }
+
+        //在文本框中输入内容，属于onkeydown的默认行为
+        //如果在onkeydown中取消了默认行为，则输入的内容，不会出现在文本框中
+        return false;
+    }
+
+    function inputLength(event) {
+        event = event || window.event;
+
+        if (event.keyCode == 8 || $(event.target).val().length < 8) {
+            return true;
+        }
+
+        return false;
+    }
+</script>
+
+
+</body>
+</html>

@@ -5,29 +5,31 @@
     <title></title>
     <script src="jquery-1.11.1.js"></script>
     <script>
-        //这种绑定事件的方法是不会层叠的。
-        //        $(document).click(function () {
-        //            alert(1);
-        //        });
-        //        $(document).click(function () {
-        //            alert(2);
-        //        });
+        $(document).click(function () {
+            alert(1);
+        });
+        $(document).click(function () {
+            alert(2);
+        });
 
         //第二种绑定：bind
-        //        $(document).bind("click mouseenter", function () {
-        //            alert(1);
-        //        })
-        //        $(document).bind("click mouseenter", function () {
-        //            alert(2);
-        //        })
+        $(document).bind("click mouseenter", function () {
+            alert(1);
+        });
+        $(document).bind("click mouseenter", function () {
+            alert(2);
+        });
+        // 解绑
+        $(document).unbind("mouseenter");
 
         //第三种
-        //        $(document).delegate(".box","click mouseenter", function () {
-        //            alert(1);
-        //        })
+        $(document).delegate(".box", "click mouseenter", fn);
+        $(document).delegate(".box", "click mouseenter", fn2);
+        // 解绑
+        $(document).undelegate(".box", "mouseenter", fn);
 
         //第四种(重点)
-        //                $(document).on("click mouseenter",".box",{"name":111}, function (event) {
+        // $(document).on("click mouseenter",".box",{"name":111}, function (event) {
         $(document).on("click", ".box", {"name": 111}, function (event) {
             alert(event.data.name);
         });
@@ -35,6 +37,12 @@
         $(document).on("click", ".box", function () {
             alert(1);
         });
+
+        $(".box").on("click", function () {
+            alert(5);
+        });
+        // 解绑
+        $(document).off("mouseenter", ".box");
     </script>
 </head>
 <body>

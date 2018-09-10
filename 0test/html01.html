@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <title></title>
     <style type="text/css">
-        span{
+        span {
             float: left;
             width: 100px;
             height: 100px;
             background-color: #0000FF;
         }
+
         /*选择第一个span*/
-        span:first-child{
+        span:first-child {
             background-color: red;
         }
     </style>
 </head>
 <body>
-    <span>123</span>
-    <span>464</span>
+<span>123</span>
+<span>464</span>
+
+<!--单独添加一个链接，实现跳转-->
+<input type="button" value="我是一个按钮" onclick="javascrtpt:window.location.href='http://blog.sina.com.cn/mleavs'">
+<!--触发一个函数跳转-->
+<script>
+    function jump() {
+        window.location.href = "http://blog.sina.com.cn/mleavs";
+    }
+</script>
+<input type="button" value="我是一个按钮" onclick=javascrtpt:jump()>
+
 </body>
+<script type="text/javascript">
+    // jquery如何获取第一个或最后一个子元素？
+    $(this).children("input:first-child").val();
+    $(this).children("input:last-child").val();
+</script>
 </html>

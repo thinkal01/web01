@@ -1,429 +1,451 @@
 <html>
-	<head>
-		<title>bookStore商城-商品信息展示</title>
-		 <meta http-equiv="content-type" content="text/html; charset=gbk">
-		<style type="text/css">
-			.main{
-				/*设置外边距，下面有30px距离*/
-				margin:0px 0px 30px 0px;
-				/*背景色*/
-				background-color:#ffffff;
-				/*字体大小*/
-				font-size:12px;
-				/*文字颜色*/
-				color:#000000;
-				/*文本对齐方式*/
-				text-align:center;
-				/*垂直对齐方式*/
-				vertical-align:top;
-				/*设置行高*/
-				line-height:150%;	
-				/*设置字体*/
-				font-family: Arial, Helvetica, sans-serif;				
-			}
-			/*设置a标签 字体12px 颜色 #0066FF*/
-			a {
-				font-size: 12px;
-				color: #0066FF; /*#1E33F7*/
-			}
-			/*设置未访问的超连接无下划线*/
-			a:link {
-				text-decoration: none;
-			}
-			/*设置访问后的连接颜色为#0066ff 也无下划线*/
-			a:visited {
-				text-decoration: none;
-				color: #0066FF;
-			}
-			/*设置鼠标移到超连接上无下划线颜色为#990099*/
-			a:hover {
-				text-decoration: none;
-				color: #990099; /*颜色变换*/
-			}
-			/*设置选定的超连接无下划线，颜色为#0066ff*/
-			a:active {
-				text-decoration: none;
-				color: #0066FF;
-			}
-			/*设置所有td标签*/
-			td{
-				text-align:left;
-				vertical-align:top;
-				font-size:12px;
-			}
-			/*设置所有的hr标签*/
-			hr{
-				/*颜色*/
-				color:#cccccc;
-				/*高度*/
-				height:1px;
-				/*上外边距5px*/
-				margin-top:5px;
-				/*下外边距5px*/
-				margin-bottom:5px;
-				/*分隔线如果超出框架部分隐藏*/
-				overflow:hidden;
-			}
-			/*设置h1*/
-			h1{
-				font-size:14px;
-				color:#000000;				
-				margin-bottom:5px;
-				font-weight:bold;
-				display:inline;		
-				text-align:left;				
-			}
-			
-			#head{
-				/*设置head这个div宽度为100%*/
-				width:100%;
-			}
-			.headtab{
-				width:100%;
-			}
-			.headtab td{
-				/*设置td内边距上10px 右50px 下25px 左135px*/
-				padding:10px 50px 25px 135px;
-			}
-			
-			#menu{
-				width:100%;
-				background-color:#1c3f09;/*设置背景色*/
-				border-top-width:4px;/*设置上边框宽度4px*/
-				border-top-style:solid; /*设置上边框样式 实线*/
-				border-top-color:#82b211; /*设置上边框的颜色 #82b211*/
-				text-align:center;
-				font-size:14px;
-				padding:10px 0px 10px 0px;
-			}
-			#menu td{
-				text-align:center;
-			}
-			/*#menu下的a标签样式设置*/
-			#menu a{
-				font-size:14px;
-				color:#ffffff; /*超连接文字颜色*/
-				font-weight:bold; /*超连接字体加粗*/
-				padding:10px 10px 10px 10px; /*超连接内边距*/
-			}
-			
-			#menu a:link {
-				text-decoration: none;
-				font-weight: bold;
-			}
+<head>
+    <title>bookStore商城-商品信息展示</title>
+    <meta http-equiv="content-type" content="text/html; charset=gbk">
+    <style type="text/css">
+        .main {
+            /*设置外边距，下面有30px距离*/
+            margin: 0px 0px 30px 0px;
+            /*背景色*/
+            background-color: #ffffff;
+            /*字体大小*/
+            font-size: 12px;
+            /*文字颜色*/
+            color: #000000;
+            /*文本对齐方式*/
+            text-align: center;
+            /*垂直对齐方式*/
+            vertical-align: top;
+            /*设置行高*/
+            line-height: 150%;
+            /*设置字体*/
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-			#menu a:visited {
-				text-decoration: none;
-				color: #FFFFFF;
-				font-weight: bold;
-			}
+        /*设置a标签 字体12px 颜色 #0066FF*/
+        a {
+            font-size: 12px;
+            color: #0066FF; /*#1E33F7*/
+        }
 
-			#menu a:hover {
-				text-decoration: none;
-				color: #999999; /*颜色变换*/
-				font-weight: bold;
-			}
+        /*设置未访问的超连接无下划线*/
+        a:link {
+            text-decoration: none;
+        }
 
-			#menu a:active {
-				text-decoration: none;
-				color: #FFFFFF;
-				font-weight: bold;
-			}
-			/*设置search样式*/	
-			#search{
-				width:100%;
-				text-align:center;
-				color:#ffffff;
-				font-weight:bold;
-				padding:5px 0px 5px 0px;
-				background-color:#b6b684;
-			}
-			/*设置search中的文本框样式*/
-			.inputtxt{
-				width:130px;
-				height:18px;
-				border:1px solid #999999;
-			}
-			/*content整体设置*/
-			#content{
-				width:900px; /*宽度900px*/
-				margin-top:10px; /*上外边距*/
-				/*左右外边 浏览器默认*/	
-				margin-right:auto;
-				margin-left:auto;
-			}
-			
-			.contentlist{
-				background-color:#fcfdef;
-				border:1px solid #cccccc;
-				width:99%;
-				margin-left:5px;
-				
-			}
-			.contentlist td{
-				padding:20px;
-			}
+        /*设置访问后的连接颜色为#0066ff 也无下划线*/
+        a:visited {
+            text-decoration: none;
+            color: #0066FF;
+        }
 
-			.booklist{
-				width:100%;
-				
-			}
-			.booklist td{
-				text-align:center;
-				width:25%;
-				padding:10px;
-			}
-			#foot{
-				width:100%;
-				background-color:#efeedc;
-				margin-top:15px;				
-			}
-			
-			#pagediv{
-				width:600px;
-				text-align:center;
-				margin:5px;
-				padding:5px;
-			}
-			#pagediv ul{
-				margin:5px;
-				padding:5px;
-				font-size:14px;
-			}
-			#pagediv li{
-				margin:1px;
-				padding:1px;
-				display:inline;
-				list-style-type:none;
-			}
-			
-			#pagediv a,#pagediv a:visited {
-				padding: 5px;
-				border: 1px solid #9aafe5;
-				text-decoration: none;
-				color: #2e6ab1;
-			}
+        /*设置鼠标移到超连接上无下划线颜色为#990099*/
+        a:hover {
+            text-decoration: none;
+            color: #990099; /*颜色变换*/
+        }
 
-			#pagediv a:hover,#pagediv a:active {
-				padding: 5px;
-				border: 1px solid #2b66a5;
-				color: #000000;
-				background-color: lightyellow;
-			}
-			
-			#pagediv li.currentpage{
-				font-weight:bold;
-				padding:5px;
-				border:1px solid navy;
-				background-color:#2e6ab1;
-				color:#ffffff;
-				
-			}
-			#pagediv li.nextpage{
-				font-weight:bold;
-				padding:5px;
-			}
-			#pagediv li.disablepage{
-				padding: 5px;
-				border: 1px solid #929292;
-				color: #929292;
-			}
-			
-			
-		</style>
-	</head>
-	<body class="main">
-		<!--
-			head是由一行两列table完成展示 
-		-->
-		<div id="head">
-			<table class="headtab">
-				<tr>
-					<td align="left">
-						<img src="images/logo.png">
-					</td>
-					<td style="text-align:right">					
-						<img src="images/cart.gif">							
-						<a>购物车</a>|
-						<a>帮助中心</a>|
-						<a>我的帐户</a>|
-						<a>新用户注册</a>|						
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!--
-			menu其中就是很多超连接
-		-->
-		<div id="menu">	
-			<table width="100%">
-				<tr>
-					<td>
-						<a href="#">文学</a>			
-						<a href="#">生活</a>
-						<a href="#">计算机</a>
-						<a href="#">外语</a>
-						<a href="#">经管</a>
-						<a href="#">励志</a>
-						<a href="#">社科</a>			
-						<a href="#">学术</a>
-						<a href="#">少儿</a>
-						<a href="#">艺术</a>			
-						<a href="#">原版</a>
-						<a href="#">科技</a>
-						<a href="#">考试</a>			
-						<a href="#">生活百科</a>
-						<a href="#" style="color:yellow">全部商品目录</a>
-					</td>
-				</tr>		
-			</table>	
-		</div>
-		<!--
-			search是由一行一列table完成
-		-->
-		<div id="search">
-			<table width="100%">
-				<tr>
-					<td style="text-align:right;padding-right:220px">
-						Search
-						<input type="text" class="inputtxt">
-						<input type="image" src="images/serchbutton.gif" style="margin-bottom:-4px;">						
-					</td>
-				</tr>
-			</table>
-		</div>	
-		<!--
-			
-		-->
-		<div id="content">
-			<table width="100%">
-				<tr>
-					<td>
-						<div align="right" style="text-align:right;margin:5px 10px 5px 10px;">
-							<a href="#">首页</a>&nbsp;&gt;&nbsp;旅游&nbsp;&gt;&nbsp;图书列表&nbsp;&nbsp;&nbsp;
-						</div>
-						<table width="100%" class="contentlist">
-							<tr>
-								<td>
-									<h1>商品目录</h1>
-									<hr>
-									<h1>计算机类</h1>共xxx种商品
-									<hr>
-									<div>
-										<img src="images/productlist.gif" width="100%">
-									<div>
-									<table class="booklist">
-										<tr>
-											<td>
-												<div><img src="bookcover/101.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>											
-												<div><img src="bookcover/102.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>												
-												<div><img src="bookcover/103.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>											
-												<div><img src="bookcover/104.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>											
-										</tr>
-									</table>
-									
-									<table width="100%" align="center">
-										<tr>
-											<td>
-												<div><img src="bookcover/105.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>											
-												<div><img src="bookcover/106.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>												
-												<div><img src="bookcover/107.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>
-											<td>											
-												<div><img src="bookcover/code.jpg" width="130" height="197"></div>
-												<div>
-													书名:xxx<br>
-													售价:xxx
-												</div>
-											</td>											
-										</tr>
-									</table>
-									
-									<!--分页-->
-									<div id="pagediv">
-										<ul>
-											<li class="disablepage">上一页</li>											
-											<li class="currentpage">1</li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li>...</li>
-											<li><a href="#">6</a></li>
-											<li><a href="#">7</a></li>
-											<li><a href="#">8</a></li>
-											<li><a href="#">9</a></li>
-											<li class="nextpage"><a href="#">下一页</a></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!--
-			foot是由两行两列的table完成。
-			但是第一个td合并了2行
-		-->
-		<div id="foot">
-			<table bgcolor="#efeedc" width="100%" align="center">
-				<tr>
-					<td rowspan="2" style="width:10%">
-						<img src="images/logo.png" width="195" height="50" style="margin-left:175px;">
-					</td>
-					<td style="padding-left:50px;padding-top:5px;">
-						<a><font color="#747556">CONTACT US</font></a>
-					</td>
-				</tr>
-				<tr>
-					
-					<td style="padding-left:50px;">
-						<font color="#747556">copyright&nbsp;2008&copy;BookStore All Rights RESERVED</font>
-					</td>
-				</tr>
-				
-			</table>
-		</div>			
-	</body>
+        /*设置选定的超连接无下划线，颜色为#0066ff*/
+        a:active {
+            text-decoration: none;
+            color: #0066FF;
+        }
+
+        /*设置所有td标签*/
+        td {
+            text-align: left;
+            vertical-align: top;
+            font-size: 12px;
+        }
+
+        /*设置所有的hr标签*/
+        hr {
+            /*颜色*/
+            color: #cccccc;
+            /*高度*/
+            height: 1px;
+            /*上外边距5px*/
+            margin-top: 5px;
+            /*下外边距5px*/
+            margin-bottom: 5px;
+            /*分隔线如果超出框架部分隐藏*/
+            overflow: hidden;
+        }
+
+        /*设置h1*/
+        h1 {
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 5px;
+            font-weight: bold;
+            display: inline;
+            text-align: left;
+        }
+
+        #head {
+            /*设置head这个div宽度为100%*/
+            width: 100%;
+        }
+
+        .headtab {
+            width: 100%;
+        }
+
+        .headtab td {
+            /*设置td内边距上10px 右50px 下25px 左135px*/
+            padding: 10px 50px 25px 135px;
+        }
+
+        #menu {
+            width: 100%;
+            background-color: #1c3f09; /*设置背景色*/
+            border-top-width: 4px; /*设置上边框宽度4px*/
+            border-top-style: solid; /*设置上边框样式 实线*/
+            border-top-color: #82b211; /*设置上边框的颜色 #82b211*/
+            text-align: center;
+            font-size: 14px;
+            padding: 10px 0px 10px 0px;
+        }
+
+        #menu td {
+            text-align: center;
+        }
+
+        /*#menu下的a标签样式设置*/
+        #menu a {
+            font-size: 14px;
+            color: #ffffff; /*超连接文字颜色*/
+            font-weight: bold; /*超连接字体加粗*/
+            padding: 10px 10px 10px 10px; /*超连接内边距*/
+        }
+
+        #menu a:link {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #menu a:visited {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        #menu a:hover {
+            text-decoration: none;
+            color: #999999; /*颜色变换*/
+            font-weight: bold;
+        }
+
+        #menu a:active {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        /*设置search样式*/
+        #search {
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            background-color: #b6b684;
+        }
+
+        /*设置search中的文本框样式*/
+        .inputtxt {
+            width: 130px;
+            height: 18px;
+            border: 1px solid #999999;
+        }
+
+        /*content整体设置*/
+        #content {
+            width: 900px; /*宽度900px*/
+            margin-top: 10px; /*上外边距*/
+            /*左右外边 浏览器默认*/
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .contentlist {
+            background-color: #fcfdef;
+            border: 1px solid #cccccc;
+            width: 99%;
+            margin-left: 5px;
+
+        }
+
+        .contentlist td {
+            padding: 20px;
+        }
+
+        .booklist {
+            width: 100%;
+
+        }
+
+        .booklist td {
+            text-align: center;
+            width: 25%;
+            padding: 10px;
+        }
+
+        #foot {
+            width: 100%;
+            background-color: #efeedc;
+            margin-top: 15px;
+        }
+
+        #pagediv {
+            width: 600px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #pagediv ul {
+            margin: 5px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        #pagediv li {
+            margin: 1px;
+            padding: 1px;
+            display: inline;
+            list-style-type: none;
+        }
+
+        #pagediv a, #pagediv a:visited {
+            padding: 5px;
+            border: 1px solid #9aafe5;
+            text-decoration: none;
+            color: #2e6ab1;
+        }
+
+        #pagediv a:hover, #pagediv a:active {
+            padding: 5px;
+            border: 1px solid #2b66a5;
+            color: #000000;
+            background-color: lightyellow;
+        }
+
+        #pagediv li.currentpage {
+            font-weight: bold;
+            padding: 5px;
+            border: 1px solid navy;
+            background-color: #2e6ab1;
+            color: #ffffff;
+
+        }
+
+        #pagediv li.nextpage {
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        #pagediv li.disablepage {
+            padding: 5px;
+            border: 1px solid #929292;
+            color: #929292;
+        }
+
+
+    </style>
+</head>
+<body class="main">
+<!--
+    head是由一行两列table完成展示
+-->
+<div id="head">
+    <table class="headtab">
+        <tr>
+            <td align="left">
+                <img src="images/logo.png">
+            </td>
+            <td style="text-align:right">
+                <img src="images/cart.gif">
+                <a>购物车</a>|
+                <a>帮助中心</a>|
+                <a>我的帐户</a>|
+                <a>新用户注册</a>|
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+    menu其中就是很多超连接
+-->
+<div id="menu">
+    <table width="100%">
+        <tr>
+            <td>
+                <a href="#">文学</a>
+                <a href="#">生活</a>
+                <a href="#">计算机</a>
+                <a href="#">外语</a>
+                <a href="#">经管</a>
+                <a href="#">励志</a>
+                <a href="#">社科</a>
+                <a href="#">学术</a>
+                <a href="#">少儿</a>
+                <a href="#">艺术</a>
+                <a href="#">原版</a>
+                <a href="#">科技</a>
+                <a href="#">考试</a>
+                <a href="#">生活百科</a>
+                <a href="#" style="color:yellow">全部商品目录</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+    search是由一行一列table完成
+-->
+<div id="search">
+    <table width="100%">
+        <tr>
+            <td style="text-align:right;padding-right:220px">
+                Search
+                <input type="text" class="inputtxt">
+                <input type="image" src="images/serchbutton.gif" style="margin-bottom:-4px;">
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+
+-->
+<div id="content">
+    <table width="100%">
+        <tr>
+            <td>
+                <div align="right" style="text-align:right;margin:5px 10px 5px 10px;">
+                    <a href="#">首页</a>&nbsp;&gt;&nbsp;旅游&nbsp;&gt;&nbsp;图书列表&nbsp;&nbsp;&nbsp;
+                </div>
+                <table width="100%" class="contentlist">
+                    <tr>
+                        <td>
+                            <h1>商品目录</h1>
+                            <hr>
+                            <h1>计算机类</h1>共xxx种商品
+                            <hr>
+                            <div>
+                                <img src="images/productlist.gif" width="100%">
+                                <div>
+                                    <table class="booklist">
+                                        <tr>
+                                            <td>
+                                                <div><img src="bookcover/101.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/102.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/103.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/104.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table width="100%" align="center">
+                                        <tr>
+                                            <td>
+                                                <div><img src="bookcover/105.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/106.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/107.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div><img src="bookcover/code.jpg" width="130" height="197"></div>
+                                                <div>
+                                                    书名:xxx<br>
+                                                    售价:xxx
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <!--分页-->
+                                    <div id="pagediv">
+                                        <ul>
+                                            <li class="disablepage">上一页</li>
+                                            <li class="currentpage">1</li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>...</li>
+                                            <li><a href="#">6</a></li>
+                                            <li><a href="#">7</a></li>
+                                            <li><a href="#">8</a></li>
+                                            <li><a href="#">9</a></li>
+                                            <li class="nextpage"><a href="#">下一页</a></li>
+                                        </ul>
+                                    </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+    foot是由两行两列的table完成。
+    但是第一个td合并了2行
+-->
+<div id="foot">
+    <table bgcolor="#efeedc" width="100%" align="center">
+        <tr>
+            <td rowspan="2" style="width:10%">
+                <img src="images/logo.png" width="195" height="50" style="margin-left:175px;">
+            </td>
+            <td style="padding-left:50px;padding-top:5px;">
+                <a><font color="#747556">CONTACT US</font></a>
+            </td>
+        </tr>
+        <tr>
+
+            <td style="padding-left:50px;">
+                <font color="#747556">copyright&nbsp;2008&copy;BookStore All Rights RESERVED</font>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</body>
 </html>
