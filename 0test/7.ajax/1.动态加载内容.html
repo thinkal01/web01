@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			//1 创建5区域
+			for(var i = 0 ; i < 10 ; i++){
+				createDiv();
+			}
+			
+			//2 窗口滚动事件
+			$(window).scroll(function(){
+				// 1 显示区域高度
+				var windowHeight = $(this).height();
+				// 2 滚动位置
+				var top = $(this).scrollTop();
+				// 3 文档高度
+				var documentHeight = $(document).height();
+				
+				// 1 + 2 接近 3 时 添加
+				if(windowHeight + top + 100 > documentHeight){
+					createDiv();
+					//发送ajax填充div内容
+				}
+				$("#showMsg").html(windowHeight + " - " + top + " - " + documentHeight);
+			});
+			
+		});
+		
+		var num = 1;
+		//创建div
+		function createDiv(){
+			var divObj = $("<div></div>");
+			divObj.html(num++);
+			divObj.css({
+				"border": "1px solid #000",
+  				"height": "100px",
+ 			 	"width": "500px",
+				"margin":"5px",
+				"font-size":"30px"
+			});
+			$("body").append(divObj);
+		}
+	</script>
+	
+	<style type="text/css">
+		#showMsg{
+			  position: fixed;
+			  border: 1px solid #000;
+			  width: 300px;
+			  height: 30px;
+			  left: 600px;
+			  bottom: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="showMsg"></div>
+</body>
+</html><

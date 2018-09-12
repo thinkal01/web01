@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //所有详情隐藏
+            //点击分组显示详情，隐藏其他详情
+            $("div>span").siblings().hide().end().click(function () {
+                $(this).siblings().show().end().parent().siblings().find("a").hide();
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        div * {
+            display: block;
+            width: 200px;
+        }
+
+        div span {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>交往中</span>
+    <a>唐诗</a>
+    <a>大保健</a>
+</div>
+<div>
+    <span>已分手</span>
+    <a>王鹤</a>
+    <a>海涛</a>
+</div>
+<div>
+    <span>已嫁人</span>
+    <a>姜涛</a>
+    <a>刘跃东</a>
+</div>
+</body>
+</html>

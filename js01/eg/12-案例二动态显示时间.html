@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>HTMLÊ¾Àı</title>
+<title>HTMLç¤ºä¾‹</title>
 <style type="text/css">
 </style>
 </head>
@@ -8,15 +8,15 @@
 	<div id="times"></div>
 	<script type="text/javascript">
 		function getD1() {
-			//µ±Ç°Ê±¼ä
+			//å½“å‰æ—¶é—´
 			var date = new Date();
-			//¸ñÊ½»¯
+			//æ ¼å¼åŒ–
 			var d1 = date.toLocaleString();
-			//»ñÈ¡divf
+			//è·å–divf
 			var div1 = document.getElementById("times");
 			div1.innerHTML = d1;
 		}
-		//Ê¹ÓÃ¶¨Ê±Æ÷ÊµÏÖÃ¿Ò»ÃëĞ´Ò»´ÎÊ±¼ä
+		//ä½¿ç”¨å®šæ—¶å™¨å®ç°æ¯ä¸€ç§’å†™ä¸€æ¬¡æ—¶é—´
 		setInterval("getD1();", 1000);
 	</script>
 </body>
