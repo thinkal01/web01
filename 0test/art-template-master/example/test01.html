@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/template-web.js"></script>
+</head>
+<body>
+
+<!--空值设置为0-->
+<script id="remainInventory" type="text/html">
+    <p>剩余电池数量：{{if battery!=null}}{{battery.remainNum}}{{else}}0{{/if}}</p>
+</script>
+
+</body>
+</html>

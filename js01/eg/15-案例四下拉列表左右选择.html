@@ -1,6 +1,6 @@
-<html>
+ï»¿<html>
 <head>
-    <title>HTMLÊ¾Àý</title>
+    <title>HTMLç¤ºä¾‹</title>
 </head>
 <body>
 <div id="s1" style="float:left;">
@@ -16,8 +16,8 @@
     </div>
 
     <div>
-        <input type="button" value="Ñ¡ÖÐÌí¼Óµ½ÓÒ±ß" onclick="selToRight();"/><br/>
-        <input type="button" value="È«²¿Ìí¼Óµ½ÓÒ±ß" onclick="allToRight();"/>
+        <input type="button" value="é€‰ä¸­æ·»åŠ åˆ°å³è¾¹" onclick="selToRight();"/><br/>
+        <input type="button" value="å…¨éƒ¨æ·»åŠ åˆ°å³è¾¹" onclick="allToRight();"/>
     </div>
 </div>
 
@@ -28,130 +28,129 @@
             <option>QQQQQQQQ</option>
         </select>
     </div>
-
     <div>
-        <input type="button" value="Ñ¡ÖÐÌí¼Óµ½×ó±ß" onclick="selToLeft();"/><br/>
-        <input type="button" value="È«²¿Ìí¼Óµ½×ó±ß" onclick="allToLeft();"/>
+        <input type="button" value="é€‰ä¸­æ·»åŠ åˆ°å·¦è¾¹" onclick="selToLeft();"/><br/>
+        <input type="button" value="å…¨éƒ¨æ·»åŠ åˆ°å·¦è¾¹" onclick="allToLeft();"/>
     </div>
 </div>
 <div style="width:200px;height:200px;background:red;float:left"></div>
 <div style="width:200px;height:200px;background:yellow"></div>
 
 <script type="text/javascript">
-    //ÊµÏÖÈ«²¿Ìí¼Óµ½×ó±ß
+    //å®žçŽ°å…¨éƒ¨æ·»åŠ åˆ°å·¦è¾¹
     function allToLeft() {
         /*
-            1¡¢»ñÈ¡select2ÀïÃæµÄoption¶ÔÏó
-            2¡¢·µ»ØÊÇÊý×é£¬±éÀúÊý×é
-            3¡¢µÃµ½Ã¿Ò»¸öoption¶ÔÏó
-            4¡¢»ñÈ¡µ½select1
-            5¡¢Ìí¼Óµ½select1ÀïÃæ
-                - Ê¹ÓÃappendChild·½·¨
+            1ã€èŽ·å–select2é‡Œé¢çš„optionå¯¹è±¡
+            2ã€è¿”å›žæ˜¯æ•°ç»„ï¼ŒéåŽ†æ•°ç»„
+            3ã€å¾—åˆ°æ¯ä¸€ä¸ªoptionå¯¹è±¡
+            4ã€èŽ·å–åˆ°select1
+            5ã€æ·»åŠ åˆ°select1é‡Œé¢
+                - ä½¿ç”¨appendChildæ–¹æ³•
          */
-        //»ñÈ¡select2
+        //èŽ·å–select2
         var select2 = document.getElementById("select2");
-        //»ñÈ¡select1
+        //èŽ·å–select1
         var select1 = document.getElementById("select1");
-        //»ñÈ¡select2ÀïÃæµÄoption
+        //èŽ·å–select2é‡Œé¢çš„option
         var options1 = select2.getElementsByTagName("option");
-        //±éÀúÊý×é
+        //éåŽ†æ•°ç»„
         for (var m = 0; m < options1.length; m++) {
-            //µÃµ½Ã¿Ò»¸öoption
+            //å¾—åˆ°æ¯ä¸€ä¸ªoption
             var op11 = options1[m];
-            //Ìí¼Óµ½select1ÀïÃæ
+            //æ·»åŠ åˆ°select1é‡Œé¢
             select1.appendChild(op11);
             m--;
         }
     }
 
-    //Ñ¡ÔñÌí¼Óµ½×ó±ß
+    //é€‰æ‹©æ·»åŠ åˆ°å·¦è¾¹
     function selToLeft() {
         /*
-            1¡¢»ñÈ¡select2ÀïÃæµÄoption¶ÔÏó
-            2¡¢·µ»ØÊÇÊý×é£¬±éÀúÊý×é
-            3¡¢µÃµ½Ã¿Ò»¸öoption¶ÔÏó
-            4¡¢ÅÐ¶ÏoptionÊÇ·ñ±»Ñ¡ÖÐ
-                - ifÌõ¼þ ÊôÐÔ selected == true£ºÑ¡Ôñ
-            5¡¢»ñÈ¡select1
-            6¡¢Ìí¼Óµ½select1ÀïÃæ
-                - Ê¹ÓÃappendChild·½·¨
+            1ã€èŽ·å–select2é‡Œé¢çš„optionå¯¹è±¡
+            2ã€è¿”å›žæ˜¯æ•°ç»„ï¼ŒéåŽ†æ•°ç»„
+            3ã€å¾—åˆ°æ¯ä¸€ä¸ªoptionå¯¹è±¡
+            4ã€åˆ¤æ–­optionæ˜¯å¦è¢«é€‰ä¸­
+                - ifæ¡ä»¶ å±žæ€§ selected == trueï¼šé€‰æ‹©
+            5ã€èŽ·å–select1
+            6ã€æ·»åŠ åˆ°select1é‡Œé¢
+                - ä½¿ç”¨appendChildæ–¹æ³•
          */
-        //»ñÈ¡select1
+        //èŽ·å–select1
         var s1 = document.getElementById("select1");
-        //»ñÈ¡µ½select2
+        //èŽ·å–åˆ°select2
         var s2 = document.getElementById("select2");
-        //µÃµ½s1ÀïÃæµÄoption¶ÔÏó
+        //å¾—åˆ°s1é‡Œé¢çš„optionå¯¹è±¡
         var opss = s2.getElementsByTagName("option");
-        //±éÀúÊý×é
+        //éåŽ†æ•°ç»„
         for (var aa = 0; aa < opss.length; aa++) {
-            //µÃµ½Ã¿Ò»¸öoption
+            //å¾—åˆ°æ¯ä¸€ä¸ªoption
             var op = opss[aa];
-            //ÅÐ¶ÏÊÇ·ñ±»Ñ¡ÖÐ
-            if (op.selected == true) { //±»Ñ¡ÖÐ
-                //Ìí¼Óµ½select1ÀïÃæ
+            //åˆ¤æ–­æ˜¯å¦è¢«é€‰ä¸­
+            if (op.selected == true) { //è¢«é€‰ä¸­
+                //æ·»åŠ åˆ°select1é‡Œé¢
                 s1.appendChild(op);
                 aa--;
             }
         }
     }
 
-    //È«²¿Ìí¼Óµ½ÓÒ±ß
+    //å…¨éƒ¨æ·»åŠ åˆ°å³è¾¹
     function allToRight() {
         /*
-            1¡¢»ñÈ¡µÚÒ»¸öselectÏÂÃæµÄoption¶ÔÏó
-            2¡¢·µ»ØÊý×é£¬±éÀúÊý×é
-            3¡¢µÃµ½Ã¿Ò»¸öoption¶ÔÏó
-            4¡¢µÃµ½select2
-            5¡¢Ìí¼Óµ½select2ÏÂÃæ
-                - appendChild·½·¨
+            1ã€èŽ·å–ç¬¬ä¸€ä¸ªselectä¸‹é¢çš„optionå¯¹è±¡
+            2ã€è¿”å›žæ•°ç»„ï¼ŒéåŽ†æ•°ç»„
+            3ã€å¾—åˆ°æ¯ä¸€ä¸ªoptionå¯¹è±¡
+            4ã€å¾—åˆ°select2
+            5ã€æ·»åŠ åˆ°select2ä¸‹é¢
+                - appendChildæ–¹æ³•
          */
-        //µÃµ½select2
+        //å¾—åˆ°select2
         var s2 = document.getElementById("select2");
-        //µÃµ½selectÏÂÃæµÄoption¶ÔÏó
+        //å¾—åˆ°selectä¸‹é¢çš„optionå¯¹è±¡
         var s1 = document.getElementById("select1");
-        var ops = s1.getElementsByTagName("option");//·µ»ØµÄÊÇÊý×é
-        //±éÀúÊý×é
+        var ops = s1.getElementsByTagName("option");//è¿”å›žçš„æ˜¯æ•°ç»„
+        //éåŽ†æ•°ç»„
         for (var j = 0; j < ops.length; j++) {
-            //µÃµ½Ã¿Ò»¸öoption¶ÔÏó
+            //å¾—åˆ°æ¯ä¸€ä¸ªoptionå¯¹è±¡
             var op1 = ops[j];
-            //Ìí¼Óoptionµ½s2ÏÂÃæ
+            //æ·»åŠ optionåˆ°s2ä¸‹é¢
             s2.appendChild(op1);
             j--;
         }
     }
 
-    //ÊµÏÖÑ¡ÖÐÌí¼Óµ½ÓÒ±ß
+    //å®žçŽ°é€‰ä¸­æ·»åŠ åˆ°å³è¾¹
     function selToRight() {
         /*
-            1¡¢»ñÈ¡select1ÀïÃæµÄoption
-                - getElementsByTagName()·µ»ØÊÇÊý×é
-                - ±éÀúÊý×é£¬µÃµ½Ã¿Ò»¸öoption
-            2¡¢ÅÐ¶ÏoptionÊÇ·ñ±»Ñ¡ÖÐ
-                - ÊôÐÔ selected£¬ÅÐ¶ÏÊÇ·ñ±»Ñ¡ÖÐ
-         ** selected= true: Ñ¡ÖÐ
-         ** selected= false£ºÃ»ÓÐÑ¡Ôñ
-            3¡¢Èç¹ûÊÇÑ¡ÖÐ£¬°ÑÑ¡ÔñµÄÌí¼Óµ½ÓÒ±ßÈ¥
-            4¡¢µÃµ½select2
-            4¡¢Ìí¼ÓÑ¡ÔñµÄ²¿·Ö
-                - appendChild·½·¨
+            1ã€èŽ·å–select1é‡Œé¢çš„option
+                - getElementsByTagName()è¿”å›žæ˜¯æ•°ç»„
+                - éåŽ†æ•°ç»„ï¼Œå¾—åˆ°æ¯ä¸€ä¸ªoption
+            2ã€åˆ¤æ–­optionæ˜¯å¦è¢«é€‰ä¸­
+                - å±žæ€§ selectedï¼Œåˆ¤æ–­æ˜¯å¦è¢«é€‰ä¸­
+         ** selected= true: é€‰ä¸­
+         ** selected= falseï¼šæ²¡æœ‰é€‰æ‹©
+            3ã€å¦‚æžœæ˜¯é€‰ä¸­ï¼ŒæŠŠé€‰æ‹©çš„æ·»åŠ åˆ°å³è¾¹åŽ»
+            4ã€å¾—åˆ°select2
+            4ã€æ·»åŠ é€‰æ‹©çš„éƒ¨åˆ†
+                - appendChildæ–¹æ³•
          */
-        //»ñÈ¡select1ÀïÃæµÄoption
-        //»ñÈ¡select2
+        //èŽ·å–select1é‡Œé¢çš„option
+        //èŽ·å–select2
         var select2 = document.getElementById("select2");
-        //µÃµ½select1
+        //å¾—åˆ°select1
         var select1 = document.getElementById("select1");
-        //µÃµ½option
+        //å¾—åˆ°option
         var options1 = select1.getElementsByTagName("option");
-        //±éÀúÊý×é
+        //éåŽ†æ•°ç»„
         for (var i = 0; i < options1.length; i++) {
             //alert(i);
-            //µÚÒ»´ÎÑ­»· i=0  length£º5
-            //µÚ¶þ´ÎÑ­»· i=0  length£º4
+            //ç¬¬ä¸€æ¬¡å¾ªçŽ¯ i=0  lengthï¼š5
+            //ç¬¬äºŒæ¬¡å¾ªçŽ¯ i=0  lengthï¼š4
             //       i=0  length: 3
-            var option1 = options1[i];//µÃµ½Ã¿Ò»¸öoption¶ÔÏó
-            //ÅÐ¶ÏÊÇ·ñ±»Ñ¡ÖÐ
+            var option1 = options1[i];//å¾—åˆ°æ¯ä¸€ä¸ªoptionå¯¹è±¡
+            //åˆ¤æ–­æ˜¯å¦è¢«é€‰ä¸­
             if (option1.selected == true) {
-                //Ìí¼Óµ½select2ÀïÃæ
+                //æ·»åŠ åˆ°select2é‡Œé¢
                 select2.appendChild(option1);
                 i--;
             }
