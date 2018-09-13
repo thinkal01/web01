@@ -6,45 +6,7 @@
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <!-- js是弱类型语言 -->
     <script type="text/javascript">
-        //java中的变量分类
-        //1 基本数据类型 => 8个
-        //2 引用数据类型
-
-        //js中的变量分类
-        //1 原始类型
-        //2 对象类型
-
-        //js的原始类型  5种
-        //1 number 数字  不分整型或浮点型
-        //由于保存浮点数需要的内存空间是保存整数值的两倍，因此ECMAScrip会将浮点数值转换为整数值。
-        //如果小数点后没有跟任何数字或都为0,浮点数本身就是一个整数就会被转换为整数。
-
-        //2 string 字符串
-        //3 boolean 布尔
-        //4 null 一般人为来赋值为null. 对象数据类型的占位符.
-        //5 undefined(未定义) null的衍生值. 通常是系统自动赋值.创建一个变量没有初始化.
-        var a = 10;
-        var b = 3.14;
-        var c = "hello";
-        var d = 'world';
-        var e = true;
-        var f = null; // object
-        var g = undefined;
-        var h;
-        var i = new Object();
-
-        //运算符=> typeof => 返回原始类型的类型
-        alert(typeof f);
-        // 是javascript中的一个bug.后来将该bug保留了.
-        // typeof null => object
-
-        //Instance of 与java一样, 用于判断变量是否属于指定类型
-        var str = new String("abc");
-        alert(str instanceof String);//true
-        alert("abc" instanceof String);//false
-
         /*
             声明变量, 变量的类型是随时可以变化的,区分大小写
             定义了多个同名的变量是，后定义的同名变量是覆盖前面定义的同名变量。
@@ -122,7 +84,6 @@
            2 循环
                 for / while do / do {statement} while (expression);
         */
-
         var i = 5;
         while (i > 1) {
             alert(i);

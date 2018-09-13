@@ -46,9 +46,9 @@
         var obj = new Object();
 
         /*
-         * 在对象中保存的值称为属性
          * 向对象添加属性
-         * 语法：对象.属性名 = 属性值;
+           1.点语法
+           2.通过 [] 的形式去添加
          */
         //向obj中添加一个name属性
         obj.name = "孙悟空";
@@ -56,6 +56,17 @@
         obj.gender = "男";
         //向obj中添加一个age属性
         obj.age = 18;
+
+        // 对象名[属性名]  这里的属性名是字符串
+        console.log(obj["name"]);
+        obj["name"] = "黎明";
+
+        //这里如果使用的键不是字符串类型，会隐式的转换成字符串类型
+        obj[obj] = function () {
+            console.log("我添加成功了");
+        };
+        obj[obj]();
+        obj["[object Object]"]();
 
         /*
          * 读取对象中的属性
@@ -76,6 +87,11 @@
          */
         delete obj.name;
         console.log(obj.age);
+
+        //delete关键字可以用来删除未使用var声明的变量
+        //delete关键字有返回值 用来表示删除属性是否成功
+        //如果删除的是不存在的属性，返回值为true
+        //如果删除的属性存在原型当中，那么返回值为true，但是并未删除
 
         //对象的属性值可以是任何的数据类型，也可以是个函数
         obj.sayName = function () {
