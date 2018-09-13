@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("input").click(function(){
+				var url = "/jQuery_day02/HelloServlet";
+				var params = {"username":"屌丝"};
+				
+				/*
+				//1 load  获得数据字符串
+				$(this).load(url,params,function(data){
+					//需要手动转成json对象
+					var jsonData = eval("("+data+")");
+					alert(jsonData.success);
+				});
+				*/
+				
+				//2 $.get  获得数据为json对象
+				// * 当发送数据位字符串是，通过第四个参数设置类型
+				// * 服务器端可以通过 MIME类型 确定发送JSON数据
+				/*
+				$.get(url,params,function(data){
+					alert(data.success);
+				},"json");
+				*/
+				
+				
+				//3 $.post
+				/*
+				$.post(url,params,function(data){
+					alert(data.success);
+				});
+				*/
+				
+				//4 $.ajax
+				// * async 设置是否异步，true：表示异步（ajax）
+				// * type 设置请求方式。例如：get、post
+				// * url 设置请求路径
+				// * data 请求参数
+				// * dataType 设置数据转换类型，例如：xml, html, script, json
+				// * success  成功回调
+				// * error 错误回调
+				$.ajax({
+					"async":true,
+					"type":"POST",
+					"url":url,
+					"data":params,
+					"success":function(data){
+						alert(data);
+					},
+					"error" : function(){
+						alert("错误");
+					}
+				});
+				
+				
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<input type="button" value="发送ajax" />
+	
+	
+</body>
+</html><

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定义一个缓存数组，存储已经计算出来的斐波那契数
+        //1.先从cache中去取
+        //2.如果取到了，直接使用
+        //3.如果没有取到，就去计算，把计算结果存入cache
+
+        // 创建缓存容器
+        function createCache() {
+            var cache = {};
+            return function (key, value) {
+                //如果传了值，设置值
+                if (value !== undefined) {
+                    cache[key] = value;
+                    return cache[key];
+                }
+                //如果没有传值，获取值
+                else {
+                    return cache[key];
+                }
+            }
+        }
+
+        // 函数调用次数
+        var count = 0;
+
+        function createFib() {
+            var fibCache = createCache();
+
+            function fib(n) {
+                count++;
+                //1.从cache中获取数据
+                if (fibCache(n) !== undefined) {
+                    //如果缓存中有直接返回
+                    return fibCache(n);
+                }
+                //如果缓存中没有就计算
+                if (n <= 2) {
+                    //把计算结果存入数组
+                    return fibCache(n, 1);
+                }
+                var temp = fib(n - 1) + fib(n - 2);
+                //把计算结果存入数组
+                fibCache(n, temp);
+                return temp;
+            }
+
+            return fib;
+        }
+
+        var fib = createFib();
+        fib(5);
+        console.log(count);
+
+        count = 0;
+        fib(6);
+        console.log(count);
+
+        count = 0;
+        fib(20);
+        console.log(count);
+
+        count = 0;
+        fib(21);
+        console.log(count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

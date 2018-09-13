@@ -52,12 +52,6 @@
             var items = document.getElementsByName("items");
             for (var i = 0; items != null && i < items.length; i++) {
                 var item = items[i];
-//			if(item.checked){
-//				item.checked = false;
-//			}
-//			else{
-//				item.checked = true;
-//			}
                 //简便写法
                 item.checked = !item.checked;
             }
@@ -65,20 +59,6 @@
 
         /**<input type="checkbox" name="checkItems"  id="checkItems" value="全选/全不选"/>全选/全不选*/
         document.getElementById("checkItems").onclick = function () {
-//	 	if(this.checked){
-//			var items = document.getElementsByName("items");
-//			for(var i=0;items!=null && i<items.length;i++){
-//			    var item = items[i];
-//				item.checked = true;
-//			}
-//		}
-//		else{
-//			var items = document.getElementsByName("items");
-//			for(var i=0;items!=null && i<items.length;i++){
-//			    var item = items[i];
-//				item.checked = false;
-//			}
-//		}
             //简便方法
             var items = document.getElementsByName("items");
             for (var i = 0; items != null && i < items.length; i++) {

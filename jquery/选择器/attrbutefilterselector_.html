@@ -55,6 +55,19 @@
             $("#btn8").click(function () {
                 $("div[title][title!='test']").css("background", "#ffbbaa");
             });
+            // 选择索引号为3和4的div
+            $("#b9").click(function () {
+                $("div").slice(3, 5).css("backgroundColor", "#ff0");
+            });
+
+            // 将所有的div 的title属性值，拼凑成一个字符串
+            $("#b10").click(function () {
+                //使用map处理所有div ，获得title值，使用get() 将jquery转成dom，使用dom api join连接
+                var s = $("div").map(function () {
+                    return this.title;
+                }).get().join(",");
+                alert(s);
+            });
         });
     </script>
 </head>

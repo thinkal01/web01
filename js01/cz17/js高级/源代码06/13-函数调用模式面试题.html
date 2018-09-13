@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1
+        var age = 38;
+        var obj = {
+            age: 18,
+            getAge: function () {
+                console.log(this.age);
+            }
+        };
+
+        obj.getAge(); // 18
+        var getAge = obj.getAge;
+        getAge(); // 38
+
+
+        //2
+        var age = 38;
+        var obj = {
+            age: 18,
+            getAge: function () {
+                console.log(this.age);
+
+                function foo() {
+                    console.log(this.age);
+                }
+
+                foo();
+            }
+        };
+        obj.getAge(); // 18 38
+
+        //3
+        var length = 10;
+
+        function fn() {
+            console.log(this.length);
+        }
+
+        var obj = {
+            length: 5,
+            method: function (f) {
+                fn(); // 10
+                f(); // 10
+                arguments[0](); // 3,arguments为一个参数对象
+            }
+        };
+        obj.method(fn, 123, 456);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
