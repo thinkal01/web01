@@ -29,7 +29,7 @@
                     console.log(this.age);
                 }
 
-                foo();
+                foo(); // 函数调用模式
             }
         };
         obj.getAge(); // 18 38
@@ -46,7 +46,7 @@
             method: function (f) {
                 fn(); // 10
                 f(); // 10
-                arguments[0](); // 3,arguments为一个参数对象
+                arguments[0](); // 3,arguments为一个参数对象,调用对象的第一个属性
             }
         };
         obj.method(fn, 123, 456);

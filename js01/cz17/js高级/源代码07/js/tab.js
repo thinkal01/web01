@@ -1,78 +1,67 @@
-(function(window) {
-    var Tab = function(config) {
-        this.init(config);
-    };
+(function (w) {
+    function Tab(config) {
+        this.tabMenus = null;
+        this.tabMains = null;
+        if (config) {
+            this._init(config)
+        }
+    }
 
     Tab.prototype = {
-        // constructor: Tab,
-        init: function(config) {
-            initElements.call(this, config);
-            initEvents.call(this);
+        //初始化工作
+        _init: function (config) {
+            this.initElements(config);
+            this.initEvent();
 
-            if(this.auto === true) {
+            if (config.auto) {
                 this.autoPlay();
             }
         },
-        change: function(obj) {
-            var tabMain = this.tabMain,
-                tabMenus = this.tabMenus,
-                tabMLen = tabMenus.length,
-                i = 0;
-
-            for(; i < tabMLen; i++) {
-                // 清除所有按钮样式
-                tabMenus[i].className = "tab-item";
-                // 隐藏所有div
-                tabMain[i].style.display = "none";
-            }
-
-            obj.className += " active";
-            tabMain[obj.index].style.display = "block";
-        },
-        autoPlay: function() {
-            var index = -1,
-                self = this,
-                play = function() {
-                    index++;
-                    if(index > 3) {
-                        index = 0;
-                    }
-
-                    self.change(self.tabMenus[index]);
+        initEvent: function () {
+            for (var i = 0; i < this.tabMenus.length; i++) {
+                var li = this.tabMenus[i];
+                li.index = i;
+                //that存储当前对象也就Tab创建出来的对象
+                var that = this;
+                li.onclick = function () {
+                    //that还是只想Tab创建出来的对象
+                    //this指的就是当前点击事件触发的这个li
+                    that.change(this);
                 };
+            }
+        },
+        initElements: function (config) {
+            //根据config里的id
+            //给当前对象的tabMenus和tabMains赋值
+            var tabMenu = document.getElementById(config.tabMenu);
+            var tabMain = document.getElementById(config.tabMain);
 
-            play();
-            setInterval(play, 1000);
+            this.tabMenus = tabMenu.children;
+            this.tabMains = tabMain.children;
+        },
+        change: function (tabMenu) {
+            //1.让所有的li变暗
+            for (var i = 0; i < this.tabMenus.length; i++) {
+                this.tabMenus[i].className = "tab-item";
+                //3.让所有div隐藏
+                this.tabMains[i].style.display = "none";
+            }
+            //2.让当前的li变亮
+            tabMenu.className += " active";
+            //4.对应的div显示
+            this.tabMains[tabMenu.index].style.display = "block";
+        },
+        autoPlay: function () {
+            var index = 0;
+            var that = this;
+            setInterval(function () {
+                index++;
+                if (index == that.tabMenus.length) {
+                    index = 0;
+                }
+                that.change(that.tabMenus[index]);
+            }, 2000);
         }
     };
-
-    var id = function(idStr) {
-        return document.getElementById(idStr);
-    };
-
-    var initElements = function(config) {
-        // 初始化元素
-        // this.container = id(config.container);
-        this.tabMenus = id(config.tabMenu).children;
-        this.tabMain = id(config.tabMain).children;
-        this.auto = config.auto;
-    };
-
-    var initEvents = function() {
-        var self = this,
-            tabMenus = this.tabMenus,
-            tabMLen = tabMenus.length,
-            i = 0;
-        for(; i < tabMLen; i++) {
-            // 初始化索引号
-            tabMenus[i].index = i;
-            // 初始化单击事件
-            tabMenus[i].onclick = function() {
-                self.change( this );
-            };
-        }
-    };
-
-    // 对外开放
-    window.Tab = Tab;
+    w.Tab = Tab;
 })(window);

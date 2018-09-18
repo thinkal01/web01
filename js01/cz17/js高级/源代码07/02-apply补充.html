@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        // 伪数组,通过元素模拟数组下标访问
         var obj = {0: "abc", 1: "def", 2: "hig", length: 3};
-        //错误的代码
+        // concat 参数为数组,或可变
         // var arr = [].concat(1, 2, 3, 4, 5);
         // console.log(arr);
 
-        //正确的代码
+        // 拼接伪数组对象
         //[].concat(obj[0],obj[1],obj[2])
         var arr = [].concat.apply([], obj);
 
@@ -19,7 +20,7 @@
             console.log("" + this);
         }
 
-        //当时用call和apply传入的第一个参数为值类型的时候
+        //当call和apply传入的第一个参数为值类型的时候
         //会将值类型转换成对应的对象（引用类型）然后赋值给this
         test.apply(1); // 1 1 1
         test.apply("abc"); // abc NaN abc
@@ -28,8 +29,8 @@
         //当传入的第一个参数为 null或者Undefined的时候
         //会把this赋值为 window
         // Window {frames: Window, postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, …}
-        // 3 NaN
-        // 4 [object Window]
+        // NaN
+        // [object Window]
         test.apply(undefined);
 
         //借用构造函数 实现继承
