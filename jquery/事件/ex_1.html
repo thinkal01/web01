@@ -3,19 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Untitled Document</title>
-    <script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
     <script type="text/javascript">
-        //1. 点击所有的 p 节点, 能够弹出其对应的文本内容
+        //1. 点击所有 p 节点, 能够弹出其对应的文本内容
         /*
         1. jQuery 对象可以进行隐式迭代: $("p").click(function(){...});
-        为选取的所有的 p 节点都添加了 click 响应函数. jQuery 对象本身就是一个DOM 对象的数组
+        为选取的所有 p 节点都添加了 click 响应函数. jQuery 对象本身就是一个DOM 对象的数组
         2. 在响应函数中, this 是一个 DOM 对象. 若想使用 jQuery 对象的方法
         需要把其包装为 jQuery 对象: 使用 $() 把 this 包起来.
         3. text() 方法是一个读写的方法: 不加任何参数, 读取文本值; 加参数为
         属性节点添加文本值(文本节点) (和 text() 类似的方法: attr(), val())
         */
         $("p").click(function () {
-            alert($(this).text());
             $(this).text("^^" + $(this).text());
             //alert(this.firstChild.nodeValue);
         });
