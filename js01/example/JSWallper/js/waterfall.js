@@ -1,9 +1,7 @@
-window.onload = function () {
-
+﻿window.onload = function () {
     waterfall('main', 'pin');
 
     var dataInt = {'data': [{'src': '1.jpg'}, {'src': '2.jpg'}, {'src': '3.jpg'}, {'src': '4.jpg'}]};
-
     window.onscroll = function () {
         if (checkscrollside()) {
             var oParent = document.getElementById('main');// 父级对象
@@ -21,7 +19,7 @@ window.onload = function () {
             waterfall('main', 'pin');
         }
     }
-}
+};
 
 /*
  parend 父级id

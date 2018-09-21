@@ -4,41 +4,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Untitled Document</title>
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-1.7.2.js"></script>
 
     <script type="text/javascript">
         //演示动画效果: show() 和 hide() 方法中传入毫秒数以达到动画的效果
-        /*
-         $(function(){
-         $(".head").toggle(function(){
-         $(".content").show(1000);
-         }, function(){
-         $(".content").hide(1000);
-         });
-         })
-         */
+        $(function () {
+            $(".head").toggle(function () {
+                $(".content").show(1000);
+            }, function () {
+                $(".content").hide(1000);
+            });
+        });
 
         //只改变高度
-        /*
-         $(function(){
-         $(".head").toggle(function(){
-         $(".content").slideDown(500);
-         }, function(){
-         $(".content").slideUp(500);
-         });
-         })
-         */
+        $(function () {
+            $(".head").toggle(function () {
+                $(".content").slideDown(500);
+            }, function () {
+                $(".content").slideUp(500);
+            });
+        });
 
         //只改变透明度
-        /*
-         $(function(){
-         $(".head").toggle(function(){
-         $(".content").fadeIn(1000);
-         }, function(){
-         $(".content").fadeOut(1000);
-         });
-         })
-         */
+        $(function () {
+            $(".head").toggle(function () {
+                $(".content").fadeIn(1000);
+            }, function () {
+                $(".content").fadeOut(1000);
+            });
+        });
 
         //toggle() 可以切换元素的可见状态.
         //slideToggle(): 通过高度变化来切换匹配元素的可见性
