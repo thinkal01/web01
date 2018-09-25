@@ -70,36 +70,4 @@
     </div>
 </div>
 </body>
-</html>
-<script type="text/javascript">
-    // 绑定点击事件
-    document.querySelector('.sendBtn').onclick = function (event) {
-        var xmlObj = new XMLHttpRequest();
-
-        // 获取用户输入的文本框的值
-        var inputValue = document.querySelector('.messageText').value;
-
-        xmlObj.open('get', 'chat.php?message=' + inputValue);
-
-        // 创建div 设置class 为 self 将输入的内容设置进去
-        var createDiv = document.createElement('div');
-        createDiv.className = 'self';
-        createDiv.innerText = inputValue;
-        // 添加到messageBox 中
-        document.querySelector('.messageBox').appendChild(createDiv);
-
-        xmlObj.send();
-
-        xmlObj.onreadystatechange = function () {
-            if (xmlObj.readyState == 4 && xmlObj.status == 200) {
-                // 根据 服务器返回的 内容 修改页面
-                //  创建 div 设置class为 other 设置innerText 添加到 messageBox中
-                var otherDiv = document.createElement('div');
-                otherDiv.className = 'other';
-                otherDiv.innerText = xmlObj.responseText;
-                // 添加到messageBox 中
-                document.querySelector('.messageBox').appendChild(otherDiv);
-            }
-        }
-    }
-</script>
+</html>/script>

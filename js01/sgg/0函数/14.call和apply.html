@@ -47,6 +47,14 @@
         //fun.apply(obj);
 
         //obj.sayName.apply(obj2);
+
+        function fn() {
+            console.log(this);
+        }
+
+        // fn里面的this，是包装过的对象
+        fn.call(1);
+        fn.call('abc');
     </script>
 </head>
 

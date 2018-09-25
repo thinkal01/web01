@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * jquery对外暴露了两个方法：jQuery和$,这两方法实际上是同一个方法
+    * 通过调用这两个方法，可以得到一个jQuery实例对象
+    * jQuery实例对象是一个伪数组对象
+    * jQuery和$实际上是一个工厂函数
+    * */
+
+    // 工厂函数直接调用，就可以得到一个实例
+    var $div = $('<div></div>');
+    var jQueryDiv = jQuery('<div></div>');
+
+    // 验证实例是伪装组
+    console.log({}.toString.call($div));
+</script>
+<script>
+    /*
+    * jQuery插件实现机制：
+    * 就是给原型添加一些功能方法。
+    * */
+    // 咱们的自调结构，沿用了1.7的版本
+    (function (w) {
+        // 对外暴露的工厂函数
+        function jQuery() {
+            return new jQuery.fn.init();
+        }
+
+        // 给原型提供一个简写方式
+        jQuery.fn = jQuery.prototype = {};
+
+        // init是jQuery中真正的构造函数
+        var init = jQuery.fn.init = function () {
+        };
+
+        // 替换构造函数的原型 为 jQuery工厂的原型
+        init.prototype = jQuery.fn;
+
+        // 把工厂通过两个变量暴露出去
+        w.jQuery = w.$ = jQuery;
+    }(window));
+
+    // 实现一个jQ弹出框插件
+    jQuery.fn.alert = function (msg) {
+        alert(msg);
+    };
+
+    // 测试插件
+    $().alert('弹出框插件');
+</script>
+</body>
+</html>

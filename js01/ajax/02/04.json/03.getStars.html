@@ -18,21 +18,7 @@
 <h1>获取女神</h1>
 <input type="button" value="获取很多女神" id='getStars'>
 </body>
-</html>
-<script type="text/javascript">
-    document.querySelector("#getStars").onclick = function () {
-        var ajax = new XMLHttpRequest();
-        ajax.open('post', '03.getStars.php');
-        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        ajax.send();
-        ajax.onreadystatechange = function () {
-            if (ajax.readyState == 4 && ajax.status == 200) {
-                // 转化为js对象 不管是数组还是对象都可以使用该方法转化
-                var starArr = JSON.parse(ajax.responseText);
-                // 这里也放到一个table中
-                var str = '';
-                // table 开始
-                str += '<table>';
+</html>table>';
                 // 拼接tr td
                 for (var i = 0; i < starArr.length; i++) {
                     // 获取 当前循环的那个 对象
