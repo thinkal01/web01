@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="jquery-2.2.0.js"></script>
+    <script src="../../../js/jquery-2.2.0.js"></script>
 </head>
 <body>
 <div>
@@ -12,32 +12,30 @@
 </div>
 <script>
     // 另外一种方式
-    /*$('span').click(function() {
-     alert( 'span' );
-     });*/
-
-
-    /*---------------------------------------------------------------------*/
+    $('span').click(function () {
+        alert('span');
+    });
 
     function clickHandle() {
-        alert( 'span' );
+        alert('span');
     }
+
     function clickHandle2() {
-        alert( 'spanspanspan' );
+        alert('spanspanspan');
     }
+
     function mouseoutHandle() {
-        alert( 'mouseout' );
+        alert('mouseout');
     }
 
-    $('span').on( 'click', clickHandle );
-    $('span').on( 'click', clickHandle2 );
-    $('span').on( 'mouseout', mouseoutHandle );
+    $('span').on('click', clickHandle);
+    $('span').on('click', clickHandle2);
+    $('span').on('mouseout', mouseoutHandle);
 
-    // 如果只传入事件类型，解除该事件类型所有的回调
     // 如果传入事件类型和回调，那么解除指定事件类型的指定回调
-    //$('span').off( 'click', clickHandle2 );
-    //$('span').off( 'click' );
-
+    $('span').off('click', clickHandle2);
+    // 如果只传入事件类型，解除该事件类型所有的回调
+    $('span').off('click');
     // 不传参，删除所有事件类型的所有回调
     $('span').off();
 </script>

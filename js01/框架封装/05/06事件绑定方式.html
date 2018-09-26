@@ -17,27 +17,26 @@
     * */
     var span = document.querySelector('span');
 
-    /*// 标准方式
-    span.addEventListener( 'click', function() {
+    // 标准方式
+    span.addEventListener('click', function () {
         alert('点击span');
     });
 
     // IE8方式
-    span.attachEvent( 'onclick', function() {
+    span.attachEvent('onclick', function () {
         alert('点击span');
-    } );*/
+    });
 
     // 兼容绑定事件
-    function addEvent( ele, type, fn ) {
-        if( ele.addEventListener ) {
-            ele.addEventListener( type, fn);
-        }else {
-            ele.attachEvent( 'on' + type, fn );
+    function addEvent(ele, type, fn) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, fn);
+        } else {
+            ele.attachEvent('on' + type, fn);
         }
     }
 
-    addEvent( span, 'click', function() {
+    addEvent(span, 'click', function () {
         alert('点击span');
-    } );
-
+    });
 </script>

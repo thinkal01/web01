@@ -13,11 +13,11 @@
     var span = document.querySelector('span');
 
     // 兼容绑定事件
-    function addEvent( ele, type, fn ) {
-        if( ele.addEventListener ) {
-            ele.addEventListener( type, fn);
-        }else {
-            ele.attachEvent( 'on' + type, fn );
+    function addEvent(ele, type, fn) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, fn);
+        } else {
+            ele.attachEvent('on' + type, fn);
         }
     }
 
@@ -26,26 +26,27 @@
     * 1、只绑定一个事件回调，这个事件回调内部遍历调用那些真正的事件回调，
     * 2、因为是按照顺序遍历的，所以执行顺序从不可控变为了可控。
     * */
-
     span.clickCache = [
-        function() {
+        function () {
             console.log('1');
         },
-        function() {
+        function () {
             console.log('2');
         },
-        function() {
+        function () {
             console.log('3');
         },
-        function() {
+        function () {
             console.log('4');
         }
     ];
 
-    addEvent( span, 'click', function() {
-        for( var i = 0, len = span.clickCache.length; i < len; i++ ) {
-            span.clickCache[ i ]();
+    addEvent(span, 'click', function () {
+        for (var i = 0, len = span.clickCache.length; i < len; i++) {
+            // 利用class解决回调函数内部的this为绑定的DOM对象
+            // 同时传入e，是为了让回调函数能够获取到事件对象
+            span.clickCache[i].call(span, e);
         }
-    } );
+    });
 </script>
 <

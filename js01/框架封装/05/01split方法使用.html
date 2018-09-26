@@ -5,11 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
-        var className = ' aa bb cc ';
-
-        // 先trim，再通过split劈开，就会得到一个数组，里面存储着所有的class
-        console.log(className.trim().split(' '));
-    </script>
+<script>
+    var className = ' aa bb  cc ';
+    // 先trim，再替换单词间为一个空格,通过split劈开，得到一个数组，里面存储着所有的class
+    console.log(className.trim().replace(/\s+/g, ' ').split(' '));
+</script>
 </body>
 </html>
