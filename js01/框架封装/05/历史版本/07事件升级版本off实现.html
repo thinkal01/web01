@@ -150,13 +150,41 @@
 
             // 链式编程
             return this;
+        },
+
+        // 点击事件
+        click: function (fn) {
+            return this.on('click', fn);
+        },
+
+        // 鼠标移除事件
+        mouseout: function (fn) {
+            return this.on('mouseout', fn);
         }
     });
-</script>
-<script>
+    // 得到存储所有事件的数组
+    var events = "blur focus focusin focusout load resize scroll unload click dblclick " +
+        "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
+        "change select submit keydown keypress keyup error contextmenu".split(' ');
+
+    // 单独添加某事件的范例，这样是写死的，
+    // 如果要绑定多个事件，太麻烦，需要一个一个写
+    $.fn.click = function (fn) {
+        return this.on('click', fn);
+    };
+
+    // 批量给原型添加事件，他们都复用了on方法
+    jQuery.each(events, function (i, eventName) {
+        // 给原型添加的方法，供实例使用，所以内部的this指向实例
+        $.fn[eventName] = function (fn) {
+            // 实例可以调用on方法绑定事件
+            return this.on(eventName, fn);
+        }
+    });
+
     function fn() {
         console.log('单个');
-    };
+    }
 
     $('span')._on('click', function (e) {
         console.log('第一次绑定', this, e);

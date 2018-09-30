@@ -5,12 +5,12 @@
  * param { padding: Object } 设置坐标轴到画布的边距
  * param { arrow: Object } 设置箭头的宽高
  * */
-function Line( ctx, data, padding, arrow ) {
+function Line(ctx, data, padding, arrow) {
 
     this.ctx = ctx;
     this.data = data;
-    this.padding = padding || { top: 10, right: 10, bottom: 10, left: 10 };
-    this.arrow = arrow || { width: 10, height: 20 };
+    this.padding = padding || {top: 10, right: 10, bottom: 10, left: 10};
+    this.arrow = arrow || {width: 10, height: 20};
 
     // 上顶点的坐标
     this.vertexTop = {
@@ -40,45 +40,45 @@ function Line( ctx, data, padding, arrow ) {
 Line.prototype = {
     constructor: Line,
 
-    draw: function() {
+    draw: function () {
         this.drawCoord();
         this.drawArrow();
         this.drawLine();
     },
 
     // 绘制坐标轴
-    drawCoord: function() {
+    drawCoord: function () {
         this.ctx.beginPath();
-        this.ctx.moveTo( this.vertexTop.x, this.vertexTop.y );
-        this.ctx.lineTo( this.origin.x, this.origin.y );
-        this.ctx.lineTo( this.vertexRight.x, this.vertexRight.y );
+        this.ctx.moveTo(this.vertexTop.x, this.vertexTop.y);
+        this.ctx.lineTo(this.origin.x, this.origin.y);
+        this.ctx.lineTo(this.vertexRight.x, this.vertexRight.y);
         this.ctx.stroke();
     },
 
     // 绘制建箭头
-    drawArrow: function() {
+    drawArrow: function () {
 
         // 上箭头
         this.ctx.beginPath();
-        this.ctx.moveTo( this.vertexTop.x, this.vertexTop.y );
-        this.ctx.lineTo( this.vertexTop.x - this.arrow.width / 2, this.vertexTop.y + this.arrow.height );
-        this.ctx.lineTo( this.vertexTop.x, this.vertexTop.y + this.arrow.height / 2 );
-        this.ctx.lineTo( this.vertexTop.x + this.arrow.width / 2, this.vertexTop.y + this.arrow.height );
+        this.ctx.moveTo(this.vertexTop.x, this.vertexTop.y);
+        this.ctx.lineTo(this.vertexTop.x - this.arrow.width / 2, this.vertexTop.y + this.arrow.height);
+        this.ctx.lineTo(this.vertexTop.x, this.vertexTop.y + this.arrow.height / 2);
+        this.ctx.lineTo(this.vertexTop.x + this.arrow.width / 2, this.vertexTop.y + this.arrow.height);
         this.ctx.closePath();
         this.ctx.stroke();
 
         // 右箭头
         this.ctx.beginPath();
-        this.ctx.moveTo( this.vertexRight.x, this.vertexRight.y );
-        this.ctx.lineTo( this.vertexRight.x - this.arrow.height, this.vertexRight.y - this.arrow.width / 2 );
-        this.ctx.lineTo( this.vertexRight.x - this.arrow.height / 2, this.vertexRight.y );
-        this.ctx.lineTo( this.vertexRight.x - this.arrow.height, this.vertexRight.y + this.arrow.width / 2 );
+        this.ctx.moveTo(this.vertexRight.x, this.vertexRight.y);
+        this.ctx.lineTo(this.vertexRight.x - this.arrow.height, this.vertexRight.y - this.arrow.width / 2);
+        this.ctx.lineTo(this.vertexRight.x - this.arrow.height / 2, this.vertexRight.y);
+        this.ctx.lineTo(this.vertexRight.x - this.arrow.height, this.vertexRight.y + this.arrow.width / 2);
         this.ctx.closePath();
         this.ctx.stroke();
     },
 
     // 根据数据绘制折线图
-    drawLine: function() {
+    drawLine: function () {
 
         // 先清除之前的路径
         this.ctx.beginPath();
@@ -93,7 +93,7 @@ Line.prototype = {
          * */
 
         var ratioX = this.coordWidth / this.data.length,
-            ratioY = this.coordHeight / Math.max.apply( null, this.data );
+            ratioY = this.coordHeight / Math.max.apply(null, this.data);
 
         /*
          * 要根据原点的坐标来计算点的坐标
@@ -102,13 +102,13 @@ Line.prototype = {
          * */
 
         // 遍历所有的数据，依次绘制点
-        this.data.forEach( function( y, x ) {
-            self.ctx.fillRect( self.origin.x + ( x * ratioX ) - 1, self.origin.y - ( y * ratioY ) - 1 , 2, 2 );
+        this.data.forEach(function (y, x) {
+            self.ctx.fillRect(self.origin.x + (x * ratioX) - 1, self.origin.y - (y * ratioY) - 1, 2, 2);
         });
 
         // 遍历所有的数据，依次绘制线
-        this.data.forEach( function( y, x ) {
-            self.ctx.lineTo( self.origin.x + ( x * ratioX ), self.origin.y - ( y * ratioY ) );
+        this.data.forEach(function (y, x) {
+            self.ctx.lineTo(self.origin.x + (x * ratioX), self.origin.y - (y * ratioY));
         });
 
         // 绘制线
@@ -117,22 +117,22 @@ Line.prototype = {
 }
 
 // 实现折线图插件方法
-jQuery.fn.line = function( data ) {
+jQuery.fn.line = function (data) {
 
-    var $node = this.eq( 0 );
+    var $node = this.eq(0);
     var canvas = $('<canvas></canvas>').get(0);
-    var ctx = canvas.getContext( '2d' );
+    var ctx = canvas.getContext('2d');
 
     // 根据元素的大小设置画布的大小
-    var width = parseInt( $node.css( 'width' ) );
-    var height = parseInt( $node.css( 'height' ) );
+    var width = parseInt($node.css('width'));
+    var height = parseInt($node.css('height'));
     canvas.width = width;
     canvas.height = height;
 
     // 根据数据绘制折线图
-    var line = new Line( ctx, data );
+    var line = new Line(ctx, data);
     line.draw();
 
     // 把画布添加到第一个元素中
-    $node.append( canvas );
+    $node.append(canvas);
 };
