@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>History Api</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0
+        }
+
+        aside {
+            background-color: #e0e0e0;
+            float: left;
+            height: 100%;
+            width: 220px;
+        }
+
+        article {
+            background-color: #f5f5f5;
+            height: 100%;
+            margin-left: 220px;
+            padding: 20px;
+            overflow: scroll;
+        }
+
+        article > p {
+            line-height: 2;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul > li {
+            font-size: 18px;
+            line-height: 50px;
+            margin: 5px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        ul > li::before {
+            content: '🍋';
+            margin-right: 5px;
+        }
+
+        ul > li:hover {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+
+<body>
+<aside>
+    <ul id="list" data-id="1" data-name="sss">
+    </ul>
+</aside>
+<article>
+    <p id="content"></p>
+</article>
+<!-- plugin:auto file name -->
+<script src="data.js"></script>
+<script>
+    (function () {
+        var listElement = document.querySelector('#list');
+        for (var title in data) {
+            var liElement = document.createElement('li');
+            liElement.innerHTML = '⭐️' + title;
+            liElement.setAttribute('data-title', title);
+            listElement.appendChild(liElement);
+        }
+
+        var liElements = document.querySelectorAll('#list>li');
+        var content = document.querySelector('#content');
+
+        // 注册元素事件
+        for (var i = 0; i < liElements.length; i++) {
+            liElements[i].addEventListener('click', function () {
+                // 拿到被点击title
+                var title = this.dataset['title'];
+                // 赋值
+                content.innerHTML = data[title];
+                // 操作历史记录
+                if (window.history && history.pushState) {
+                    // 添加一个新的历史记录
+                    history.pushState(title, 'title没有任何浏览器支持', '?t=' + title);
+                } else {
+                    console.log('不支持');
+                }
+            });
+        }
+
+        // 当我们在伪造的访问历史中前进或后退时会执行一个popstate事件
+        window.addEventListener('popstate', function (e) {
+            content.innerHTML = data[e.state];
+        });
+
+        // window.location = "https://www.baidu.com";
+        // 第一次请求过来 获取地址栏中的t参数
+        // window.location可以拿到当前网页中跟地址相关的信息
+        var search = window.location.search; // ?t=jkaljdksfla
+        // 如果地址栏中的地址有中文，会以URL编码方式呈现
+        // decodeURI 可以转换到之前中文
+        var title = search.split('=')[1]; // ['?t','jkaljdksfla']
+        if (title) {
+            // 有值 decodeURI作用就是从URL编码转换到之前的状态
+            console.log(decodeURI(title));
+            content.innerHTML = data[decodeURI(title)];
+        }
+    })();
+</script>
+</body>
+
+</html>
