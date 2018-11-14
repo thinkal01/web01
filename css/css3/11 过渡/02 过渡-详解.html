@@ -50,14 +50,15 @@
             background-color: yellow;
             position: absolute;
             left: 20px;
-            /*transition: left 2s;*/
+            /*需要明确我要监听哪个属性的变化，并且规定变化的时间*/
             transition-property: left;
             transition-duration: 2s;
-            /*transition-timing-function: linear;*/
+            /*transition: left 2s;*/
             /*控制过渡的速度*/
+            /*transition-timing-function: linear;*/
             transition-timing-function: ease;
-            transition-delay: 5s;
-            /*需要明确我要监听哪个属性的变，并且规定变化的时间*/
+            /*延迟执行*/
+            transition-delay: 2s;
         }
 
         .move:hover .transition {
