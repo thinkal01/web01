@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            /*width: 400px;*/
+            /*height: 200px;*/
+            height: 400px;
+            padding: 50px;
+            margin: 100px auto;
+            border: 5px dashed red;
+            background-color: yellow;
+            background-image: url(images/bg.jpg);
+            /*background-size 与 background-clip无关*/
+            background-clip: content-box;
+
+            /*background-size 与 background-origin 保持一致*/
+            background-origin: content-box;
+
+            /*contain 占满某边最小缩放比，另一边同比缩放，不一定铺满容器，会完整显示图片*/
+            /*background-size: contain;*/
+            /*cover 占满某边最大缩放比，另一边同比缩放，铺满容器，超出部分会溢出*/
+            background-size: cover;
+            /*第一个用于定义背景图像的宽度，第二个用于定义背景图像的高度。*/
+            /*如果只提供一个，该值将用于定义背景图像的宽度，第2个值默认为auto，即高度为auto，此时背景图以提供的宽度作为参照来进行等比缩放。*/
+            /*background-size:  auto 100%;*/
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

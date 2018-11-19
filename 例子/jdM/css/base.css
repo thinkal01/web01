@@ -44,8 +44,8 @@ input, textarea {
 
 /*头部通栏*/
 .jd_topBar {
-    height: 45px;
     width: 100%;
+    height: 45px;
     background: url("../images/header-bg.png") repeat-x;
     background-size: 1px 44px;
     border-bottom: 1px solid #e0e0e0;
@@ -55,9 +55,9 @@ input, textarea {
 
 /*返回按钮*/
 .jd_topBar .icon_back {
-    background-position: -20px 0;
     width: 20px;
     height: 20px;
+    background-position: -20px 0;
     display: block;
     margin: 12px 10px;
     position: absolute;
@@ -91,12 +91,12 @@ input, textarea {
 
 /*返回菜单*/
 .jd_topBar .icon_menu {
-    background-position: -60px 0;
     width: 40px;
     height: 44px;
     display: block;
     padding: 12px 10px;
 
+    background-position: -60px 0;
     background-clip: content-box;
     background-origin: content-box;
 
@@ -104,5 +104,3 @@ input, textarea {
     top: 0;
     right: 0;
 }
-
-

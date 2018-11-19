@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3盒模型</title>
+    <style>
+        div.box {
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            background-color: yellow;
+            float: left;
+            font-size: 20px;
+            color: red;
+        }
+
+        div.pic {
+            margin-left: 20px;
+            float: left;
+        }
+
+        div.box2 {
+            width: 800px;
+            height: 200px;
+            padding: 50px;
+            margin: 100px auto;
+            background-color: yellow;
+            box-sizing: border-box;
+            /*box-sizing: content-box;*/
+            border: 10px solid red;
+            /*类似 IE低版本 怪异模式*/
+            font-size: 20px;
+            clear:both;
+        }
+
+        div.box2 p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    CSS3盒模型允许我们设定盒模型，如右图
+</div>
+<div class="pic">
+    <img src="images/box-sizing.gif" alt="">
+</div>
+
+<div class="box2">
+    盒模型设定为border-box时 width = border + padding + content <br>
+    盒模型设定为content-box时 width = content
+    <p>所谓定盒模型即可以指定 属性width的计算方式</p>
+</div>
+</body>
+</html>

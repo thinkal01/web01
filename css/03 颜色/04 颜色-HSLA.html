@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*新增了RGBA、HSLA模式，其中的A 表示透明度通道，即可以设置颜色值的透明度，相较opacity，不具有继承性，即不会影响子元素的透明度。
+        Red、Green、Blue、Alpha即RGBA
+        Hue、Saturation、Lightness、Alpha即HSLA
+        R、G、B 取值范围0~255
+        H 取值范围0~360，0/360表示黑色、120表示绿色、240表示蓝色
+        S：Saturation(饱和度)。取值为：0.0% - 100.0%
+        L：Lightness(亮度)。取值为：0.0% - 100.0%
+        A：Alpha透明度。取值0~1之间。
+        关于透明度：
+        1、opacity子元素会继承父元素的透明度，在实际开发中会带来干扰；
+        2 、transparent 设置透明度时完全类似于“玻璃”一样的透明；*/
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(images/bg.jpg);
+        }
+
+        .layer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding-top: 100px;
+            text-align: center;
+            background-color: hsla(0, 10%, 10%, 0.3);
+            /*opacity: 0.3;*/
+        }
+    </style>
+</head>
+<body>
+<div class="layer">
+    <img src="images/layer.jpg" alt="">
+</div>
+</body>
+</html>
