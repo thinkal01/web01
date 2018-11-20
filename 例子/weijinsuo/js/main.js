@@ -5,68 +5,79 @@ $(function () {
      * 根据屏幕宽度的变化决定轮播图片应该展示什么
      */
     function resize() {
-        // 获取屏幕宽度
+        // 屏幕宽度
         var windowWidth = $(window).width();
-        // 判断屏幕属于大还是小
-        var isSmallScreen = windowWidth < 768;
-        // 根据屏幕大小为界面上的每一张轮播图设置背景
-        $('#main_ad > .carousel-inner > .item').each(function (i, item) {
-            // 拿到是DOM对象需要转换
+        // 是否为小于768的屏幕
+        var smallScreen = windowWidth < 768;
+        // 轮播图板块适应
+        $('#home_slide .item-image').each(function (i, item) {
             var $item = $(item);
-            var imgSrc = $item.data(isSmallScreen ? 'image-xs' : 'image-lg');
-
-            // 设置背景图片
-            $item.css('backgroundImage', 'url("' + imgSrc + '")');
-
-            // 因为小图时尺寸等比例变化，所以小图时使用img方式
-            // 图片高度768时,高度近似410
-            if (isSmallScreen) {
-                $item.html('<img src="' + imgSrc + '" alt="" />');
+            var imgSrc = $item.data(smallScreen ? 'image-small' : 'image-large');
+            var imgAlt = $item.data('image-alt');
+            $item.html('<img src="' + imgSrc + '" alt="' + imgAlt + '"/>');
+            $item.css('backgroundImage', 'url(' + imgSrc + ')');
+            /*if (smallScreen) {
+                $item.html('<img src="' + imgSrc + '" alt="' + imgAlt + '"/>');
             } else {
                 $item.empty();
+            }*/
+        });
+
+        // tab栏宽度适应
+        var $tabs = $('.nav-tabs');
+        $tabs.each(function (i, item) {
+            var $tab = $(this);
+            // 获取所有子元素的宽度和
+            // 因为原本ul上有padding-left
+            var width = 20;
+            // 遍历子元素
+            $tab.children().each(function (ci, citem) {
+                width += $(citem).width();
+            });
+            // 此时width等于所有LI的宽度总和
+            // 判断当前UL的宽度是否超出屏幕，如果超出就显示横向滚动条
+            // if (width > $(window).width()) {
+            if (width > $tab.parent().width()) {
+                $tab.css('width', width);
+                $tabs.parent().css('overflow-x', 'scroll');
+            } else {
+                $tab.css('width', 'auto');
+                $tabs.parent().css('overflow-x', 'hidden');
             }
         });
     }
 
     $(window).on('resize', resize).trigger('resize');
 
-    // 初始化tooltips插件
-    $('[data-toggle="tooltip"]').tooltip();
+    /*var OFFSET = 50;
+    $('.carousel').each(function (i, item) {
+        var startX, endX;
+        item.addEventListener('touchstart', function (e) {
+            startX = e.touches[0].clientX;
+            e.preventDefault();
+        });
+        item.addEventListener('touchmove', function (e) {
+            endX = e.touches[0].clientX;
+            e.preventDefault();
+        });
+        item.addEventListener('touchend', function (e) {
+            var offsetX = endX - startX;
+            if (offsetX > OFFSET) {
+                // 上一张
+                $(this).carousel('prev');
+            } else if (offsetX < -OFFSET) {
+                // 上一张
+                $(this).carousel('next');
+            }
+            e.preventDefault();
+        });
+    });*/
 
-    /**
-     * 控制标签页的标签容器宽度
-     */
-    var $ulContainer = $('.nav-tabs');
-    // 获取所有子元素的宽度和
-    // 因为原本ul上有padding-left
-    var width = 30;
-    // 遍历子元素
-    $ulContainer.children().each(function (index, element) {
-        // console.log($(element).width());
-        width += element.clientWidth;
-    });
-    // 此时width等于所有LI的宽度总和
-    // 判断当前UL的宽度是否超出屏幕，如果超出就显示横向滚动条
-    if (width > $(window).width()) {
-        $ulContainer.css('width', width).parent().css('overflow-x', 'scroll');
-    }
-
-    // a点击注册事件
-    var $newTitle = $('.news-title');
-    $('#news .nav-pills a').on('click', function () {
-        // 获取当前点击元素
-        var $this = $(this);
-        // 获取对应的title值
-        var title = $this.data('title');
-        // 将title设置到相应的位置
-        $newTitle.text(title);
-    });
-
-    // 1. 获取手指在轮播图元素上的一个滑动方向（左右）
+    // 轮播图触摸
     // 获取界面上的轮播图容器
     var $carousels = $('.carousel');
     var startX, endX;
-    var offset = 50;
+    var OFFSET = 50;
     // 注册滑动事件
     $carousels.on('touchstart', function (e) {
         // 手指触摸开始时记录一下手指所在的坐标X
@@ -81,11 +92,21 @@ $(function () {
         // 结束触摸一瞬间记录最后的手指所在坐标X
         // 获取每次运动的距离，当距离大于一定值时认为是有方向变化
         var distance = Math.abs(startX - endX);
-        if (distance > offset) {
-            // 有方向变化
+        if (distance > OFFSET) {
             // 2. 根据获得到的方向选择上一张或者下一张
             // - 原生的carousel方法实现 http://v3.bootcss.com/javascript/#carousel-methods
             $(this).carousel(startX > endX ? 'next' : 'prev');
         }
+    });
+
+    // 提示框效果
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // 新闻点击切换
+    $('.news-nav a').on('click', function (e) {
+        // e.preventDefault();
+        // e.stopPropagation();
+        // 不要阻止默認事件
+        $('.news-title').text($(this).data('title'));
     });
 });
