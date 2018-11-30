@@ -12,16 +12,10 @@
         .my-progress::-webkit-progress-bar {
             background-color: #f00;
         }
-
-        .content::after {
-            content: 'bbbbbb';
-            color: #f40;
-        }
     </style>
 </head>
 <!-- Sublime Server  不要stop 直接退出 -->
 <body>
-<div class="content">aaaaa</div>
 <!-- 下拉数据列表呈现需要载体,输入有提示 -->
 <input type="text" list="input_list">
 <datalist id="input_list">
@@ -31,8 +25,10 @@
 <br>
 <!-- 状态指示器 -->
 <progress></progress>
+<br>
 <!-- 进度条默认最大值是 -->
 <progress class="my-progress" value="10" max="100"></progress>
+<br>
 <meter min="0" max="100" low="40" high="90" optimum="100" value="91">A+</meter>
 </body>
 

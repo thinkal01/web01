@@ -20,4 +20,17 @@
 <!-- 可以使用 iframe 嵌入 另外一个页面 -->
 <iframe src="http://www.itcast.cn/"></iframe>
 </body>
-</html>/script>
+</html>
+<script type="text/javascript">
+    window.onload = function () {
+        // 获取iframe
+        var iframe = document.querySelector('iframe');
+
+        // 获取docucment对象
+        var iframeDocument = iframe.contentWindow.document;
+
+        // 获取按钮
+        var inputDom = iframeDocument.querySelector('input');
+        console.log(inputDom);
+    }
+</script>

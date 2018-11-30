@@ -7,15 +7,15 @@
         .clock {
             width: 200px;
             height: 200px;
-            margin: 40px auto;
+            margin: 100px auto;
             position: relative;
             border-radius: 110px;
             border: 10px solid #000;
         }
 
         .line1, .line2, .line3, .line4, .line5, .line6 {
-            height: 200px;
             width: 6px;
+            height: 200px;
             position: absolute;
             left: 50%;
             margin-left: -3px;
@@ -75,7 +75,7 @@
             height: 50px;
             margin: -50px 0 0 -3px;
             background-color: #000;
-            animation: move 216000s steps(60) infinite;
+            animation: rotate 216000s steps(60) infinite;
         }
 
         .minute {
@@ -83,7 +83,7 @@
             height: 60px;
             margin: -60px 0 0 -2px;
             background-color: #000;
-            animation: move 3600s steps(60) infinite;
+            animation: rotate 3600s steps(60) infinite;
         }
 
         .seconds {
@@ -91,10 +91,86 @@
             height: 80px;
             margin: -80px 0 0 -1px;
             background-color: red;
-            animation: move 60s steps(60) infinite;
+            animation: rotate 60s steps(60) infinite;
         }
 
-        @keyframes move {
+        /*.line1, .line2, .line3, .line4, .line5, .line6 {
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 200px;
+            margin-left: -2px;
+            background-color: #CCC;
+        }
+
+        .line1, .line6 {
+            width: 6px;
+            margin-left: -3px;
+            background-color: #AAA;
+        }
+
+        .dotted {
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -10px 0 0 -10px;
+        }
+
+        .cover {
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0 0 -80px;
+            background-color: #FFF;
+        }
+
+        .hour {
+            width: 6px;
+            height: 50px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            margin-left: -3px;
+            transform-origin: top center;
+            animation: rotate 43200s steps(60) infinite;
+        }
+
+        .minute {
+            width: 4px;
+            height: 60px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            margin-left: -2px;
+            transform-origin: top center;
+            animation: rotate 3600s steps(60) infinite;
+        }
+
+        .seconds {
+            width: 2px;
+            height: 70px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            margin-left: -1px;
+            transform-origin: top center;
+            animation: rotate 60s steps(4) infinite;
+        }*/
+
+        @keyframes rotate {
             0% {
             }
 
@@ -102,132 +178,20 @@
                 transform: rotate(360deg);
             }
         }
-
-        /*  .clock {
-              width: 200px;
-              height: 200px;
-              margin: 100px auto;
-              border: 10px solid #000;
-              border-radius: 110px;
-              position: relative;
-          }
-
-          .line1, .line2, .line3, .line4, .line5, .line6 {
-              position: absolute;
-              left: 50%;
-              width: 4px;
-              height: 200px;
-              margin-left: -2px;
-              background-color: #CCC;
-          }
-
-          .line1, .line6 {
-              width: 6px;
-              margin-left: -3px;
-              background-color: #AAA;
-          }
-
-          .line2 {
-              transform: rotate(-30deg);
-          }
-
-          .line3 {
-              transform: rotate(60deg);
-          }
-
-          .line4 {
-              transform: rotate(-60deg);
-          }
-
-          .line5 {
-              transform: rotate(30deg);
-          }
-
-          .line6 {
-              transform: rotate(90deg);
-          }
-
-          .dotted {
-              width: 20px;
-              height: 20px;
-              background-color: #000;
-              border-radius: 10px;
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              margin: -10px 0 0 -10px;
-          }
-
-          .cover {
-              width: 160px;
-              height: 160px;
-              border-radius: 80px;
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              margin: -80px 0 0 -80px;
-              background-color: #FFF;
-          }
-
-          .hour {
-              width: 6px;
-              height: 50px;
-              background-color: #000;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              z-index: 2;
-              margin-left: -3px;
-              transform-origin: top center;
-              animation: rotate 43200s steps(60) infinite;
-          }
-
-          .minute {
-              width: 4px;
-              height: 60px;
-              background-color: #000;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              z-index: 2;
-              margin-left: -2px;
-              transform-origin: top center;
-              animation: rotate 3600s steps(60) infinite;
-          }
-
-          .seconds {
-              width: 2px;
-              height: 70px;
-              background-color: red;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              z-index: 2;
-              margin-left: -1px;
-              transform-origin: top center;
-              animation: rotate 60s steps(4) infinite;
-          }
-
-          @keyframes rotate {
-              from {
-
-              }
-
-              to {
-                  transform: rotate(360deg);
-              }
-          }*/
     </style>
 </head>
 <body>
 <div class="clock">
+    <!-- 时钟刻度线条 -->
     <div class="line1"></div>
     <div class="line2"></div>
     <div class="line3"></div>
     <div class="line4"></div>
     <div class="line5"></div>
     <div class="line6"></div>
+    <!-- 内部白圆与线条配合形成刻度 -->
     <div class="cover"></div>
+    <!-- 时钟中心圆点 -->
     <div class="dotted"></div>
     <div class="hour"></div>
     <div class="minute"></div>

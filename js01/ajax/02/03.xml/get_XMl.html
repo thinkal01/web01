@@ -7,4 +7,23 @@
 <body>
 <input type="button" value="获取XMl数据" id='getXML'>
 </body>
-</html>/script>
+</html>
+<script type="text/javascript">
+    document.querySelector('#getXML').onclick = function () {
+        var ajax = new XMLHttpRequest();
+        ajax.open('get', 'get_XMl.php');
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // 如果返回的是 xml文件
+                // 异步对象中有另外一个属性用来专门获取 xml
+                // xml对象在浏览器就是一个 document对象
+                // 解析时可以直接使用querySelector 或者 getElementById等 document对象的语法
+                console.log(ajax.responseXML);
+                console.log(ajax.responseXML.querySelector('kuzi').innerHTML);
+                // 下面这个页面文档对象如果要获取某个标签
+                console.log(window.document);
+            }
+        }
+    }
+</script>

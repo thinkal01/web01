@@ -13,7 +13,8 @@ var search = function () {
     var height = banner.offsetHeight;
 
     window.onscroll = function () {
-        var top = document.body.scrollTop;
+        // var top = document.body.scrollTop;
+        var top = document.documentElement.scrollTop;
         /*当滚动高度大于banner的高度时候颜色不变*/
         if (top > height) {
             search.style.background = "rgba(201,21,35,0.85)";

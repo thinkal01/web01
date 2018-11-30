@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style type="text/css">
+    .float-test .left {
+        float: left;
+    }
+
+    .float-test .right {
+        float: right;
+    }
+
+    p:first-of-type {
+        color: red;
+    }
+</style>
 <body>
 <!--
 title属性，这个属性可以给任何标签指定
@@ -11,5 +24,10 @@ title属性，这个属性可以给任何标签指定
 -->
 <p title="hello">我是一个段落</p>
 
+<div class="float-test">
+    <p>测试浮动</p>
+    <div class="left">abc</div>
+    <div class="right">def</div>
+</div>
 </body>
 </html>

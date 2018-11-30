@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 1000px;
+            background-color: #f40;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        /*
+        也遵循层叠样式表的优先级
+        为了避免样式覆盖可以修改先后顺序
+        */
+        /* 媒体查询 当使用min-width作为判断条件一定要从小到大，其原因是CSS从上往下执行 */
+        @media (min-width: 768px) and (max-width: 992px) {
+            /*768<设备宽度<992*/
+            .container {
+                width: 750px;
+            }
+        }
+
+        /*@media screen and (min-width: 992px) {*/
+        @media (min-width: 992px) {
+            /*992<设备宽度*/
+            .container {
+                width: 972px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container"></div>
+</body>
+
+</html>

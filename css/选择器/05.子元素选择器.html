@@ -44,8 +44,8 @@
 
         /*
          * 为第一个p标签设置一个背景颜色为黄色
-         *  :first-child 可以选中第一个子元素
-         *  :last-child 可以选中最后一个子元素
+         *  :first-child 必须是父元素的第一个子元素
+         *  :last-child 必须是父元素的最后一个子元素
          */
         body > p:first-child {
             /*background-color: yellow;*/
@@ -69,7 +69,7 @@
         }
 
         /*
-         * :first-of-type
+         * :first-of-type 父元素的第1个为E的子元素，不论第1个子元素是否为E
          * :last-of-type
          * :nth-of-type
 

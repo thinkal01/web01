@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        a {
+            width: 200px;
+            height: 200px;
+            display: block;
+            /* 手指点击 清除默认的高亮效果 设置透明 */
+            -webkit-tap-highlight-color: transparent;
+            /* 盒子模型 */
+            /* 保证内容的大小不变 */
+            box-sizing: content-box;
+            /* 保证盒子大小不变 内容可能会变 移动端设置所有的盒子都是border-box 目的保证盒子大小不变 */
+            box-sizing: border-box;
+        }
+
+        input {
+            /* 移动端 现在扁平化大行其道 除了锤子手机都是扁平化 */
+            border: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            /* 移动端 有一些浏览器会默认给 input标签 添加一些特有的样式 比如 3d 高光效果  */
+            -webkit-appearance: none;
+        }
+
+        /* 在移动端开发的时候 如果想要限制某个元素的大小 会选用 max-width 限制最大值 为了不让用户无止境的缩放
+            使用min-width 为了防止在超小屏幕上显示错乱
+        */
+
+        /*
+            移动端为了在 宽度方向上进行适配 会使用百分比宽度
+            高度方向上 由于页面的高度是有内容撑开的 所以高度还是使用具体的值
+         */
+    </style>
+</head>
+<body>
+<a href="#"></a>
+<input type="button" name="" value="我是一个按钮">
+</body>
+</html>

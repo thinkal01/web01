@@ -18,7 +18,27 @@
 <h1>ajax获取 多个明星数据</h1>
 <input type="button" value="获取男神们?" id='getStars'>
 </body>
-</html>table>';
+</html>
+<script type="text/javascript">
+    // 绑定点击事件
+    document.querySelector('#getStars').onclick = function () {
+        var ajax = new XMLHttpRequest();
+        // post
+        ajax.open('post', 'getStars.php');
+        // 设置请求报文
+        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // 发送
+        ajax.send();
+
+        // 注册事件
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // document对象
+                var persons = ajax.responseXML.querySelectorAll('person');
+
+                // 在循环之前 把table拼出来
+                var str = '';
+                str += '<table>';
                 // 循环 获取其中的某一个
                 for (var i = 0; i < persons.length; i++) {
                     // 获取 当前循环的那个person标签对象

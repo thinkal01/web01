@@ -8,7 +8,8 @@
 <input type="button" value='去百度 获取天气预报'>
 <table id='weather'></table>
 </body>
-</html>/script>
+</html>
+<script type="text/javascript" src='../js/template-native.js'></script>
 <script type="text/template" id='template'>
     <%for(var i=0;i<weather_data.length;i++) {%>
     <tr>
@@ -21,7 +22,7 @@
     </tr>
     <% } %>
 </script>
-<script type="text/javascript" src='../js/jquery.min.js'></script>
+<script type="text/javascript" src='../../js/jquery.min.js'></script>
 <script type="text/javascript">
     $("input").click(function () {
         $.ajax({

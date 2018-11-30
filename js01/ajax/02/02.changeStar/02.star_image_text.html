@@ -34,7 +34,11 @@
 <input type="button" class="starBtn" value='hxm'>
 <input type="button" class="starBtn" value='lh'>
 </body>
-</html> btnList.length; i++) {
+</html>
+<script type="text/javascript">
+    // 为按钮绑定点击事件
+    var btnList = document.querySelectorAll('.starBtn');
+    for (var i = 0; i < btnList.length; i++) {
         btnList[i].onclick = function () {
             var ajax = new XMLHttpRequest();
             // 使用post
@@ -51,7 +55,6 @@
                     // 从数组中 取出 不同的值 设置给 不同的 dom元素即可
                     // 背景图片
                     document.querySelector('.imageBox').style.background = 'url(' + strArr[0] + ') no-repeat center / cover';
-
                     // 描述信息
                     document.querySelector('.infoBox').innerHTML = strArr[1];
                 }
