@@ -1,55 +1,69 @@
-﻿window.onload = function () {
-    /*
-    * 1.显示弹出层
-    * 2.做动画
-    * 3.删除盒子需要做
-    * 4.点击取消按钮  关闭  弹出层
-    * */
+window.onload = function () {
+    var win = document.getElementsByClassName('jd_win')[0];
+    var winCon = win.getElementsByClassName('jd_win_box')[0];
+    var delBtnTop;
 
-    /*获取弹出层*/
-    var jdWin = document.querySelector('.jd_win');
-    /*获取框*/
-    var jdWinBox = jdWin.querySelector('.jd_win_box');
-    /*获取所有的删除按钮*/
-    var deleteList = document.querySelectorAll('.deleteBox');
+    var deleteBtn = document.getElementsByClassName('deleteBox');
+    for (var i = 0; i < deleteBtn.length; i++) {
+        deleteBtn[i].onclick = function () {
+            document.body.style.position = 'absolute';
+            win.style.display = 'block';
+            var top = document.body.scrollTop + (window.innerHeight - winCon.offsetHeight) / 2;
+            /*            winCon.style.webkitTransition = 'all 0.5s ease 0s';
+             winCon.style.transition = 'all 0.5s ease 0s';
+             winCon.style.opacity = 1;
+             winCon.style.webkitTransform = 'translateY('+top+'px)';
+             winCon.style.transform = 'translateY('+top+'px)';*/
 
-    /*记录当前点击的是按个按钮*/
-    var deleteBtn = null;
+            winCon.className = "jd_win_box bounceInDown";
 
-    for (var i = 0; i < deleteList.length; i++) {
-        deleteList[i].onclick = function () {
-            /*1.显示弹出层*/
-            jdWin.style.display = "block";
-            /*2.做动画*/
-            jdWinBox.classList.add('bounceInDown');
-            /*删除盒子需要做*/
-            console.log(this);
-
-            deleteBtn = this;
-            var up = deleteBtn.querySelector('.up');
-            console.log(up);
-            /*加过渡*/
-            up.style.webkitTransition = "all 1s";
-            up.style.transition = "all 1s";
-            /*定义旋转原点*/
-            up.style.webkitTransformOrigin = "0 5px";
-            up.style.transformOrigin = "0 5px";
-            /*加改变*/
-            up.style.webkitTransform = "rotate(-30deg) translateY(2px)";
-            up.style.transform = "rotate(-30deg) translateY(2px)";
-        }
+            /*动画*/
+            delBtnTop = this.getElementsByClassName('deleteBox_top')[0];
+            delBtnTop.style.webkitTransition = 'all 0.5s ease 0s';
+            delBtnTop.style.transition = 'all 0.5s ease 0s';
+            delBtnTop.style.webkitTransform = 'translateY(-5px) rotate(-45deg)';
+            delBtnTop.style.transform = 'translateY(-5px) rotate(-45deg)';
+        };
     }
 
-    /*4.点击取消按钮关闭弹出层*/
-    jdWinBox.querySelector('.cancel').onclick = function () {
-        jdWin.style.display = "none";
-        jdWinBox.classList.remove('bounceInDown');
-
-        /*当前点击过*/
+    winCon.getElementsByClassName('cancel')[0].onclick = function () {
+        winCon.style.opacity = 0;
+        winCon.style.webkitTransform = 'translateY(0px)';
+        winCon.style.transform = 'translateY(0px)';
+        win.style.display = 'none';
+        /*动画*/
         if (deleteBtn) {
-            var up = deleteBtn.querySelector('.up');
-            up.style.webkitTransform = "none";
-            up.style.transform = "none";
+            delBtnTop.style.webkitTransition = 'all 0.5s ease 0s';
+            delBtnTop.style.transition = 'all 0.5s ease 0s';
+            delBtnTop.style.webkitTransform = 'translateY(0px) rotate(0deg)';
+            delBtnTop.style.transform = 'translateY(0px) rotate(0deg)';
+        }
+        return false;
+    };
+    winCon.getElementsByClassName('submit')[0].onclick = function () {
+        winCon.style.opacity = 0;
+        winCon.style.webkitTransform = 'translateY(0px)';
+        winCon.style.transform = 'translateY(0px)';
+        win.style.display = 'none';
+        /*动画*/
+        if (deleteBtn) {
+            delBtnTop.style.webkitTransition = 'all 0.5s ease 0s';
+            delBtnTop.style.transition = 'all 0.5s ease 0s';
+            delBtnTop.style.webkitTransform = 'translateY(0px) rotate(0deg)';
+            delBtnTop.style.transform = 'translateY(0px) rotate(0deg)';
+        }
+        return false;
+    };
+
+    var checkBtn = document.getElementsByClassName('jd_check_box');
+    for (var j = 0; j < checkBtn.length; j++) {
+        checkBtn[j].onclick = function () {
+            var hasChecked = this.getAttribute('checked');
+            if (hasChecked !== null) {
+                this.removeAttribute('checked');
+            } else {
+                this.setAttribute('checked', ' ');
+            }
         }
     }
 };
