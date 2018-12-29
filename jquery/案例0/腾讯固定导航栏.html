@@ -11,10 +11,7 @@
 
         .top, .nav, .main {
             margin: 0 auto;
-        }
-
-        .main {
-            width: 1001px;
+            width: max-content;
         }
 
         .fixed-top {
@@ -28,14 +25,21 @@
         $(function () {
             //第一步：拿到top的高度
             var h = $(".top").height();
+            // var H = $(".nav").offset().top;
             //第二步：绑定windows的滚动事件
             $(window).scroll(function (event) {
                 var t = $(window).scrollTop();
-                //当windows滚动超过 top的高度，然后把nav进行固定定位
                 if (t > h) {
+                    //当windows滚动超过top的高度，把nav固定定位
+                    // $(".nav").css({"position": "fixed", "top": 0});
                     $(".nav").addClass('fixed-top');
-                    $(".main").css("marginTop", "83px")//固定定位后高度塌陷,设置margin补齐固定定位的元素高度
+
+                    //固定定位后高度塌陷,设置margin补齐固定定位的元素高度
+                    // $(".main").css("margin-top", $(".nav").height());
+                    $(".main").css("marginTop", "83px");
                 } else {
+                    /*静态定位*/
+                    // $(".nav").css({"position": "static"});
                     $(".nav").removeClass('fixed-top');
                     $(".main").css("marginTop", "0")
                 }
@@ -51,7 +55,6 @@
     <img src="imgs/nav.png" height="83" width="1423" alt="">
 </div>
 <div class="main">
-
     <img src="imgs/main.png" height="2734" width="1001" alt="">
 </div>
 </body>

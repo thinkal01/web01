@@ -28,7 +28,7 @@
     position: absolute;
     top: 8px;
     left: 0;
-    background: url("../images/safe_icon.png") no-repeat;
+    background: url("../../jdM02/images/safe_icon.png") no-repeat;
     background-size: 18px 18px;
     width: 18px;
     height: 18px
@@ -157,7 +157,7 @@
 }
 
 .option .f_right .up {
-    background: url("../images/delete_up.png") no-repeat;
+    background: url("../../jdM02/images/delete_up.png") no-repeat;
     background-size: 20px 5px;
     width: 20px;
     height: 5px;
@@ -166,7 +166,7 @@
 }
 
 .option .f_right .down {
-    background: url("../images/delete_down.png") no-repeat;
+    background: url("../../jdM02/images/delete_down.png") no-repeat;
     background-size: 18px 18px;
     width: 18px;
     height: 18px;
@@ -179,7 +179,7 @@
     height: 34px;
     width: 40px;
     padding: 7px 10px;
-    background: url("../images/shop-icon.png") no-repeat;
+    background: url("../../jdM02/images/shop-icon.png") no-repeat;
     background-size: 50px 100px;
     background-origin: content-box;
     background-clip: content-box;

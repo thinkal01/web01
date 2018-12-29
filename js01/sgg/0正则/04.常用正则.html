@@ -31,6 +31,11 @@
         var emailReg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
         var email = "abc.hello@163.com";
         console.log(emailReg.test(email));
+
+        // 使用正则替换，每隔三个数加一个','
+        var a = 22122122.6754;
+        // ?= 匹配以\d{3}结尾的字符串，并且捕获(存储)到分组中
+        var b = a.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
     </script>
 </head>
 <body>

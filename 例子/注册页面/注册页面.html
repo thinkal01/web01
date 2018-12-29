@@ -1,350 +1,372 @@
 <html>
-	<title>bookStoreÉÌ³Ç-ÉÌÆ·ĞÅÏ¢Õ¹Ê¾</title>
-		<style type="text/css">
-			.main{
-				/*ÉèÖÃÍâ±ß¾à£¬ÏÂÃæÓĞ30px¾àÀë*/
-				margin:0px 0px 30px 0px;
-				/*±³¾°É«*/
-				background-color:#ffffff;
-				/*×ÖÌå´óĞ¡*/
-				font-size:12px;
-				/*ÎÄ×ÖÑÕÉ«*/
-				color:#000000;
-				/*ÎÄ±¾¶ÔÆë·½Ê½*/
-				text-align:center;
-				/*´¹Ö±¶ÔÆë·½Ê½*/
-				vertical-align:top;
-				/*ÉèÖÃĞĞ¸ß*/
-				line-height:150%;	
-				font-family: Arial, Helvetica, sans-serif;				
-			}
-			/*ÉèÖÃa±êÇ© ×ÖÌå12px ÑÕÉ« #0066FF*/
-			a {
-				font-size: 12px;
-				color: #0066FF; /*#1E33F7*/
-			}
-			/*ÉèÖÃÎ´·ÃÎÊµÄ³¬Á¬½ÓÎŞÏÂ»®Ïß*/
-			a:link {
-				text-decoration: none;
-			}
-			/*ÉèÖÃ·ÃÎÊºóµÄÁ¬½ÓÑÕÉ«Îª#0066ff Ò²ÎŞÏÂ»®Ïß*/
-			a:visited {
-				text-decoration: none;
-				color: #0066FF;
-			}
-			/*ÉèÖÃÊó±êÒÆµ½³¬Á¬½ÓÉÏÎŞÏÂ»®ÏßÑÕÉ«Îª#990099*/
-			a:hover {
-				text-decoration: none;
-				color: #990099; /*ÑÕÉ«±ä»»*/
-			}
-			/*ÉèÖÃÑ¡¶¨µÄ³¬Á¬½ÓÎŞÏÂ»®Ïß£¬ÑÕÉ«Îª#0066ff*/
-			a:active {
-				text-decoration: none;
-				color: #0066FF;
-			}
-			/*ÉèÖÃËùÓĞtd±êÇ©*/
-			td{
-				text-align:left;
-				vertical-align:top;
-				font-size:12px;
-			}
-			/*ÉèÖÃËùÓĞµÄhr±êÇ©*/
-			hr{
-				/*ÑÕÉ«*/
-				color:#cccccc;
-				/*¸ß¶È*/
-				height:1px;
-				/*ÉÏÍâ±ß¾à5px*/
-				margin-top:5px;
-				/*ÏÂÍâ±ß¾à5px*/
-				margin-bottom:5px;
-				/*·Ö¸ôÏßÈç¹û³¬³ö¿ò¼Ü²¿·ÖÒş²Ø*/
-				overflow:hidden;
-			}
-			/*ÉèÖÃh1*/
-			h1{
-				font-size:14px;
-				color:#000000;				
-				margin-bottom:5px;
-				font-weight:bold;
-				display:inline;		
-				text-align:left;				
-			}
-			
-			#head{
-				/*ÉèÖÃheadÕâ¸ödiv¿í¶ÈÎª100%*/
-				width:100%;
-			}
-			.headtab{
-				width:100%;
-			}
-			.headta td{
-				/*ÉèÖÃtdÄÚ±ß¾àÉÏ10px ÓÒ50px ÏÂ25px ×ó135px*/
-				padding:10px 50px 25px 135px;
-			}
-			
-			#menu{
-				width:100%;
-				background-color:#1c3f09;/*ÉèÖÃ±³¾°É«*/
-				border-top-width:4px;/*ÉèÖÃÉÏ±ß¿ò¿í¶È4px*/
-				border-top-style:solid; /*ÉèÖÃÉÏ±ß¿òÑùÊ½ ÊµÏß*/
-				border-top-color:#82b211; /*ÉèÖÃÉÏ±ß¿òµÄÑÕÉ« #82b211*/
-				text-align:center;
-				font-size:14px;
-				padding:10px 0px 10px 0px;
-			}
-			#menu td{
-				text-align:center;
-			}
-			#menu a{
-				font-size:14px;
-				color:#ffffff; /*³¬Á¬½ÓÎÄ×ÖÑÕÉ«*/
-				font-weight:bold; /*³¬Á¬½Ó×ÖÌå¼Ó´Ö*/
-				padding:10px 10px 10px 10px; /*³¬Á¬½ÓÄÚ±ß¾à*/
-			}
-			
-			#menu a:link {
-				text-decoration: none;
-				font-weight: bold;
-			}
+<title>bookStoreå•†åŸ-å•†å“ä¿¡æ¯å±•ç¤º</title>
+<style type="text/css">
+    .main {
+        /*è®¾ç½®å¤–è¾¹è·ï¼Œä¸‹é¢æœ‰30pxè·ç¦»*/
+        margin: 0px 0px 30px 0px;
+        /*èƒŒæ™¯è‰²*/
+        background-color: #ffffff;
+        /*å­—ä½“å¤§å°*/
+        font-size: 12px;
+        /*æ–‡å­—é¢œè‰²*/
+        color: #000000;
+        /*æ–‡æœ¬å¯¹é½æ–¹å¼*/
+        text-align: center;
+        /*å‚ç›´å¯¹é½æ–¹å¼*/
+        vertical-align: top;
+        /*è®¾ç½®è¡Œé«˜*/
+        line-height: 150%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-			#menu a:visited {
-				text-decoration: none;
-				color: #FFFFFF;
-				font-weight: bold;
-			}
+    /*è®¾ç½®aæ ‡ç­¾ å­—ä½“12px é¢œè‰² #0066FF*/
+    a {
+        font-size: 12px;
+        color: #0066FF; /*#1E33F7*/
+    }
 
-			#menu a:hover {
-				text-decoration: none;
-				color: #999999; /*ÑÕÉ«±ä»»*/
-				font-weight: bold;
-			}
+    /*è®¾ç½®æœªè®¿é—®çš„è¶…è¿æ¥æ— ä¸‹åˆ’çº¿*/
+    a:link {
+        text-decoration: none;
+    }
 
-			#menu a:active {
-				text-decoration: none;
-				color: #FFFFFF;
-				font-weight: bold;
-			}
-			#search{
-				width:100%;
-				text-align:center;
-				color:#ffffff;
-				font-weight:bold;
-				padding:5px 0px 5px 0px;
-				background-color:#b6b684;
-			}
-			.inputtxt{
-				width:130px;
-				height:18px;
-				border:1px solid #999999;
-			}
-			/*×¢²áÒ³Ãæcontent²¿·ÖÕûÌåÉè¼Æ*/
-			#content{
-				width:900px;
-				background-color:#fcfdef;
-				border:1px solid #eeeddb;
-				margin-right:auto;
-				margin-left:auto;
-			}
-			/*ÉèÖÃ±ß¿ò*/			
-			.upline{
-				border-bottom-width:1px;
-				border-bottom-style:dashed;
-				border-bottom-color:#b0bec7;
-				padding-top:5px;
-				padding-bottom:5px;
-				margin:20px;
-			}
-			/*ÉèÖÃÎÄ±¾¿òÑùÊ½*/
-			.txtinput{
-				margin-left:10px;
-				font-size:12px;
-				width:150px;
-				height:18px;
-				border:1px solid #a4b4bd;
-			}
-			/*ÉèÖÃÎÄ±¾ÓòÑùÊ½*/
-			.txtarea{
-				margin-left:10px;
-				font-size:12px;
-				width:350px;
-				height:75px;
-				border:1px solid #a4b4bd;
-			}
-			#foot{
-				width:100%;
-				background-color:#efeedc;
-				margin-top:15px;
-			}			
-		</style>
-	</head>
-	<body class="main">
-		<!--
-			headÊÇÓÉÒ»ĞĞÁ½ÁĞtableÍê³ÉÕ¹Ê¾ 
-		-->
-		<div id="head">
-		<table class="headtab">
-			<tr>
-				<td align="left">
-					<img src="images/logo.png">
-				</td>
-				<td style="text-align:right">					
-					<img src="images/cart.gif">							
-					<a>¹ºÎï³µ</a>|
-					<a>°ïÖúÖĞĞÄ</a>|
-					<a>ÎÒµÄÕÊ»§</a>|
-					<a>ĞÂÓÃ»§×¢²á</a>|
-					
-				</td>
-			</tr>
-		</table>
-		</div>
-		<!--
-			menuÆäÖĞ¾ÍÊÇºÜ¶à³¬Á¬½Ó
-		-->
-		<div id="menu">	
-			<table width="100%">
-				<tr>
-					<td>
-						<a href="#">ÎÄÑ§</a>			
-						<a href="#">Éú»î</a>
-						<a href="#">¼ÆËã»ú</a>
-						<a href="#">ÍâÓï</a>
-						<a href="#">¾­¹Ü</a>
-						<a href="#">ÀøÖ¾</a>
-						<a href="#">Éç¿Æ</a>			
-						<a href="#">Ñ§Êõ</a>
-						<a href="#">ÉÙ¶ù</a>
-						<a href="#">ÒÕÊõ</a>			
-						<a href="#">Ô­°æ</a>
-						<a href="#">¿Æ¼¼</a>
-						<a href="#">¿¼ÊÔ</a>			
-						<a href="#">Éú»î°Ù¿Æ</a>
-						<a href="#" style="color:yellow">È«²¿ÉÌÆ·Ä¿Â¼</a>
-					</td>
-				</tr>		
-			</table>	
-		</div>
-		<!--
-			searchÊÇÓÉÒ»ĞĞÒ»ÁĞtableÍê³É
-		-->
-		<div id="search">
-			<table width="100%">
-				<tr>
-					<td style="text-align:right;padding-right:220px">
-						Search
-						<input type="text" class="inputtxt">
-						<input type="image" src="images/serchbutton.gif" style="margin-bottom:-4px;">						
-					</td>
-				</tr>
-			</table>
-		</div>	
-		<!--
-			
-		-->
-<div id="content">			
-	<form action="#" method="post">
-		<table width="850px" border="0" cellspacing="0">
-			<tr>
-				<td style="padding:30px;">
-					<h1>ĞÂ»áÔ±×¢²á</h1>
-					<table width="70%" border="0" cellspacing="2" class="upline">
-						<tr>
-							<td style="text-align:right;width:20%">»áÔ±ÓÊÏä</td>									
-							<td><input type="text" name="email" class="txtinput"></td>			
-							<td>
-								<font color="#999999">ÇëÊäÈëÓĞĞ§µÄÓÊÏäµØÖ·</font>
-							</td>
-						</tr>
-						
-						<tr>
-							<td style="text-align:right;">»áÔ±Ãû</td>									
-							<td><input type="text" name="username" class="txtinput"></td>
-							<td><font color="#999999">ÓÃ»§ÃûÖÁÉÙÁùÎ»</font></td>
-						</tr>
-						
-						<tr>
-							<td  style="text-align:right;">ÃÜÂë</td>									
-							<td><input type="password" name="password" class="txtinput"></td>									
-							<td><font color="#999999">ÃÜÂëÖÁÉÙÁùÎ»</font></td>
-						</tr>
-						
-						<tr>
-							<td  style="text-align:right;">ÖØ¸´ÃÜÂë</td>									
-							<td><input type="password" name="repassword" class="txtinput"></td>									
-							<td>&nbsp;</td>
-						</tr>
-						
-						<tr>
-							<td  style="text-align:right;width:20%">ĞÔ±ğ</td>									
-							<td colspan="2"><input type="radio" name="sex" value="ÄĞ" checked>ÄĞ&nbsp;&nbsp;<input type="radio" name="sex" value="Å®">Å®</td>
-							
-						</tr>
-						
-						<tr>
-							<td  style="text-align:right;width:20%">ÁªÏµµç»°</td>									
-							<td colspan="2"><input type="text" name="telephone" class="txtinput" style="width:350px;"></td>									
-							
-						</tr>
-						
-						<tr>
-							<td  style="text-align:right;width:20%">¸öÈË½éÉÜ</td>									
-							<td colspan="2"><textarea name="introduce" class="txtarea"></textarea></td>									
-						</tr>
-					</table>
-					<h1>×¢²áĞ£Ñé</h1>
-					<table width="70%" border="0" cellspacing="2" class="upline">
-						<tr>
-							<td  style="text-align:right;width:20%">ÊäÈëĞ£ÑéÂë</td>
-							<td><input type="text" name="checkcode" class="txtinput"></td>
-							<td>&nbsp;</td>
-						</tr>
-						
-						<tr>
-							<td>&nbsp;</td>
-							<td colspan="2">
-								<img src="images/validateCode.png" class="txtinput" style="height:30px;">
-								<a href="#">¿´²»Çå»»Ò»ÕÅ</a>
-							</td>
-						</tr>
-					</table>
-					
-					<table width="70%" border="0" cellspacing="2">
-						<tr>
-							<td style="text-align:center">
-								<input type="image" src="images/signup.gif">
-							</td>									
-						</tr>
-					</table>
-					
-				</td>
-			</tr>
-		</table>
-	</form>
-	
+    /*è®¾ç½®è®¿é—®åçš„è¿æ¥é¢œè‰²ä¸º#0066ff ä¹Ÿæ— ä¸‹åˆ’çº¿*/
+    a:visited {
+        text-decoration: none;
+        color: #0066FF;
+    }
+
+    /*è®¾ç½®é¼ æ ‡ç§»åˆ°è¶…è¿æ¥ä¸Šæ— ä¸‹åˆ’çº¿é¢œè‰²ä¸º#990099*/
+    a:hover {
+        text-decoration: none;
+        color: #990099; /*é¢œè‰²å˜æ¢*/
+    }
+
+    /*è®¾ç½®é€‰å®šçš„è¶…è¿æ¥æ— ä¸‹åˆ’çº¿ï¼Œé¢œè‰²ä¸º#0066ff*/
+    a:active {
+        text-decoration: none;
+        color: #0066FF;
+    }
+
+    /*è®¾ç½®æ‰€æœ‰tdæ ‡ç­¾*/
+    td {
+        text-align: left;
+        vertical-align: top;
+        font-size: 12px;
+    }
+
+    /*è®¾ç½®æ‰€æœ‰çš„hræ ‡ç­¾*/
+    hr {
+        /*é¢œè‰²*/
+        color: #cccccc;
+        /*é«˜åº¦*/
+        height: 1px;
+        /*ä¸Šå¤–è¾¹è·5px*/
+        margin-top: 5px;
+        /*ä¸‹å¤–è¾¹è·5px*/
+        margin-bottom: 5px;
+        /*åˆ†éš”çº¿å¦‚æœè¶…å‡ºæ¡†æ¶éƒ¨åˆ†éšè—*/
+        overflow: hidden;
+    }
+
+    /*è®¾ç½®h1*/
+    h1 {
+        font-size: 14px;
+        color: #000000;
+        margin-bottom: 5px;
+        font-weight: bold;
+        display: inline;
+        text-align: left;
+    }
+
+    #head {
+        /*è®¾ç½®headè¿™ä¸ªdivå®½åº¦ä¸º100%*/
+        width: 100%;
+    }
+
+    .headtab {
+        width: 100%;
+    }
+
+    .headta td {
+        /*è®¾ç½®tdå†…è¾¹è·ä¸Š10px å³50px ä¸‹25px å·¦135px*/
+        padding: 10px 50px 25px 135px;
+    }
+
+    #menu {
+        width: 100%;
+        background-color: #1c3f09; /*è®¾ç½®èƒŒæ™¯è‰²*/
+        border-top-width: 4px; /*è®¾ç½®ä¸Šè¾¹æ¡†å®½åº¦4px*/
+        border-top-style: solid; /*è®¾ç½®ä¸Šè¾¹æ¡†æ ·å¼ å®çº¿*/
+        border-top-color: #82b211; /*è®¾ç½®ä¸Šè¾¹æ¡†çš„é¢œè‰² #82b211*/
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 0px 10px 0px;
+    }
+
+    #menu td {
+        text-align: center;
+    }
+
+    #menu a {
+        font-size: 14px;
+        color: #ffffff; /*è¶…è¿æ¥æ–‡å­—é¢œè‰²*/
+        font-weight: bold; /*è¶…è¿æ¥å­—ä½“åŠ ç²—*/
+        padding: 10px 10px 10px 10px; /*è¶…è¿æ¥å†…è¾¹è·*/
+    }
+
+    #menu a:link {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #menu a:visited {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+    #menu a:hover {
+        text-decoration: none;
+        color: #999999; /*é¢œè‰²å˜æ¢*/
+        font-weight: bold;
+    }
+
+    #menu a:active {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+    #search {
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 5px 0px 5px 0px;
+        background-color: #b6b684;
+    }
+
+    .inputtxt {
+        width: 130px;
+        height: 18px;
+        border: 1px solid #999999;
+    }
+
+    /*æ³¨å†Œé¡µé¢contentéƒ¨åˆ†æ•´ä½“è®¾è®¡*/
+    #content {
+        width: 900px;
+        background-color: #fcfdef;
+        border: 1px solid #eeeddb;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /*è®¾ç½®è¾¹æ¡†*/
+    .upline {
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-color: #b0bec7;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 20px;
+    }
+
+    /*è®¾ç½®æ–‡æœ¬æ¡†æ ·å¼*/
+    .txtinput {
+        margin-left: 10px;
+        font-size: 12px;
+        width: 150px;
+        height: 18px;
+        border: 1px solid #a4b4bd;
+    }
+
+    /*è®¾ç½®æ–‡æœ¬åŸŸæ ·å¼*/
+    .txtarea {
+        margin-left: 10px;
+        font-size: 12px;
+        width: 350px;
+        height: 75px;
+        border: 1px solid #a4b4bd;
+    }
+
+    #foot {
+        width: 100%;
+        background-color: #efeedc;
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body class="main">
+<!--
+    headæ˜¯ç”±ä¸€è¡Œä¸¤åˆ—tableå®Œæˆå±•ç¤º
+-->
+<div id="head">
+    <table class="headtab">
+        <tr>
+            <td align="left">
+                <img src="images/logo.png">
+            </td>
+            <td style="text-align:right">
+                <img src="images/cart.gif">
+                <a>è´­ç‰©è½¦</a>|
+                <a>å¸®åŠ©ä¸­å¿ƒ</a>|
+                <a>æˆ‘çš„å¸æˆ·</a>|
+                <a>æ–°ç”¨æˆ·æ³¨å†Œ</a>|
+
+            </td>
+        </tr>
+    </table>
 </div>
-		<!--
-			footÊÇÓÉÁ½ĞĞÁ½ÁĞµÄtableÍê³É¡£
-			µ«ÊÇµÚÒ»¸ötdºÏ²¢ÁË2ĞĞ
-		-->
-		<div id="foot">
-			<table bgcolor="#efeedc" width="100%" align="center">
-				<tr>
-					<td rowspan="2" style="width:10%">
-						<img src="images/logo.png" width="195" height="50" style="margin-left:175px;">
-					</td>
-					<td style="padding-left:50px;padding-top:5px;">
-						<a><font color="#747556">CONTACT US</font></a>
-					</td>
-				</tr>
-				<tr>
-					
-					<td style="padding-left:50px;">
-						<font color="#747556">copyright&nbsp;2008&copy;BookStore All Rights RESERVED</font>
-					</td>
-				</tr>
-				
-			</table>
-		</div>			
-	</body>
+<!--
+    menuå…¶ä¸­å°±æ˜¯å¾ˆå¤šè¶…è¿æ¥
+-->
+<div id="menu">
+    <table width="100%">
+        <tr>
+            <td>
+                <a href="#">æ–‡å­¦</a>
+                <a href="#">ç”Ÿæ´»</a>
+                <a href="#">è®¡ç®—æœº</a>
+                <a href="#">å¤–è¯­</a>
+                <a href="#">ç»ç®¡</a>
+                <a href="#">åŠ±å¿—</a>
+                <a href="#">ç¤¾ç§‘</a>
+                <a href="#">å­¦æœ¯</a>
+                <a href="#">å°‘å„¿</a>
+                <a href="#">è‰ºæœ¯</a>
+                <a href="#">åŸç‰ˆ</a>
+                <a href="#">ç§‘æŠ€</a>
+                <a href="#">è€ƒè¯•</a>
+                <a href="#">ç”Ÿæ´»ç™¾ç§‘</a>
+                <a href="#" style="color:yellow">å…¨éƒ¨å•†å“ç›®å½•</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+    searchæ˜¯ç”±ä¸€è¡Œä¸€åˆ—tableå®Œæˆ
+-->
+<div id="search">
+    <table width="100%">
+        <tr>
+            <td style="text-align:right;padding-right:220px">
+                Search
+                <input type="text" class="inputtxt">
+                <input type="image" src="images/serchbutton.gif" style="margin-bottom:-4px;">
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+
+-->
+<div id="content">
+    <form action="#" method="post">
+        <table width="850px" border="0" cellspacing="0">
+            <tr>
+                <td style="padding:30px;">
+                    <h1>æ–°ä¼šå‘˜æ³¨å†Œ</h1>
+                    <table width="70%" border="0" cellspacing="2" class="upline">
+                        <tr>
+                            <td style="text-align:right;width:20%">ä¼šå‘˜é‚®ç®±</td>
+                            <td><input type="text" name="email" class="txtinput"></td>
+                            <td>
+                                <font color="#999999">è¯·è¾“å…¥æœ‰æ•ˆçš„é‚®ç®±åœ°å€</font>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;">ä¼šå‘˜å</td>
+                            <td><input type="text" name="username" class="txtinput"></td>
+                            <td><font color="#999999">ç”¨æˆ·åè‡³å°‘å…­ä½</font></td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;">å¯†ç </td>
+                            <td><input type="password" name="password" class="txtinput"></td>
+                            <td><font color="#999999">å¯†ç è‡³å°‘å…­ä½</font></td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;">é‡å¤å¯†ç </td>
+                            <td><input type="password" name="repassword" class="txtinput"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;width:20%">æ€§åˆ«</td>
+                            <td colspan="2"><input type="radio" name="sex" value="ç”·" checked>ç”·&nbsp;&nbsp;<input
+                                    type="radio" name="sex" value="å¥³">å¥³
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;width:20%">è”ç³»ç”µè¯</td>
+                            <td colspan="2"><input type="text" name="telephone" class="txtinput" style="width:350px;">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="text-align:right;width:20%">ä¸ªäººä»‹ç»</td>
+                            <td colspan="2"><textarea name="introduce" class="txtarea"></textarea></td>
+                        </tr>
+                    </table>
+                    <h1>æ³¨å†Œæ ¡éªŒ</h1>
+                    <table width="70%" border="0" cellspacing="2" class="upline">
+                        <tr>
+                            <td style="text-align:right;width:20%">è¾“å…¥æ ¡éªŒç </td>
+                            <td><input type="text" name="checkcode" class="txtinput"></td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td colspan="2">
+                                <img src="images/validateCode.png" class="txtinput" style="height:30px;">
+                                <a href="#">çœ‹ä¸æ¸…æ¢ä¸€å¼ </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table width="70%" border="0" cellspacing="2">
+                        <tr>
+                            <td style="text-align:center">
+                                <input type="image" src="images/signup.gif">
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<!--
+    footæ˜¯ç”±ä¸¤è¡Œä¸¤åˆ—çš„tableå®Œæˆã€‚
+    ä½†æ˜¯ç¬¬ä¸€ä¸ªtdåˆå¹¶äº†2è¡Œ
+-->
+<div id="foot">
+    <table bgcolor="#efeedc" width="100%" align="center">
+        <tr>
+            <td rowspan="2" style="width:10%">
+                <img src="images/logo.png" width="195" height="50" style="margin-left:175px;">
+            </td>
+            <td style="padding-left:50px;padding-top:5px;">
+                <a><font color="#747556">CONTACT US</font></a>
+            </td>
+        </tr>
+        <tr>
+
+            <td style="padding-left:50px;">
+                <font color="#747556">copyright&nbsp;2008&copy;BookStore All Rights RESERVED</font>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</body>
 </html>
